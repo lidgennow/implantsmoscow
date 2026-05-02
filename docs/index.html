@@ -93,6 +93,7 @@
     <div class="kpi-mini" style="color:var(--good)">ПЦП на договоре</div>
     <div style="font-size:36px;font-weight:600;margin-top:8px;color:var(--good)" id="pcpContract">—</div>
     <div style="color:var(--muted);font-size:13px;margin-top:4px">сумма подписанных договоров</div>
+    <div style="color:var(--good);font-size:15px;margin-top:6px;font-weight:600" id="pcpContractCount">—</div>
   </div>
   <div class="card">
     <div class="kpi-mini" style="color:var(--warn)">ПЦП с планом — без депозита</div>
@@ -171,8 +172,9 @@ function render(d) {
   }).join('');
 
   // ---------- ПЦП результаты ----------
-  document.getElementById('pcpContract').textContent  = k.pcp_contract  != null ? fmt(k.pcp_contract)  + ' ₽' : '—';
-  document.getElementById('pcpNoDeposit').textContent = k.pcp_no_deposit != null ? fmt(k.pcp_no_deposit) + ' ₽' : '—';
+  document.getElementById('pcpContract').textContent      = k.pcp_contract       != null ? fmt(k.pcp_contract)       + ' ₽' : '—';
+  document.getElementById('pcpContractCount').textContent = k.pcp_contract_count  ? k.pcp_contract_count + ' пациентов' : '—';
+  document.getElementById('pcpNoDeposit').textContent     = k.pcp_no_deposit     != null ? fmt(k.pcp_no_deposit)     + ' ₽' : '—';
 
   // ---------- Donut статусы ----------
   Chart.defaults.color = '#94a3b8';
