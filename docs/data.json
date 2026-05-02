@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-05-02"
   },
-  "generated_at": "2026-05-02T19:28:21Z",
+  "generated_at": "2026-05-02T19:48:39Z",
   "months": [
     {
       "key": "2026-04",
@@ -30,9 +30,9 @@
       "conv_zapis_from_pcp": 63.0,
       "conv_prishel_from_zapis": 21.3,
       "refusals_total": 110,
-      "pcp_contract": 0,
-      "pcp_no_deposit": 0,
-      "ad_spend": null
+      "pcp_contract": 382320,
+      "pcp_no_deposit": 3457960,
+      "ad_spend": 294100
     },
     "status_counts": {
       "ОТКАЗ": 110,
@@ -1222,9 +1222,9 @@
         "conv_zapis_from_pcp": 61.1,
         "conv_prishel_from_zapis": 22.7,
         "refusals_total": 105,
-        "pcp_contract": 0,
-        "pcp_no_deposit": 0,
-        "ad_spend": null
+        "pcp_contract": 382320,
+        "pcp_no_deposit": 3457960,
+        "ad_spend": 294100
       },
       "status_counts": {
         "ОТКАЗ": 105,
