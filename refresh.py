@@ -120,9 +120,10 @@ def compute(g, manual=None):
     active   = int((zap_mask & g["Явка:"].isna()).sum())
     otval    = int((zap_mask & g["Явка:"].isin(OTVAL_YAVKA)).sum())
 
-    pcp_contract = manual.get("pcp_contract")  or 0
-    pcp_no_dep   = manual.get("pcp_no_deposit") or 0
-    ad_spend     = manual.get("ad_spend")
+    pcp_contract       = manual.get("pcp_contract")       or 0
+    pcp_contract_count = manual.get("pcp_contract_count") or 0
+    pcp_no_dep         = manual.get("pcp_no_deposit")     or 0
+    ad_spend           = manual.get("ad_spend")
 
     op_stats = {}
     for op, og in g.groupby("Имя оператора, взявшего в работу", dropna=False):
@@ -162,9 +163,10 @@ def compute(g, manual=None):
             "conv_zapis_from_pcp":     round(zapis  / pcp   * 100, 1) if pcp   else 0,
             "conv_prishel_from_zapis": round(prishel/ zapis * 100, 1) if zapis else 0,
             "refusals_total":  int((g["Статус:"] == "ОТКАЗ").sum()),
-            "pcp_contract":    pcp_contract,
-            "pcp_no_deposit":  pcp_no_dep,
-            "ad_spend":        ad_spend,
+            "pcp_contract":       pcp_contract,
+            "pcp_contract_count": pcp_contract_count,
+            "pcp_no_deposit":     pcp_no_dep,
+            "ad_spend":           ad_spend,
         },
         "status_counts": {
             k: int(v) for k, v in
@@ -246,9 +248,10 @@ def main():
         if isinstance(v, dict) and v.get("ad_spend")
     ) or None
     total_manual = {
-        "pcp_contract":  sum(v.get("pcp_contract",  0) or 0 for v in manual_all.values() if isinstance(v, dict)),
-        "pcp_no_deposit":sum(v.get("pcp_no_deposit", 0) or 0 for v in manual_all.values() if isinstance(v, dict)),
-        "ad_spend":      total_ad,
+        "pcp_contract":       sum(v.get("pcp_contract",       0) or 0 for v in manual_all.values() if isinstance(v, dict)),
+        "pcp_contract_count": sum(v.get("pcp_contract_count", 0) or 0 for v in manual_all.values() if isinstance(v, dict)),
+        "pcp_no_deposit":     sum(v.get("pcp_no_deposit",     0) or 0 for v in manual_all.values() if isinstance(v, dict)),
+        "ad_spend":           total_ad,
     }
 
     data = {

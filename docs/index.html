@@ -159,7 +159,7 @@ function render(d) {
     ['Квалифицированы (ПЦП)', k.pcp,          k.total],
     ['Записаны в клинику',    k.zapis,        k.total],
     ['Пришли на приём',       k.prishel,      k.total],
-    ['ПЦП на договоре',       k.pcp_contract, k.total],
+    ['ПЦП на договоре',       k.pcp_contract_count, k.total],
   ];
   document.getElementById('funnel').innerHTML = funnel.map(([l,v,base])=>{
     const w = base ? (v/base*100) : 0;
