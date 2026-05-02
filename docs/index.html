@@ -142,6 +142,9 @@ function render(d) {
     ['Отказов',                  k.refusals_total,''],
     ['Рекламный расход',
       k.ad_spend == null ? '—' : fmt(k.ad_spend)+' ₽', 'за период'],
+    ['ДРР',
+      (k.ad_spend != null && k.pcp_contract) ? (k.ad_spend / k.pcp_contract * 100).toFixed(1) + '%' : '—',
+      'расход / договоры'],
   ];
   document.getElementById('kpi').innerHTML = kpis.map(([l,v,sub])=>`
     <div class="card">
