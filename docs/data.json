@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-05-08"
   },
-  "generated_at": "2026-05-08T10:03:45Z",
+  "generated_at": "2026-05-08T11:55:02Z",
   "months": [
     {
       "key": "2026-04",
@@ -19,16 +19,16 @@
   "all": {
     "kpi": {
       "total": 310,
-      "pcp": 137,
+      "pcp": 138,
       "nekv": 6,
-      "zapis": 88,
+      "zapis": 89,
       "prishel": 24,
       "otmena": 48,
-      "active_zapis": 16,
+      "active_zapis": 17,
       "otval_zapis": 48,
-      "conv_pcp": 44.2,
-      "conv_zapis_from_pcp": 64.2,
-      "conv_prishel_from_zapis": 27.3,
+      "conv_pcp": 44.5,
+      "conv_zapis_from_pcp": 64.5,
+      "conv_prishel_from_zapis": 27.0,
       "refusals_total": 137,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
@@ -37,10 +37,10 @@
     },
     "status_counts": {
       "ОТКАЗ": 137,
-      "запись в клинику": 88,
+      "запись в клинику": 89,
       "думает": 49,
       "в работе": 18,
-      "недозвон": 12,
+      "недозвон": 11,
       "неквал": 6
     },
     "operator_stats": {
@@ -55,12 +55,12 @@
       },
       "Оператор Людмила": {
         "total": 207,
-        "pcp": 77,
+        "pcp": 78,
         "nekv": 1,
-        "zapis": 52,
+        "zapis": 53,
         "prishel": 15,
         "otval": 30,
-        "active": 7
+        "active": 8
       },
       "Оператор Марианна": {
         "total": 102,
@@ -600,6 +600,12 @@
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Оператор Марианна",
         "Комментарии:": "нужен протез на АО-4"
+      },
+      {
+        "Имя:": "Кузнецов Виктор",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Оператор Людмила",
+        "Комментарии:": "ао"
       }
     ],
     "refusal_categories": [
@@ -2638,16 +2644,16 @@
     "2026-05": {
       "kpi": {
         "total": 68,
-        "pcp": 32,
+        "pcp": 33,
         "nekv": 2,
-        "zapis": 22,
+        "zapis": 23,
         "prishel": 6,
         "otmena": 5,
-        "active_zapis": 11,
+        "active_zapis": 12,
         "otval_zapis": 5,
-        "conv_pcp": 47.1,
-        "conv_zapis_from_pcp": 68.8,
-        "conv_prishel_from_zapis": 27.3,
+        "conv_pcp": 48.5,
+        "conv_zapis_from_pcp": 69.7,
+        "conv_prishel_from_zapis": 26.1,
         "refusals_total": 19,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
@@ -2655,22 +2661,22 @@
         "ad_spend": null
       },
       "status_counts": {
-        "запись в клинику": 22,
+        "запись в клинику": 23,
         "ОТКАЗ": 19,
         "думает": 10,
-        "недозвон": 8,
         "в работе": 7,
+        "недозвон": 7,
         "неквал": 2
       },
       "operator_stats": {
         "Оператор Людмила": {
           "total": 47,
-          "pcp": 18,
+          "pcp": 19,
           "nekv": 0,
-          "zapis": 13,
+          "zapis": 14,
           "prishel": 4,
           "otval": 5,
-          "active": 4
+          "active": 5
         },
         "Оператор Марианна": {
           "total": 21,
@@ -2814,6 +2820,12 @@
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Оператор Марианна",
           "Комментарии:": "нужен протез на АО-4"
+        },
+        {
+          "Имя:": "Кузнецов Виктор",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Оператор Людмила",
+          "Комментарии:": "ао"
         }
       ],
       "refusal_categories": [
