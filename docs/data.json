@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-05-16"
   },
-  "generated_at": "2026-05-16T12:37:30Z",
+  "generated_at": "2026-05-16T14:22:43Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,22 +13,22 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 171
+      "count": 172
     }
   ],
   "all": {
     "kpi": {
-      "total": 413,
-      "pcp": 159,
+      "total": 414,
+      "pcp": 160,
       "nekv": 6,
-      "zapis": 108,
+      "zapis": 109,
       "prishel": 31,
       "otmena": 54,
-      "active_zapis": 23,
+      "active_zapis": 24,
       "otval_zapis": 54,
-      "conv_pcp": 38.5,
-      "conv_zapis_from_pcp": 67.9,
-      "conv_prishel_from_zapis": 28.7,
+      "conv_pcp": 38.6,
+      "conv_zapis_from_pcp": 68.1,
+      "conv_prishel_from_zapis": 28.4,
       "refusals_total": 199,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
@@ -37,7 +37,7 @@
     },
     "status_counts": {
       "ОТКАЗ": 199,
-      "запись в клинику": 108,
+      "запись в клинику": 109,
       "думает": 51,
       "недозвон": 27,
       "в работе": 22,
@@ -63,13 +63,13 @@
         "active": 11
       },
       "Оператор Марианна": {
-        "total": 131,
-        "pcp": 67,
+        "total": 132,
+        "pcp": 68,
         "nekv": 5,
-        "zapis": 44,
+        "zapis": 45,
         "prishel": 15,
         "otval": 17,
-        "active": 12
+        "active": 13
       }
     },
     "appointments": [
@@ -720,6 +720,12 @@
         "Явка:": "Отмена записи",
         "Имя оператора, взявшего в работу": "Оператор Марианна",
         "Комментарии:": "ао"
+      },
+      {
+        "Имя:": "Рысьева Светлана",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Оператор Марианна",
+        "Комментарии:": "мост с опорой на импл"
       }
     ],
     "refusal_categories": [
@@ -3207,17 +3213,17 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 171,
-        "pcp": 69,
+        "total": 172,
+        "pcp": 70,
         "nekv": 2,
-        "zapis": 49,
+        "zapis": 50,
         "prishel": 12,
         "otmena": 17,
-        "active_zapis": 20,
+        "active_zapis": 21,
         "otval_zapis": 17,
-        "conv_pcp": 40.4,
-        "conv_zapis_from_pcp": 71.0,
-        "conv_prishel_from_zapis": 24.5,
+        "conv_pcp": 40.7,
+        "conv_zapis_from_pcp": 71.4,
+        "conv_prishel_from_zapis": 24.0,
         "refusals_total": 61,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
@@ -3226,7 +3232,7 @@
       },
       "status_counts": {
         "ОТКАЗ": 61,
-        "запись в клинику": 49,
+        "запись в клинику": 50,
         "недозвон": 26,
         "думает": 20,
         "в работе": 13,
@@ -3243,13 +3249,13 @@
           "active": 9
         },
         "Оператор Марианна": {
-          "total": 49,
-          "pcp": 36,
+          "total": 50,
+          "pcp": 37,
           "nekv": 2,
-          "zapis": 25,
+          "zapis": 26,
           "prishel": 8,
           "otval": 6,
-          "active": 11
+          "active": 12
         }
       },
       "appointments": [
@@ -3546,6 +3552,12 @@
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Оператор Марианна",
           "Комментарии:": "конс 4 импл"
+        },
+        {
+          "Имя:": "Рысьева Светлана",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Оператор Марианна",
+          "Комментарии:": "мост с опорой на импл"
         }
       ],
       "refusal_categories": [
