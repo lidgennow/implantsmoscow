@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-05-16"
   },
-  "generated_at": "2026-05-16T15:34:36Z",
+  "generated_at": "2026-05-16T17:00:48Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,12 +13,12 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 173
+      "count": 175
     }
   ],
   "all": {
     "kpi": {
-      "total": 415,
+      "total": 417,
       "pcp": 160,
       "nekv": 6,
       "zapis": 109,
@@ -26,7 +26,7 @@
       "otmena": 54,
       "active_zapis": 24,
       "otval_zapis": 54,
-      "conv_pcp": 38.6,
+      "conv_pcp": 38.4,
       "conv_zapis_from_pcp": 68.1,
       "conv_prishel_from_zapis": 28.4,
       "refusals_total": 200,
@@ -40,7 +40,7 @@
       "запись в клинику": 109,
       "думает": 51,
       "недозвон": 27,
-      "в работе": 22,
+      "в работе": 24,
       "неквал": 6
     },
     "operator_stats": {
@@ -54,7 +54,7 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 282,
+        "total": 284,
         "pcp": 91,
         "nekv": 1,
         "zapis": 63,
@@ -3219,7 +3219,7 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 173,
+        "total": 175,
         "pcp": 70,
         "nekv": 2,
         "zapis": 50,
@@ -3227,7 +3227,7 @@
         "otmena": 17,
         "active_zapis": 21,
         "otval_zapis": 17,
-        "conv_pcp": 40.5,
+        "conv_pcp": 40.0,
         "conv_zapis_from_pcp": 71.4,
         "conv_prishel_from_zapis": 24.0,
         "refusals_total": 62,
@@ -3241,12 +3241,12 @@
         "запись в клинику": 50,
         "недозвон": 26,
         "думает": 20,
-        "в работе": 13,
+        "в работе": 15,
         "неквал": 2
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 123,
+          "total": 125,
           "pcp": 33,
           "nekv": 0,
           "zapis": 24,
