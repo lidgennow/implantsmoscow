@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-05-23"
   },
-  "generated_at": "2026-05-23T15:42:55Z",
+  "generated_at": "2026-05-23T17:02:25Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,12 +13,12 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 271
+      "count": 273
     }
   ],
   "all": {
     "kpi": {
-      "total": 513,
+      "total": 515,
       "pcp": 177,
       "nekv": 4,
       "zapis": 123,
@@ -26,20 +26,20 @@
       "otmena": 62,
       "active_zapis": 21,
       "otval_zapis": 62,
-      "conv_pcp": 34.5,
+      "conv_pcp": 34.4,
       "conv_zapis_from_pcp": 69.5,
       "conv_prishel_from_zapis": 32.5,
-      "refusals_total": 294,
+      "refusals_total": 295,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
       "pcp_no_deposit": 3457960,
       "ad_spend": 294100
     },
     "status_counts": {
-      "ОТКАЗ": 294,
+      "ОТКАЗ": 295,
       "запись в клинику": 123,
       "думает": 54,
-      "в работе": 20,
+      "в работе": 21,
       "недозвон": 18,
       "неквал": 4
     },
@@ -54,7 +54,7 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 359,
+        "total": 361,
         "pcp": 105,
         "nekv": 1,
         "zapis": 70,
@@ -815,7 +815,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 279,
+        "count": 280,
         "share": 94.9,
         "items": [
           {
@@ -2491,6 +2491,12 @@
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Оператор Людмила",
             "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/40793725  дубль"
+          },
+          {
+            "Имя:": "dataleads.ru",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Оператор Людмила",
+            "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/40620235  дубль, был на конс"
           }
         ]
       },
@@ -3944,7 +3950,7 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 271,
+        "total": 273,
         "pcp": 104,
         "nekv": 2,
         "zapis": 74,
@@ -3952,26 +3958,26 @@
         "otmena": 36,
         "active_zapis": 17,
         "otval_zapis": 36,
-        "conv_pcp": 38.4,
+        "conv_pcp": 38.1,
         "conv_zapis_from_pcp": 71.2,
         "conv_prishel_from_zapis": 28.4,
-        "refusals_total": 133,
+        "refusals_total": 134,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
-        "ОТКАЗ": 133,
+        "ОТКАЗ": 134,
         "запись в клинику": 74,
         "думает": 30,
         "недозвон": 18,
-        "в работе": 14,
+        "в работе": 15,
         "неквал": 2
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 200,
+          "total": 202,
           "pcp": 56,
           "nekv": 0,
           "zapis": 38,
@@ -4438,7 +4444,7 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 125,
+          "count": 126,
           "share": 94.0,
           "items": [
             {
@@ -5190,6 +5196,12 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Оператор Людмила",
               "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/40793725  дубль"
+            },
+            {
+              "Имя:": "dataleads.ru",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Оператор Людмила",
+              "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/40620235  дубль, был на конс"
             }
           ]
         },
