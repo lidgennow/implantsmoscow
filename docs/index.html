@@ -8,28 +8,51 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
+  /* ── Variables (dark) ─────────────────────────────────────── */
   :root {
-    --bg:#080f1e;
-    --card:rgba(18,30,50,0.9);
-    --card-border:rgba(255,255,255,0.07);
-    --card-border-hover:rgba(56,189,248,0.25);
-    --muted:#64748b;
-    --muted2:#94a3b8;
-    --text:#e2e8f0;
-    --accent:#38bdf8;
-    --accent2:#0ea5e9;
-    --good:#22c55e;
-    --bad:#ef4444;
-    --warn:#f59e0b;
+    --bg:#080f1e; --card:rgba(18,30,50,0.9);
+    --card-border:rgba(255,255,255,0.07); --card-border-hover:rgba(56,189,248,0.25);
+    --muted:#64748b; --muted2:#94a3b8; --text:#e2e8f0;
+    --accent:#38bdf8; --accent2:#0ea5e9;
+    --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
     --border:rgba(148,163,184,0.1);
     --shadow:0 4px 24px rgba(0,0,0,.45),0 1px 0 rgba(255,255,255,.04) inset;
-    --radius:14px;
-    --radius-sm:8px;
+    --radius:14px; --radius-sm:8px;
+    --sticky-bg:rgba(8,15,30,0.96);
+    --skel-a:rgba(255,255,255,.04); --skel-b:rgba(255,255,255,.09);
   }
+  /* ── Light theme ──────────────────────────────────────────── */
+  body.light {
+    --bg:#f1f5f9; --card:rgba(255,255,255,0.92);
+    --card-border:rgba(0,0,0,0.07); --card-border-hover:rgba(14,165,233,0.3);
+    --muted:#94a3b8; --muted2:#64748b; --text:#0f172a;
+    --accent:#0ea5e9; --accent2:#0284c7;
+    --good:#16a34a; --bad:#dc2626; --warn:#ca8a04;
+    --border:rgba(0,0,0,0.07);
+    --shadow:0 4px 24px rgba(0,0,0,.08),0 1px 0 rgba(255,255,255,.8) inset;
+    --sticky-bg:rgba(241,245,249,0.96);
+    --skel-a:rgba(0,0,0,.05); --skel-b:rgba(0,0,0,.1);
+    background-color:var(--bg) !important;
+    background-image:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(14,165,233,.06),transparent) !important;
+  }
+  body.light .funnel-fill{color:#fff}
+  body.light th{background:rgba(240,245,250,.97) !important}
+  body.light .toast{background:rgba(255,255,255,.97);color:var(--text)}
+  body.light .filter button{background:rgba(255,255,255,.6)}
+
+  /* ── Reset + body ─────────────────────────────────────────── */
   *{box-sizing:border-box}
   body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-       background:var(--bg);color:var(--text);padding:28px 32px;line-height:1.5;
-       background-image:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(56,189,248,.06),transparent)}
+       background:var(--bg);color:var(--text);padding:0 32px 48px;line-height:1.5;
+       background-image:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(56,189,248,.06),transparent);
+       transition:background-color .3s,color .3s}
+
+  /* ── Sticky top ───────────────────────────────────────────── */
+  .sticky-top{position:sticky;top:0;z-index:100;margin:0 -32px;padding:24px 32px 0;
+              background:var(--sticky-bg);backdrop-filter:blur(16px);
+              -webkit-backdrop-filter:blur(16px);transition:background .3s}
+
+  /* ── Header ───────────────────────────────────────────────── */
   h1{margin:0 0 4px;font-size:22px;font-weight:700;letter-spacing:-0.02em}
   h2{margin:0 0 14px;font-size:15px;font-weight:600;color:var(--muted2);
      text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;gap:8px}
@@ -37,25 +60,22 @@
              background:linear-gradient(180deg,var(--accent),var(--accent2));
              border-radius:2px;flex-shrink:0}
   .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
-
-  /* Header */
   .header-row{display:flex;align-items:center;justify-content:space-between;
-              flex-wrap:wrap;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+              flex-wrap:wrap;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--border)}
 
-  /* Progress bar */
-  .update-bar-wrap{height:2px;background:rgba(255,255,255,.05);margin-bottom:36px}
+  /* ── Update progress bar ──────────────────────────────────── */
+  .update-bar-wrap{height:2px;background:rgba(255,255,255,.05);margin-bottom:0}
   .update-bar-fill{height:100%;width:100%;transition:width 1s linear;
                    background:linear-gradient(90deg,var(--accent2),var(--accent));
                    box-shadow:0 0 6px rgba(56,189,248,.4)}
 
-  /* Section bands */
+  /* ── Section bands ────────────────────────────────────────── */
   .section-wrap{margin-top:40px;position:relative}
   .section-wrap + .section-wrap::before{
     content:'';position:absolute;top:-20px;left:0;right:0;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(56,189,248,.1) 30%,rgba(148,163,184,.08) 50%,rgba(56,189,248,.1) 70%,transparent)
-  }
+    background:linear-gradient(90deg,transparent,rgba(56,189,248,.1) 30%,rgba(148,163,184,.08) 50%,rgba(56,189,248,.1) 70%,transparent)}
 
-  /* Filter */
+  /* ── Filter ───────────────────────────────────────────────── */
   .filter{display:flex;gap:6px;flex-wrap:wrap}
   .filter button{background:rgba(15,23,42,.6);color:var(--muted2);border:1px solid var(--card-border);
                  padding:7px 14px;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;
@@ -66,19 +86,27 @@
                         box-shadow:0 0 16px rgba(56,189,248,.3)}
   .filter button .count{color:inherit;font-size:11px;margin-left:6px;opacity:.7}
 
-  /* Grid / Cards */
+  /* ── Theme toggle ─────────────────────────────────────────── */
+  #themeToggle{background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);
+               padding:7px 10px;cursor:pointer;color:var(--muted2);line-height:1;
+               transition:all .2s;display:flex;align-items:center}
+  #themeToggle:hover{border-color:var(--card-border-hover);color:var(--text)}
+
+  /* ── Grid / Cards ─────────────────────────────────────────── */
   .grid{display:grid;gap:16px}
   .kpi{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
   .row2{grid-template-columns:1fr 1fr}
   @media(max-width:900px){.row2{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
-        padding:20px;box-shadow:var(--shadow);backdrop-filter:blur(12px);transition:border-color .2s,box-shadow .2s}
+        padding:20px;box-shadow:var(--shadow);backdrop-filter:blur(12px);
+        transition:border-color .2s,box-shadow .2s,background .3s}
   .card:hover{border-color:rgba(255,255,255,.11);box-shadow:var(--shadow),0 0 0 1px rgba(56,189,248,.05)}
-  .kpi .card{padding:16px 18px;position:relative;overflow:hidden}
+  .kpi .card{padding:16px 18px 40px;position:relative;overflow:hidden}
   .kpi .card::after{content:'';position:absolute;top:0;right:0;width:60px;height:60px;
-                    background:radial-gradient(circle at top right,rgba(56,189,248,.06),transparent 70%);pointer-events:none}
+                    background:radial-gradient(circle at top right,rgba(56,189,248,.06),transparent 70%);
+                    pointer-events:none}
 
-  /* KPI */
+  /* ── KPI ──────────────────────────────────────────────────── */
   .kpi .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:500}
   .kpi .value{font-size:28px;font-weight:700;margin-top:8px;letter-spacing:-0.02em;
               background:linear-gradient(135deg,var(--text) 60%,var(--muted2));
@@ -89,27 +117,36 @@
   .trend-down{color:var(--bad);font-weight:600}
   .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
 
-  /* Chart */
+  /* ── Sparkline ────────────────────────────────────────────── */
+  .sparkline{position:absolute;bottom:0;left:0;right:0;width:100%;height:32px;
+             opacity:.55;pointer-events:none;display:block}
+  .spark-line{fill:none;stroke:var(--accent);stroke-width:1.5;vector-effect:non-scaling-stroke}
+
+  /* ── Chart ────────────────────────────────────────────────── */
   .chart-wrap{position:relative;height:320px}
 
-  /* Table */
+  /* ── Table ────────────────────────────────────────────────── */
   table{width:100%;border-collapse:collapse;font-size:13px}
   th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
   th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.08em;
-     position:sticky;top:0;background:rgba(12,22,38,.95);backdrop-filter:blur(8px)}
+     position:sticky;top:0;background:rgba(12,22,38,.95);backdrop-filter:blur(8px);
+     white-space:nowrap}
+  th.sortable{cursor:pointer;user-select:none;transition:color .15s}
+  th.sortable:hover{color:var(--text)}
+  th.sort-active{color:var(--accent)}
   tbody tr{transition:background .15s}
   tbody tr:hover{background:rgba(56,189,248,.04)}
   td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
   .scroll{max-height:420px;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 
-  /* Pills */
+  /* ── Pills ────────────────────────────────────────────────── */
   .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:600}
   .pill-good{background:rgba(34,197,94,.12);color:var(--good);border:1px solid rgba(34,197,94,.2)}
   .pill-bad{background:rgba(239,68,68,.12);color:var(--bad);border:1px solid rgba(239,68,68,.2)}
   .pill-warn{background:rgba(245,158,11,.12);color:var(--warn);border:1px solid rgba(245,158,11,.2)}
   .pill-muted{background:rgba(148,163,184,.1);color:var(--muted2);border:1px solid rgba(148,163,184,.15)}
 
-  /* Funnel */
+  /* ── Funnel ───────────────────────────────────────────────── */
   .funnel{display:flex;flex-direction:column;gap:10px}
   .funnel-row{display:flex;align-items:center;gap:14px}
   .funnel-bar{flex:1;height:36px;background:rgba(56,189,248,.07);border-radius:var(--radius-sm);
@@ -122,7 +159,7 @@
   .funnel-label{width:170px;font-size:13px;color:var(--muted2);font-weight:500}
   .funnel-num{width:90px;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--muted2);font-size:13px}
 
-  /* Misc */
+  /* ── Misc ─────────────────────────────────────────────────── */
   small{color:var(--muted)}
   .comment{color:var(--muted);font-size:12px;max-width:380px}
   .kpi-mini{font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:600}
@@ -131,14 +168,25 @@
   details summary:hover{background:rgba(56,189,248,.04)}
   details[open] summary{border-bottom:1px solid var(--border)}
 
-  /* Empty state */
+  /* ── Skeleton shimmer ─────────────────────────────────────── */
+  @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+  .skel{border-radius:4px;
+        background:linear-gradient(90deg,var(--skel-a) 25%,var(--skel-b) 50%,var(--skel-a) 75%);
+        background-size:200% 100%;animation:shimmer 1.5s infinite}
+  .skel-sm{height:11px;width:100%}
+  .skel-lg{height:28px;width:65%}
+  .skel-xl{height:36px;width:50%}
+  .skel-bar{height:100%;width:100%;border-radius:6px}
+  .skel-row{height:36px;width:100%;border-radius:6px}
+
+  /* ── Empty state ──────────────────────────────────────────── */
   .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;
                padding:44px 24px;gap:10px;text-align:center}
   .empty-state svg{opacity:.3;color:var(--muted)}
   .empty-title{font-size:15px;font-weight:600;color:var(--muted2);margin:0}
   .empty-sub{font-size:13px;color:var(--muted);margin:0}
 
-  /* Toast */
+  /* ── Toast ────────────────────────────────────────────────── */
   .toast-container{position:fixed;bottom:28px;right:28px;z-index:9999;
                    display:flex;flex-direction:column;gap:8px;pointer-events:none}
   .toast{background:rgba(10,18,36,.97);border:1px solid rgba(56,189,248,.25);
@@ -155,20 +203,23 @@
 </head>
 <body>
 
-<div class="header-row">
-  <div>
-    <h1>Дашборд колл-центра</h1>
-    <div class="sub" id="period"></div>
-  </div>
-  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <div style="text-align:right;font-size:12px;color:var(--muted);line-height:1.7">
-      <div>Обновлено: <span id="generatedAt" style="color:var(--text);font-variant-numeric:tabular-nums">—</span></div>
-      <div>Обновится через: <span id="nextUpdate" style="color:var(--accent);font-variant-numeric:tabular-nums">—</span></div>
+<div class="sticky-top">
+  <div class="header-row">
+    <div>
+      <h1>Дашборд колл-центра</h1>
+      <div class="sub" id="period"></div>
     </div>
-    <div class="filter" id="monthFilter"></div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <div style="text-align:right;font-size:12px;color:var(--muted);line-height:1.7">
+        <div>Обновлено: <span id="generatedAt" style="color:var(--text);font-variant-numeric:tabular-nums">—</span></div>
+        <div>Обновится через: <span id="nextUpdate" style="color:var(--accent);font-variant-numeric:tabular-nums">—</span></div>
+      </div>
+      <button id="themeToggle" onclick="toggleTheme()" title="Сменить тему"></button>
+      <div class="filter" id="monthFilter"></div>
+    </div>
   </div>
+  <div class="update-bar-wrap"><div class="update-bar-fill" id="updateBarFill"></div></div>
 </div>
-<div class="update-bar-wrap"><div class="update-bar-fill" id="updateBarFill"></div></div>
 
 <div class="section-wrap">
   <h2>Ключевые показатели</h2>
@@ -224,14 +275,48 @@ const fmt = n => (n||0).toLocaleString('ru-RU');
 const pct = (a,b) => b ? ((a/b)*100).toFixed(1)+'%' : '—';
 let chartStatus = null;
 
-const yavkaPill = v => {
-  if(!v) return '<span class="pill pill-muted">—</span>';
-  if(v==='Пришел') return '<span class="pill pill-good">Пришёл</span>';
-  if(v==='Отмена записи') return '<span class="pill pill-bad">Отмена</span>';
-  return `<span class="pill pill-muted">${v}</span>`;
-};
+// ── Theme ────────────────────────────────────────────────────────────────────
+function updateThemeIcon() {
+  const light = document.body.classList.contains('light');
+  document.getElementById('themeToggle').innerHTML = light
+    ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>`
+    : `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+}
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+  updateThemeIcon();
+  if (DATA) setActive(activeMonth);
+}
+if (localStorage.getItem('theme') === 'light') document.body.classList.add('light');
+updateThemeIcon();
 
-// ── Toast ────────────────────────────────────────────────────────────────────
+// ── Skeletons ─────────────────────────────────────────────────────────────────
+function renderSkeletons() {
+  document.getElementById('kpi').innerHTML = Array(9).fill(0).map(()=>`
+    <div class="card" style="padding:16px 18px 40px">
+      <div class="skel skel-sm" style="width:55%"></div>
+      <div class="skel skel-lg" style="margin-top:12px"></div>
+      <div class="skel skel-sm" style="margin-top:10px;width:70%"></div>
+    </div>`).join('');
+  document.getElementById('funnel').innerHTML = Array(5).fill(0).map(()=>`
+    <div class="funnel-row">
+      <div class="funnel-label"><div class="skel skel-sm" style="width:110px"></div></div>
+      <div class="funnel-bar"><div class="skel skel-bar"></div></div>
+      <div class="funnel-num"><div class="skel skel-sm" style="width:38px;margin-left:auto"></div></div>
+    </div>`).join('');
+  document.getElementById('ops').innerHTML = `<tbody>${Array(4).fill(0).map(()=>`
+    <tr>${Array(8).fill(0).map(()=>`<td><div class="skel skel-sm"></div></td>`).join('')}</tr>`).join('')}</tbody>`;
+  document.getElementById('appts').innerHTML = `<tbody>${Array(4).fill(0).map(()=>`
+    <tr>${Array(4).fill(0).map(()=>`<td><div class="skel skel-sm"></div></td>`).join('')}</tr>`).join('')}</tbody>`;
+  document.getElementById('refCats').innerHTML = Array(3).fill(0).map(()=>`
+    <div style="padding:12px;margin-bottom:8px;border:1px solid var(--border);border-radius:8px">
+      <div class="skel skel-sm" style="width:45%;margin-bottom:8px"></div>
+      <div class="skel" style="height:8px"></div>
+    </div>`).join('');
+}
+
+// ── Toast ─────────────────────────────────────────────────────────────────────
 function showToast(msg, dur = 4000) {
   const c = document.getElementById('toastContainer');
   const t = document.createElement('div');
@@ -241,26 +326,59 @@ function showToast(msg, dur = 4000) {
   setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 350); }, dur);
 }
 
-// ── Count-up ─────────────────────────────────────────────────────────────────
+// ── Count-up ──────────────────────────────────────────────────────────────────
 function countUp(el, target, suffix) {
-  const dur = 900;
-  const start = performance.now();
+  const dur = 900, start = performance.now();
   (function tick(now) {
     const p = Math.min((now - start) / dur, 1);
-    const ease = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.round(ease * target).toLocaleString('ru-RU') + (suffix || '');
+    el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target).toLocaleString('ru-RU') + (suffix||'');
     if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = target.toLocaleString('ru-RU') + (suffix || '');
+    else el.textContent = target.toLocaleString('ru-RU') + (suffix||'');
   })(start);
 }
 
 // ── Trend badge ───────────────────────────────────────────────────────────────
 function trendBadge(cur, prev) {
   if (prev == null || prev === 0 || cur == null) return '';
-  const d = ((cur - prev) / prev * 100);
+  const d = (cur - prev) / prev * 100;
   if (Math.abs(d) < 1) return '';
   const up = d > 0;
-  return `<span class="${up ? 'trend-up' : 'trend-down'}">${up ? '↑' : '↓'} ${Math.abs(d).toFixed(0)}%</span>`;
+  return `<span class="${up?'trend-up':'trend-down'}">${up?'↑':'↓'} ${Math.abs(d).toFixed(0)}%</span>`;
+}
+
+// ── Sparklines ────────────────────────────────────────────────────────────────
+const KPI_KEYS = ['total','pcp','zapis','active_zapis','prishel','otmena','refusals_total','ad_spend',null];
+function renderSparklines() {
+  if (!DATA || DATA.months.length < 2) return;
+  document.querySelectorAll('.kpi .card').forEach((card, i) => {
+    const key = KPI_KEYS[i];
+    if (!key) return;
+    const vals = DATA.months.map(m => {
+      const v = DATA.by_month[m.key]?.kpi?.[key];
+      return typeof v === 'number' ? v : null;
+    }).filter(v => v !== null);
+    if (vals.length < 2) return;
+    card.querySelector('.sparkline')?.remove();
+    const W = 100, H = 28, mn = Math.min(...vals), mx = Math.max(...vals), rng = mx - mn || 1;
+    const pts = vals.map((v,i) =>
+      `${(i/(vals.length-1)*W).toFixed(1)},${(H - (v-mn)/rng*(H-6) - 3).toFixed(1)}`);
+    const line = `M${pts.join('L')}`;
+    const fill = `${line}L${W},${H}L0,${H}Z`;
+    const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.className = 'sparkline';
+    svg.innerHTML = `
+      <defs>
+        <linearGradient id="sg${i}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--accent)" stop-opacity=".25"/>
+          <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="${fill}" fill="url(#sg${i})"/>
+      <path d="${line}" class="spark-line"/>`;
+    card.appendChild(svg);
+  });
 }
 
 // ── Empty state ───────────────────────────────────────────────────────────────
@@ -274,40 +392,86 @@ function emptyHTML(title, sub) {
   </div>`;
 }
 
+// ── Ops sort ──────────────────────────────────────────────────────────────────
+const yavkaPill = v => {
+  if(!v) return '<span class="pill pill-muted">—</span>';
+  if(v==='Пришел') return '<span class="pill pill-good">Пришёл</span>';
+  if(v==='Отмена записи') return '<span class="pill pill-bad">Отмена</span>';
+  return `<span class="pill pill-muted">${v}</span>`;
+};
+let sortState = {col: null, dir: -1};
+function sortOps(col) {
+  sortState = sortState.col === col ? {col, dir: sortState.dir * -1} : {col, dir: -1};
+  if (!DATA) return;
+  renderOps((activeMonth === 'all' ? DATA.all : DATA.by_month[activeMonth]).operator_stats);
+}
+function renderOps(ops) {
+  const entries = Object.entries(ops);
+  if (!entries.length) {
+    document.getElementById('ops').innerHTML =
+      `<tbody><tr><td style="border:0;padding:0">${emptyHTML('Нет данных по операторам','За выбранный период нет обработанных заявок')}</td></tr></tbody>`;
+    return;
+  }
+  if (sortState.col) {
+    entries.sort(([,a],[,b]) => (a[sortState.col] - b[sortState.col]) * sortState.dir);
+  }
+  const OPS_COLS = [
+    {key:null, label:'Оператор'},{key:'total',label:'Всего'},{key:'pcp',label:'ПЦП'},
+    {key:'nekv',label:'Неквал'},{key:'zapis',label:'Записей'},{key:'prishel',label:'Пришло'},
+    {key:'otval',label:'Отмена'},{key:'active',label:'Активна'},
+  ];
+  const thead = OPS_COLS.map(c => {
+    if (!c.key) return `<th>${c.label}</th>`;
+    const active = sortState.col === c.key;
+    const arrow = active ? (sortState.dir === 1 ? ' ↑' : ' ↓') : '';
+    return `<th class="sortable${active?' sort-active':''}" onclick="sortOps('${c.key}')">${c.label}${arrow}</th>`;
+  }).join('');
+  document.getElementById('ops').innerHTML =
+    `<thead><tr>${thead}</tr></thead>
+     <tbody>${entries.map(([name,s])=>`
+      <tr>
+        <td><b>${name}</b></td>
+        <td class="num">${s.total}</td>
+        <td class="num">${s.pcp} <small>(${pct(s.pcp,s.total)})</small></td>
+        <td class="num">${s.nekv}</td>
+        <td class="num">${s.zapis} <small>(${pct(s.zapis,s.pcp)} от ПЦП)</small></td>
+        <td class="num"><span class="good">${s.prishel}</span></td>
+        <td class="num"><span class="bad">${s.otval}</span> <small>${pct(s.otval,s.zapis)}</small></td>
+        <td class="num"><span class="warn">${s.active}</span></td>
+      </tr>`).join('')}</tbody>`;
+}
+
 // ── Render ────────────────────────────────────────────────────────────────────
 function render(d, prev) {
-  const k = d.kpi;
-  const pk = prev ? prev.kpi : null;
+  const k = d.kpi, pk = prev ? prev.kpi : null;
 
-  // KPI cards
+  // KPI
   const kpis = [
-    {l:'Всего заявок',          raw:k.total,           sub:`${k.conv_pcp}% квалифицировано`,         pk:pk?.total},
-    {l:'Квалифицированы (ПЦП)', raw:k.pcp,             sub:`${k.conv_pcp}% от всех`,                  pk:pk?.pcp},
-    {l:'Записей в клинику',     raw:k.zapis,           sub:`${k.conv_zapis_from_pcp}% от ПЦП`,        pk:pk?.zapis},
-    {l:'Запись активна',        raw:k.active_zapis,    sub:'без отметки явки',                        pk:pk?.active_zapis},
-    {l:'Пришли на приём',       raw:k.prishel,         sub:`${k.conv_prishel_from_zapis}% от записей`,pk:pk?.prishel},
-    {l:'Отмена записи',         raw:k.otmena,          sub:'',                                        pk:null},
-    {l:'Отказов',               raw:k.refusals_total,  sub:'',                                        pk:null},
-    {l:'Рекламный расход',      raw:k.ad_spend,        suffix:' ₽', sub:'за период',                  pk:pk?.ad_spend},
+    {l:'Всего заявок',          raw:k.total,          sub:`${k.conv_pcp}% квалифицировано`,          pk:pk?.total},
+    {l:'Квалифицированы (ПЦП)', raw:k.pcp,            sub:`${k.conv_pcp}% от всех`,                   pk:pk?.pcp},
+    {l:'Записей в клинику',     raw:k.zapis,          sub:`${k.conv_zapis_from_pcp}% от ПЦП`,         pk:pk?.zapis},
+    {l:'Запись активна',        raw:k.active_zapis,   sub:'без отметки явки',                         pk:pk?.active_zapis},
+    {l:'Пришли на приём',       raw:k.prishel,        sub:`${k.conv_prishel_from_zapis}% от записей`, pk:pk?.prishel},
+    {l:'Отмена записи',         raw:k.otmena,         sub:'',                                         pk:null},
+    {l:'Отказов',               raw:k.refusals_total, sub:'',                                         pk:null},
+    {l:'Рекламный расход',      raw:k.ad_spend,       suffix:' ₽', sub:'за период',                   pk:pk?.ad_spend},
     {l:'ДРР', raw:null,
-     display:(k.ad_spend != null && k.pcp_contract) ? (k.ad_spend/k.pcp_contract*100).toFixed(1)+'%' : '—',
+     display:(k.ad_spend!=null&&k.pcp_contract)?(k.ad_spend/k.pcp_contract*100).toFixed(1)+'%':'—',
      sub:'расход / договоры', pk:null},
   ];
-
   document.getElementById('kpi').innerHTML = kpis.map(({l,raw,display,sub,pk:pv,suffix})=>{
-    const isNum = typeof raw === 'number' && raw != null;
-    const dispVal = display ?? (isNum ? '0' : '—');
+    const isNum = typeof raw === 'number';
+    const val = display ?? (isNum ? '0' : '—');
     const trend = (isNum && pv != null) ? trendBadge(raw, pv) : '';
     return `<div class="card">
       <div class="label">${l}</div>
-      <div class="value kpi-val">${dispVal}</div>
-      <div class="delta">${sub}${trend ? `<span>${trend}</span>` : ''}</div>
+      <div class="value kpi-val">${val}</div>
+      <div class="delta">${sub}${trend?`<span>${trend}</span>`:''}</div>
     </div>`;
   }).join('');
-
-  document.querySelectorAll('.kpi .value.kpi-val').forEach((el, i) => {
-    const {raw, suffix} = kpis[i];
-    if (typeof raw === 'number' && raw > 0) countUp(el, raw, suffix || '');
+  document.querySelectorAll('.kpi .value.kpi-val').forEach((el,i) => {
+    const {raw,suffix} = kpis[i];
+    if (typeof raw === 'number' && raw > 0) countUp(el, raw, suffix||'');
   });
 
   // Funnel
@@ -318,27 +482,25 @@ function render(d, prev) {
     ['Пришли на приём',       k.prishel,            k.total],
     ['ПЦП на договоре',       k.pcp_contract_count, k.total],
   ];
-  document.getElementById('funnel').innerHTML = funnelData.map(([l,v,base])=>{
-    const w = base ? (v/base*100) : 0;
-    return `<div class="funnel-row">
+  document.getElementById('funnel').innerHTML = funnelData.map(([l,v,base])=>`
+    <div class="funnel-row">
       <div class="funnel-label">${l}</div>
-      <div class="funnel-bar"><div class="funnel-fill" data-w="${Math.max(w,4).toFixed(2)}">${v}</div></div>
+      <div class="funnel-bar"><div class="funnel-fill" data-w="${base?(v/base*100).toFixed(2):0}">${v}</div></div>
       <div class="funnel-num">${pct(v,base)}</div>
-    </div>`;
-  }).join('');
+    </div>`).join('');
   requestAnimationFrame(() => requestAnimationFrame(() => {
-    document.querySelectorAll('.funnel-fill').forEach((el, i) => {
-      setTimeout(() => { el.style.width = el.dataset.w + '%'; }, i * 90);
+    document.querySelectorAll('.funnel-fill').forEach((el,i) => {
+      setTimeout(() => { el.style.width = Math.max(+el.dataset.w, 4) + '%'; }, i * 90);
     });
   }));
 
   // ПЦП
-  document.getElementById('pcpContract').textContent     = k.pcp_contract    != null ? fmt(k.pcp_contract)    + ' ₽' : '—';
+  document.getElementById('pcpContract').textContent     = k.pcp_contract    != null ? fmt(k.pcp_contract)   + ' ₽' : '—';
   document.getElementById('pcpContractCount').textContent= k.pcp_contract_count ? k.pcp_contract_count + ' пациентов' : '—';
-  document.getElementById('pcpNoDeposit').textContent    = k.pcp_no_deposit  != null ? fmt(k.pcp_no_deposit)  + ' ₽' : '—';
+  document.getElementById('pcpNoDeposit').textContent    = k.pcp_no_deposit  != null ? fmt(k.pcp_no_deposit) + ' ₽' : '—';
 
   // Donut
-  Chart.defaults.color = '#94a3b8';
+  Chart.defaults.color = document.body.classList.contains('light') ? '#64748b' : '#94a3b8';
   Chart.defaults.borderColor = '#334155';
   const sc = d.status_counts;
   const colorMap = {'запись в клинику':'#22c55e','думает':'#38bdf8','ОТКАЗ':'#ef4444',
@@ -351,23 +513,8 @@ function render(d, prev) {
     options:{plugins:{legend:{position:'right',labels:{font:{size:12}}}}, maintainAspectRatio:false}
   });
 
-  // Операторы
-  const opEntries = Object.entries(d.operator_stats);
-  document.getElementById('ops').innerHTML = !opEntries.length
-    ? `<tbody><tr><td style="border:0;padding:0">${emptyHTML('Нет данных по операторам','За выбранный период нет обработанных заявок')}</td></tr></tbody>`
-    : `<thead><tr><th>Оператор</th><th>Всего</th><th>ПЦП</th><th>Неквал</th>
-       <th>Записей</th><th>Пришло</th><th>Отмена</th><th>Активна</th></tr></thead>
-       <tbody>${opEntries.map(([name,s])=>`
-        <tr>
-          <td><b>${name}</b></td>
-          <td class="num">${s.total}</td>
-          <td class="num">${s.pcp} <small>(${pct(s.pcp,s.total)})</small></td>
-          <td class="num">${s.nekv}</td>
-          <td class="num">${s.zapis} <small>(${pct(s.zapis,s.pcp)} от ПЦП)</small></td>
-          <td class="num"><span class="good">${s.prishel}</span></td>
-          <td class="num"><span class="bad">${s.otval}</span> <small>${pct(s.otval,s.zapis)}</small></td>
-          <td class="num"><span class="warn">${s.active}</span></td>
-        </tr>`).join('')}</tbody>`;
+  // Ops
+  renderOps(d.operator_stats);
 
   // Записи
   document.getElementById('apptCnt').textContent = d.appointments.length ? `— ${d.appointments.length} записей` : '';
@@ -382,7 +529,7 @@ function render(d, prev) {
           <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
         </tr>`).join('')}</tbody>`;
 
-  // Причины отказов
+  // Отказы
   const cats = d.refusal_categories || [];
   const total = cats.reduce((s,c)=>s+c.count, 0);
   document.getElementById('refTotal').textContent = total ? `— всего ${total} отказов` : '';
@@ -427,11 +574,13 @@ function render(d, prev) {
       </details>`;
     }).join('');
   }
+
+  // Sparklines after paint
+  requestAnimationFrame(() => renderSparklines());
 }
 
 // ── State & lifecycle ─────────────────────────────────────────────────────────
-let DATA = null;
-let activeMonth = 'all';
+let DATA = null, activeMonth = 'all';
 
 function setActive(key) {
   activeMonth = key;
@@ -452,31 +601,28 @@ let _countdownTimer = null;
 
 function formatMoscow(date) {
   return date.toLocaleString('ru-RU', {
-    timeZone: 'Europe/Moscow', day: '2-digit', month: '2-digit',
-    hour: '2-digit', minute: '2-digit',
+    timeZone:'Europe/Moscow', day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit',
   }) + ' МСК';
 }
-
-function scheduleRetry(el, delayMs) {
+function scheduleRetry(el, ms) {
   el.textContent = 'скоро…';
-  _countdownTimer = setTimeout(() => loadData(), delayMs);
+  _countdownTimer = setTimeout(() => loadData(), ms);
 }
-
-function startCountdown(nextUpdateAt) {
+function startCountdown(nextAt) {
   if (_countdownTimer) { clearInterval(_countdownTimer); clearTimeout(_countdownTimer); }
   const el = document.getElementById('nextUpdate');
-  if (nextUpdateAt <= Date.now()) { scheduleRetry(el, 2 * 60 * 1000); return; }
+  if (nextAt <= Date.now()) { scheduleRetry(el, 2*60*1000); return; }
   _countdownTimer = setInterval(() => {
-    const rem = nextUpdateAt - Date.now();
+    const rem = nextAt - Date.now();
     const bar = document.getElementById('updateBarFill');
     if (bar) bar.style.width = Math.max(0, rem / UPDATE_INTERVAL_MS * 100).toFixed(2) + '%';
     if (rem <= 0) {
       clearInterval(_countdownTimer);
       el.textContent = 'обновляется…';
-      _countdownTimer = setTimeout(() => loadData(), 45 * 1000);
+      _countdownTimer = setTimeout(() => loadData(), 45*1000);
       return;
     }
-    const m = Math.floor(rem / 60000), s = Math.floor((rem % 60000) / 1000);
+    const m = Math.floor(rem/60000), s = Math.floor((rem%60000)/1000);
     el.textContent = m > 0 ? `${m}м ${s}с` : `${s}с`;
   }, 1000);
 }
@@ -504,6 +650,7 @@ function loadData() {
   fetch('data.json?t=' + Date.now()).then(r=>r.json()).then(applyData);
 }
 
+renderSkeletons();
 loadData();
 </script>
 </body>
