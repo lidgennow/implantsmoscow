@@ -2,74 +2,162 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Дашборд КЦ — Стоматология Имплантс VDL, Москва</title>
+<title>Дашборд КЦ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root {
-    --bg:#0f172a; --card:#1e293b; --muted:#94a3b8; --text:#e2e8f0;
-    --accent:#38bdf8; --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
-    --border:#334155;
+    --bg:#080f1e;
+    --card:rgba(18,30,50,0.9);
+    --card-border:rgba(255,255,255,0.07);
+    --card-border-hover:rgba(56,189,248,0.25);
+    --muted:#64748b;
+    --muted2:#94a3b8;
+    --text:#e2e8f0;
+    --accent:#38bdf8;
+    --accent2:#0ea5e9;
+    --good:#22c55e;
+    --bad:#ef4444;
+    --warn:#f59e0b;
+    --border:rgba(148,163,184,0.1);
+    --shadow:0 4px 24px rgba(0,0,0,.45),0 1px 0 rgba(255,255,255,.04) inset;
+    --radius:14px;
+    --radius-sm:8px;
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-       background:var(--bg);color:var(--text);padding:24px;line-height:1.4}
-  h1{margin:0 0 4px;font-size:24px}
-  h2{margin:32px 0 12px;font-size:18px;color:var(--accent)}
-  h3{margin:0;font-size:15px;font-weight:600}
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+       background:var(--bg);color:var(--text);padding:28px 32px;line-height:1.5;
+       background-image:radial-gradient(ellipse 80% 40% at 50% -10%,rgba(56,189,248,.06),transparent)}
+  h1{margin:0 0 4px;font-size:22px;font-weight:700;letter-spacing:-0.02em}
+  h2{margin:0 0 14px;font-size:15px;font-weight:600;color:var(--muted2);
+     text-transform:uppercase;letter-spacing:.07em;display:flex;align-items:center;gap:8px}
+  h2::before{content:'';display:inline-block;width:3px;height:14px;
+             background:linear-gradient(180deg,var(--accent),var(--accent2));
+             border-radius:2px;flex-shrink:0}
   .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+
+  /* Header */
   .header-row{display:flex;align-items:center;justify-content:space-between;
-              flex-wrap:wrap;gap:12px;margin-bottom:24px}
+              flex-wrap:wrap;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+
+  /* Progress bar */
+  .update-bar-wrap{height:2px;background:rgba(255,255,255,.05);margin-bottom:36px}
+  .update-bar-fill{height:100%;width:100%;transition:width 1s linear;
+                   background:linear-gradient(90deg,var(--accent2),var(--accent));
+                   box-shadow:0 0 6px rgba(56,189,248,.4)}
+
+  /* Section bands */
+  .section-wrap{margin-top:40px;position:relative}
+  .section-wrap + .section-wrap::before{
+    content:'';position:absolute;top:-20px;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(56,189,248,.1) 30%,rgba(148,163,184,.08) 50%,rgba(56,189,248,.1) 70%,transparent)
+  }
+
+  /* Filter */
   .filter{display:flex;gap:6px;flex-wrap:wrap}
-  .filter button{background:var(--card);color:var(--text);border:1px solid var(--border);
-                 padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px;
-                 font-family:inherit;transition:all .15s}
-  .filter button:hover{border-color:var(--accent)}
-  .filter button.active{background:var(--accent);color:#0f172a;border-color:var(--accent);font-weight:600}
-  .filter button .count{color:var(--muted);font-size:11px;margin-left:6px}
-  .filter button.active .count{color:#0f172a;opacity:.7}
+  .filter button{background:rgba(15,23,42,.6);color:var(--muted2);border:1px solid var(--card-border);
+                 padding:7px 14px;border-radius:var(--radius-sm);cursor:pointer;font-size:13px;
+                 font-family:inherit;font-weight:500;transition:all .2s;backdrop-filter:blur(8px)}
+  .filter button:hover{border-color:var(--card-border-hover);color:var(--text);background:rgba(56,189,248,.08)}
+  .filter button.active{background:linear-gradient(135deg,var(--accent),var(--accent2));
+                        color:#080f1e;border-color:transparent;font-weight:600;
+                        box-shadow:0 0 16px rgba(56,189,248,.3)}
+  .filter button .count{color:inherit;font-size:11px;margin-left:6px;opacity:.7}
+
+  /* Grid / Cards */
   .grid{display:grid;gap:16px}
   .kpi{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
   .row2{grid-template-columns:1fr 1fr}
   @media(max-width:900px){.row2{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
-  .kpi .card{padding:14px 16px}
-  .kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
-  .kpi .value{font-size:28px;font-weight:600;margin-top:6px}
-  .kpi .delta{font-size:12px;color:var(--muted);margin-top:4px}
+  .card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);
+        padding:20px;box-shadow:var(--shadow);backdrop-filter:blur(12px);transition:border-color .2s,box-shadow .2s}
+  .card:hover{border-color:rgba(255,255,255,.11);box-shadow:var(--shadow),0 0 0 1px rgba(56,189,248,.05)}
+  .kpi .card{padding:16px 18px;position:relative;overflow:hidden}
+  .kpi .card::after{content:'';position:absolute;top:0;right:0;width:60px;height:60px;
+                    background:radial-gradient(circle at top right,rgba(56,189,248,.06),transparent 70%);pointer-events:none}
+
+  /* KPI */
+  .kpi .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:500}
+  .kpi .value{font-size:28px;font-weight:700;margin-top:8px;letter-spacing:-0.02em;
+              background:linear-gradient(135deg,var(--text) 60%,var(--muted2));
+              -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+              background-clip:text;font-variant-numeric:tabular-nums}
+  .kpi .delta{font-size:12px;color:var(--muted);margin-top:5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .trend-up{color:var(--good);font-weight:600}
+  .trend-down{color:var(--bad);font-weight:600}
   .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+
+  /* Chart */
   .chart-wrap{position:relative;height:320px}
+
+  /* Table */
   table{width:100%;border-collapse:collapse;font-size:13px}
-  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
-  th{color:var(--muted);font-weight:500;text-transform:uppercase;font-size:11px;letter-spacing:.05em;
-     position:sticky;top:0;background:var(--card)}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.08em;
+     position:sticky;top:0;background:rgba(12,22,38,.95);backdrop-filter:blur(8px)}
+  tbody tr{transition:background .15s}
+  tbody tr:hover{background:rgba(56,189,248,.04)}
   td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .scroll{max-height:420px;overflow:auto}
-  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:500}
-  .pill-good{background:rgba(34,197,94,.15);color:var(--good)}
-  .pill-bad{background:rgba(239,68,68,.15);color:var(--bad)}
-  .pill-warn{background:rgba(245,158,11,.15);color:var(--warn)}
-  .pill-muted{background:rgba(148,163,184,.15);color:var(--muted)}
-  .funnel{display:flex;flex-direction:column;gap:8px}
-  .funnel-row{display:flex;align-items:center;gap:12px}
-  .funnel-bar{flex:1;height:34px;background:rgba(56,189,248,.15);border-radius:6px;position:relative;overflow:hidden}
-  .funnel-fill{height:100%;background:linear-gradient(90deg,#38bdf8,#0ea5e9);border-radius:6px;
-               display:flex;align-items:center;padding-left:10px;font-weight:600;font-size:13px;color:#0f172a}
-  .funnel-label{width:160px;font-size:13px;color:var(--muted)}
-  .funnel-num{width:90px;text-align:right;font-variant-numeric:tabular-nums}
+  .scroll{max-height:420px;overflow:auto;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+
+  /* Pills */
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:600}
+  .pill-good{background:rgba(34,197,94,.12);color:var(--good);border:1px solid rgba(34,197,94,.2)}
+  .pill-bad{background:rgba(239,68,68,.12);color:var(--bad);border:1px solid rgba(239,68,68,.2)}
+  .pill-warn{background:rgba(245,158,11,.12);color:var(--warn);border:1px solid rgba(245,158,11,.2)}
+  .pill-muted{background:rgba(148,163,184,.1);color:var(--muted2);border:1px solid rgba(148,163,184,.15)}
+
+  /* Funnel */
+  .funnel{display:flex;flex-direction:column;gap:10px}
+  .funnel-row{display:flex;align-items:center;gap:14px}
+  .funnel-bar{flex:1;height:36px;background:rgba(56,189,248,.07);border-radius:var(--radius-sm);
+              overflow:hidden;border:1px solid rgba(56,189,248,.1)}
+  .funnel-fill{height:100%;background:linear-gradient(90deg,rgba(56,189,248,.9),rgba(14,165,233,.8));
+               border-radius:6px;display:flex;align-items:center;padding-left:12px;
+               font-weight:700;font-size:13px;color:#060d1a;width:0%;
+               box-shadow:4px 0 12px rgba(56,189,248,.15);
+               transition:width .9s cubic-bezier(.16,1,.3,1)}
+  .funnel-label{width:170px;font-size:13px;color:var(--muted2);font-weight:500}
+  .funnel-num{width:90px;text-align:right;font-variant-numeric:tabular-nums;font-weight:600;color:var(--muted2);font-size:13px}
+
+  /* Misc */
   small{color:var(--muted)}
   .comment{color:var(--muted);font-size:12px;max-width:380px}
-  .kpi-mini{font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+  .kpi-mini{font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:600}
   details summary::-webkit-details-marker{display:none}
   details summary{user-select:none}
-  details summary:hover{background:rgba(56,189,248,.05)}
+  details summary:hover{background:rgba(56,189,248,.04)}
   details[open] summary{border-bottom:1px solid var(--border)}
+
+  /* Empty state */
+  .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;
+               padding:44px 24px;gap:10px;text-align:center}
+  .empty-state svg{opacity:.3;color:var(--muted)}
+  .empty-title{font-size:15px;font-weight:600;color:var(--muted2);margin:0}
+  .empty-sub{font-size:13px;color:var(--muted);margin:0}
+
+  /* Toast */
+  .toast-container{position:fixed;bottom:28px;right:28px;z-index:9999;
+                   display:flex;flex-direction:column;gap:8px;pointer-events:none}
+  .toast{background:rgba(10,18,36,.97);border:1px solid rgba(56,189,248,.25);
+         border-radius:12px;padding:11px 16px;color:var(--text);font-size:13px;
+         backdrop-filter:blur(16px);box-shadow:0 8px 32px rgba(0,0,0,.5);
+         display:flex;align-items:center;gap:10px;white-space:nowrap;
+         animation:toastIn .35s cubic-bezier(.16,1,.3,1) both}
+  @keyframes toastIn{from{transform:translateY(12px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+  @keyframes toastOut{from{transform:none;opacity:1}to{transform:translateY(12px) scale(.96);opacity:0}}
+  .toast.out{animation:toastOut .3s ease forwards}
+  .toast-dot{width:8px;height:8px;border-radius:50%;background:var(--good);flex-shrink:0;
+             box-shadow:0 0 8px rgba(34,197,94,.6)}
 </style>
 </head>
 <body>
 
 <div class="header-row">
   <div>
-    <h1>Стоматология Имплантс VDL — Москва</h1>
+    <h1>Дашборд колл-центра</h1>
     <div class="sub" id="period"></div>
   </div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
@@ -80,46 +168,60 @@
     <div class="filter" id="monthFilter"></div>
   </div>
 </div>
+<div class="update-bar-wrap"><div class="update-bar-fill" id="updateBarFill"></div></div>
 
-<h2>Ключевые показатели</h2>
-<div class="grid kpi" id="kpi"></div>
+<div class="section-wrap">
+  <h2>Ключевые показатели</h2>
+  <div class="grid kpi" id="kpi"></div>
+</div>
 
-<h2>Воронка по заявкам</h2>
-<div class="card"><div class="funnel" id="funnel"></div></div>
+<div class="section-wrap">
+  <h2>Воронка по заявкам</h2>
+  <div class="card"><div class="funnel" id="funnel"></div></div>
+</div>
 
-<h2>ПЦП — результаты</h2>
-<div class="grid row2" style="margin-bottom:16px">
-  <div class="card">
-    <div class="kpi-mini" style="color:var(--good)">ПЦП на договоре</div>
-    <div style="font-size:36px;font-weight:600;margin-top:8px;color:var(--good)" id="pcpContract">—</div>
-    <div style="color:var(--muted);font-size:13px;margin-top:4px">сумма подписанных договоров</div>
-    <div style="color:var(--good);font-size:15px;margin-top:6px;font-weight:600" id="pcpContractCount">—</div>
-  </div>
-  <div class="card">
-    <div class="kpi-mini" style="color:var(--warn)">ПЦП с планом — без депозита</div>
-    <div style="font-size:36px;font-weight:600;margin-top:8px;color:var(--warn)" id="pcpNoDeposit">—</div>
-    <div style="color:var(--muted);font-size:13px;margin-top:4px">сумма планов без депозита</div>
+<div class="section-wrap">
+  <h2>ПЦП — результаты</h2>
+  <div class="grid row2">
+    <div class="card">
+      <div class="kpi-mini" style="color:var(--good)">ПЦП на договоре</div>
+      <div style="font-size:36px;font-weight:600;margin-top:8px;color:var(--good)" id="pcpContract">—</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:4px">сумма подписанных договоров</div>
+      <div style="color:var(--good);font-size:15px;margin-top:6px;font-weight:600" id="pcpContractCount">—</div>
+    </div>
+    <div class="card">
+      <div class="kpi-mini" style="color:var(--warn)">ПЦП с планом — без депозита</div>
+      <div style="font-size:36px;font-weight:600;margin-top:8px;color:var(--warn)" id="pcpNoDeposit">—</div>
+      <div style="color:var(--muted);font-size:13px;margin-top:4px">сумма планов без депозита</div>
+    </div>
   </div>
 </div>
 
-<h2>Распределение по статусам</h2>
-<div class="card">
-  <div class="chart-wrap"><canvas id="chStatus"></canvas></div>
+<div class="section-wrap">
+  <h2>Распределение по статусам</h2>
+  <div class="card"><div class="chart-wrap"><canvas id="chStatus"></canvas></div></div>
 </div>
 
-<h2>Эффективность операторов</h2>
-<div class="card"><div style="overflow:auto"><table id="ops"></table></div></div>
+<div class="section-wrap">
+  <h2>Эффективность операторов</h2>
+  <div class="card"><div style="overflow:auto"><table id="ops"></table></div></div>
+</div>
 
-<h2>Записи в клинику <span style="color:var(--muted);font-size:13px;font-weight:400" id="apptCnt"></span></h2>
-<div class="card"><div class="scroll"><table id="appts"></table></div></div>
+<div class="section-wrap">
+  <h2>Записи в клинику <span style="color:var(--muted);font-size:13px;font-weight:400;text-transform:none;letter-spacing:0" id="apptCnt"></span></h2>
+  <div class="card"><div class="scroll"><table id="appts"></table></div></div>
+</div>
 
-<h2>Причины отказов <span style="color:var(--muted);font-size:13px;font-weight:400" id="refTotal"></span></h2>
-<div class="card"><div id="refCats"></div></div>
+<div class="section-wrap" style="padding-bottom:48px">
+  <h2>Причины отказов <span style="color:var(--muted);font-size:13px;font-weight:400;text-transform:none;letter-spacing:0" id="refTotal"></span></h2>
+  <div class="card"><div id="refCats"></div></div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
 
 <script>
 const fmt = n => (n||0).toLocaleString('ru-RU');
 const pct = (a,b) => b ? ((a/b)*100).toFixed(1)+'%' : '—';
-
 let chartStatus = null;
 
 const yavkaPill = v => {
@@ -129,66 +231,118 @@ const yavkaPill = v => {
   return `<span class="pill pill-muted">${v}</span>`;
 };
 
-function render(d) {
+// ── Toast ────────────────────────────────────────────────────────────────────
+function showToast(msg, dur = 4000) {
+  const c = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<div class="toast-dot"></div><span>${msg}</span>`;
+  c.appendChild(t);
+  setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 350); }, dur);
+}
+
+// ── Count-up ─────────────────────────────────────────────────────────────────
+function countUp(el, target, suffix) {
+  const dur = 900;
+  const start = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target).toLocaleString('ru-RU') + (suffix || '');
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target.toLocaleString('ru-RU') + (suffix || '');
+  })(start);
+}
+
+// ── Trend badge ───────────────────────────────────────────────────────────────
+function trendBadge(cur, prev) {
+  if (prev == null || prev === 0 || cur == null) return '';
+  const d = ((cur - prev) / prev * 100);
+  if (Math.abs(d) < 1) return '';
+  const up = d > 0;
+  return `<span class="${up ? 'trend-up' : 'trend-down'}">${up ? '↑' : '↓'} ${Math.abs(d).toFixed(0)}%</span>`;
+}
+
+// ── Empty state ───────────────────────────────────────────────────────────────
+function emptyHTML(title, sub) {
+  return `<div class="empty-state">
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+    </svg>
+    <p class="empty-title">${title}</p>
+    <p class="empty-sub">${sub}</p>
+  </div>`;
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function render(d, prev) {
   const k = d.kpi;
+  const pk = prev ? prev.kpi : null;
 
-  // ---------- KPI ----------
+  // KPI cards
   const kpis = [
-    ['Всего заявок',             k.total,        ''],
-    ['Квалифицированы (ПЦП)',    k.pcp,          `${k.conv_pcp}% от всех`],
-    ['Записей в клинику',        k.zapis,         `${k.conv_zapis_from_pcp}% от ПЦП`],
-    ['Запись активна',           k.active_zapis, 'без отметки явки'],
-    ['Пришли на приём',          k.prishel,       `${k.conv_prishel_from_zapis}% от записей`],
-    ['Отмена записи',            k.otmena,       ''],
-    ['Отказов',                  k.refusals_total,''],
-    ['Рекламный расход',
-      k.ad_spend == null ? '—' : fmt(k.ad_spend)+' ₽', 'за период'],
-    ['ДРР',
-      (k.ad_spend != null && k.pcp_contract) ? (k.ad_spend / k.pcp_contract * 100).toFixed(1) + '%' : '—',
-      'расход / договоры'],
+    {l:'Всего заявок',          raw:k.total,           sub:`${k.conv_pcp}% квалифицировано`,         pk:pk?.total},
+    {l:'Квалифицированы (ПЦП)', raw:k.pcp,             sub:`${k.conv_pcp}% от всех`,                  pk:pk?.pcp},
+    {l:'Записей в клинику',     raw:k.zapis,           sub:`${k.conv_zapis_from_pcp}% от ПЦП`,        pk:pk?.zapis},
+    {l:'Запись активна',        raw:k.active_zapis,    sub:'без отметки явки',                        pk:pk?.active_zapis},
+    {l:'Пришли на приём',       raw:k.prishel,         sub:`${k.conv_prishel_from_zapis}% от записей`,pk:pk?.prishel},
+    {l:'Отмена записи',         raw:k.otmena,          sub:'',                                        pk:pk?.otmena},
+    {l:'Отказов',               raw:k.refusals_total,  sub:'',                                        pk:pk?.refusals_total},
+    {l:'Рекламный расход',      raw:k.ad_spend,        suffix:' ₽', sub:'за период',                  pk:pk?.ad_spend},
+    {l:'ДРР', raw:null,
+     display:(k.ad_spend != null && k.pcp_contract) ? (k.ad_spend/k.pcp_contract*100).toFixed(1)+'%' : '—',
+     sub:'расход / договоры', pk:null},
   ];
-  document.getElementById('kpi').innerHTML = kpis.map(([l,v,sub])=>`
-    <div class="card">
-      <div class="label">${l}</div>
-      <div class="value">${v}</div>
-      <div class="delta">${sub}</div>
-    </div>`).join('');
 
-  // ---------- Воронка ----------
-  const funnel = [
-    ['Всего заявок',          k.total,        k.total],
-    ['Квалифицированы (ПЦП)', k.pcp,          k.total],
-    ['Записаны в клинику',    k.zapis,        k.total],
-    ['Пришли на приём',       k.prishel,      k.total],
-    ['ПЦП на договоре',       k.pcp_contract_count, k.total],
-  ];
-  document.getElementById('funnel').innerHTML = funnel.map(([l,v,base])=>{
-    const w = base ? (v/base*100) : 0;
-    return `<div class="funnel-row">
-      <div class="funnel-label">${l}</div>
-      <div class="funnel-bar"><div class="funnel-fill" style="width:${Math.max(w,5)}%">${v}</div></div>
-      <div class="funnel-num">${pct(v,base)}</div>
+  document.getElementById('kpi').innerHTML = kpis.map(({l,raw,display,sub,pk:pv,suffix})=>{
+    const isNum = typeof raw === 'number' && raw != null;
+    const dispVal = display ?? (isNum ? '0' : '—');
+    const trend = (isNum && pv != null) ? trendBadge(raw, pv) : '';
+    return `<div class="card">
+      <div class="label">${l}</div>
+      <div class="value kpi-val">${dispVal}</div>
+      <div class="delta">${sub}${trend ? `<span>${trend}</span>` : ''}</div>
     </div>`;
   }).join('');
 
-  // ---------- ПЦП результаты ----------
-  document.getElementById('pcpContract').textContent      = k.pcp_contract       != null ? fmt(k.pcp_contract)       + ' ₽' : '—';
-  document.getElementById('pcpContractCount').textContent = k.pcp_contract_count  ? k.pcp_contract_count + ' пациентов' : '—';
-  document.getElementById('pcpNoDeposit').textContent     = k.pcp_no_deposit     != null ? fmt(k.pcp_no_deposit)     + ' ₽' : '—';
+  document.querySelectorAll('.kpi .value.kpi-val').forEach((el, i) => {
+    const {raw, suffix} = kpis[i];
+    if (typeof raw === 'number' && raw > 0) countUp(el, raw, suffix || '');
+  });
 
-  // ---------- Donut статусы ----------
+  // Funnel
+  const funnelData = [
+    ['Всего заявок',          k.total,              k.total],
+    ['Квалифицированы (ПЦП)', k.pcp,                k.total],
+    ['Записаны в клинику',    k.zapis,              k.total],
+    ['Пришли на приём',       k.prishel,            k.total],
+    ['ПЦП на договоре',       k.pcp_contract_count, k.total],
+  ];
+  document.getElementById('funnel').innerHTML = funnelData.map(([l,v,base])=>{
+    const w = base ? (v/base*100) : 0;
+    return `<div class="funnel-row">
+      <div class="funnel-label">${l}</div>
+      <div class="funnel-bar"><div class="funnel-fill" data-w="${Math.max(w,4).toFixed(2)}">${v}</div></div>
+      <div class="funnel-num">${pct(v,base)}</div>
+    </div>`;
+  }).join('');
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    document.querySelectorAll('.funnel-fill').forEach((el, i) => {
+      setTimeout(() => { el.style.width = el.dataset.w + '%'; }, i * 90);
+    });
+  }));
+
+  // ПЦП
+  document.getElementById('pcpContract').textContent     = k.pcp_contract    != null ? fmt(k.pcp_contract)    + ' ₽' : '—';
+  document.getElementById('pcpContractCount').textContent= k.pcp_contract_count ? k.pcp_contract_count + ' пациентов' : '—';
+  document.getElementById('pcpNoDeposit').textContent    = k.pcp_no_deposit  != null ? fmt(k.pcp_no_deposit)  + ' ₽' : '—';
+
+  // Donut
   Chart.defaults.color = '#94a3b8';
   Chart.defaults.borderColor = '#334155';
   const sc = d.status_counts;
-  const colorMap = {
-    'запись в клинику': '#22c55e',
-    'думает':           '#38bdf8',
-    'ОТКАЗ':            '#ef4444',
-    'недозвон':         '#fb923c',
-    'в работе':         '#0ea5e9',
-    'неквал':           '#a78bfa',
-    '—':                '#475569',
-  };
+  const colorMap = {'запись в клинику':'#22c55e','думает':'#38bdf8','ОТКАЗ':'#ef4444',
+                    'недозвон':'#fb923c','в работе':'#0ea5e9','неквал':'#a78bfa','—':'#475569'};
   if (chartStatus) chartStatus.destroy();
   chartStatus = new Chart(document.getElementById('chStatus'), {
     type:'doughnut',
@@ -197,59 +351,49 @@ function render(d) {
     options:{plugins:{legend:{position:'right',labels:{font:{size:12}}}}, maintainAspectRatio:false}
   });
 
-  // ---------- Операторы ----------
-  const ops = d.operator_stats;
-  const opRows = Object.entries(ops).map(([name,s])=>`
-    <tr>
-      <td><b>${name}</b></td>
-      <td class="num">${s.total}</td>
-      <td class="num">${s.pcp} <small>(${pct(s.pcp,s.total)})</small></td>
-      <td class="num">${s.nekv}</td>
-      <td class="num">${s.zapis} <small>(${pct(s.zapis,s.pcp)} от ПЦП)</small></td>
-      <td class="num"><span class="good">${s.prishel}</span></td>
-      <td class="num"><span class="bad">${s.otval}</span> <small>${pct(s.otval,s.zapis)}</small></td>
-      <td class="num"><span class="warn">${s.active}</span></td>
-    </tr>`).join('');
-  document.getElementById('ops').innerHTML =
-    `<thead><tr><th>Оператор</th><th>Всего</th><th>ПЦП</th><th>Неквал</th>
-     <th>Записей</th><th>Пришло</th><th>Отмена</th><th>Активна</th></tr></thead>
-     <tbody>${opRows}</tbody>`;
+  // Операторы
+  const opEntries = Object.entries(d.operator_stats);
+  document.getElementById('ops').innerHTML = !opEntries.length
+    ? `<tbody><tr><td style="border:0;padding:0">${emptyHTML('Нет данных по операторам','За выбранный период нет обработанных заявок')}</td></tr></tbody>`
+    : `<thead><tr><th>Оператор</th><th>Всего</th><th>ПЦП</th><th>Неквал</th>
+       <th>Записей</th><th>Пришло</th><th>Отмена</th><th>Активна</th></tr></thead>
+       <tbody>${opEntries.map(([name,s])=>`
+        <tr>
+          <td><b>${name}</b></td>
+          <td class="num">${s.total}</td>
+          <td class="num">${s.pcp} <small>(${pct(s.pcp,s.total)})</small></td>
+          <td class="num">${s.nekv}</td>
+          <td class="num">${s.zapis} <small>(${pct(s.zapis,s.pcp)} от ПЦП)</small></td>
+          <td class="num"><span class="good">${s.prishel}</span></td>
+          <td class="num"><span class="bad">${s.otval}</span> <small>${pct(s.otval,s.zapis)}</small></td>
+          <td class="num"><span class="warn">${s.active}</span></td>
+        </tr>`).join('')}</tbody>`;
 
-  // ---------- Записи ----------
-  document.getElementById('apptCnt').textContent = `— ${d.appointments.length} записей`;
-  const apptRows = d.appointments.length ? d.appointments.map(r=>`
-    <tr>
-      <td><b>${r['Имя:']||'—'}</b></td>
-      <td>${yavkaPill(r['Явка:'])}</td>
-      <td>${r['Имя оператора, взявшего в работу']||'—'}</td>
-      <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
-    </tr>`).join('') :
-    '<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:24px">Нет данных за выбранный период</td></tr>';
-  document.getElementById('appts').innerHTML =
-    `<thead><tr><th>Пациент</th><th>Явка</th><th>Оператор</th><th>Комментарий</th></tr></thead>
-     <tbody>${apptRows}</tbody>`;
+  // Записи
+  document.getElementById('apptCnt').textContent = d.appointments.length ? `— ${d.appointments.length} записей` : '';
+  document.getElementById('appts').innerHTML = !d.appointments.length
+    ? `<tbody><tr><td style="border:0;padding:0">${emptyHTML('Нет записей','За выбранный период нет записей в клинику')}</td></tr></tbody>`
+    : `<thead><tr><th>Пациент</th><th>Явка</th><th>Оператор</th><th>Комментарий</th></tr></thead>
+       <tbody>${d.appointments.map(r=>`
+        <tr>
+          <td><b>${r['Имя:']||'—'}</b></td>
+          <td>${yavkaPill(r['Явка:'])}</td>
+          <td>${r['Имя оператора, взявшего в работу']||'—'}</td>
+          <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
+        </tr>`).join('')}</tbody>`;
 
-  // ---------- Причины отказов ----------
-  const cats  = d.refusal_categories || [];
+  // Причины отказов
+  const cats = d.refusal_categories || [];
   const total = cats.reduce((s,c)=>s+c.count, 0);
-  document.getElementById('refTotal').textContent =
-    total ? `— всего ${total} отказов` : '';
-  const catColor = {
-    'Не актуально / не нужно': '#a78bfa',
-    'Цена / финансы':          '#ef4444',
-    'Не оставлял заявку':      '#f59e0b',
-    'Уже лечится':             '#0ea5e9',
-    'Медицинские причины':     '#22c55e',
-    'Технические/мусор':       '#64748b',
-    'Другое':                  '#94a3b8',
-  };
+  document.getElementById('refTotal').textContent = total ? `— всего ${total} отказов` : '';
+  const catColor = {'Не актуально / не нужно':'#a78bfa','Цена / финансы':'#ef4444',
+    'Не оставлял заявку':'#f59e0b','Уже лечится':'#0ea5e9',
+    'Медицинские причины':'#22c55e','Технические/мусор':'#64748b','Другое':'#94a3b8'};
   if (!total) {
-    document.getElementById('refCats').innerHTML =
-      '<div style="text-align:center;color:var(--muted);padding:24px">Нет отказов за выбранный период</div>';
+    document.getElementById('refCats').innerHTML = emptyHTML('Нет отказов','За выбранный период отказов не зафиксировано');
   } else {
     document.getElementById('refCats').innerHTML = cats.map((c,i)=>{
-      const badge = i<3 ? `<span style="background:rgba(56,189,248,.15);color:var(--accent);
-        padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;margin-left:8px">ТОП-${i+1}</span>` : '';
+      const badge = i<3 ? `<span style="background:rgba(56,189,248,.15);color:var(--accent);padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;margin-left:8px">ТОП-${i+1}</span>` : '';
       const items = (c.items||[]).map(it=>`
         <div style="padding:10px 12px;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start">
           <div style="min-width:140px">
@@ -259,20 +403,14 @@ function render(d) {
               <span style="margin-left:6px">${it['Имя оператора, взявшего в работу']||'—'}</span>
             </div>
           </div>
-          <div style="flex:1;font-size:13px;color:var(--muted);line-height:1.5">
-            ${it['Комментарии:'] || '<i>без комментария</i>'}
-          </div>
+          <div style="flex:1;font-size:13px;color:var(--muted);line-height:1.5">${it['Комментарии:']||'<i>без комментария</i>'}</div>
         </div>`).join('');
-      return `
-      <details style="margin-bottom:8px;background:rgba(15,23,42,.4);border:1px solid var(--border);
-                      border-radius:8px;overflow:hidden">
-        <summary style="cursor:pointer;padding:12px 14px;list-style:none;
-                        display:flex;justify-content:space-between;align-items:center;gap:12px">
+      return `<details style="margin-bottom:8px;background:rgba(15,23,42,.4);border:1px solid var(--border);border-radius:8px;overflow:hidden">
+        <summary style="cursor:pointer;padding:12px 14px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">
           <div style="flex:1">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
               <div style="font-weight:500;display:flex;align-items:center">
-                <span style="display:inline-block;width:10px;height:10px;border-radius:2px;
-                             background:${catColor[c.cat]||'#94a3b8'};margin-right:8px"></span>
+                <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${catColor[c.cat]||'#94a3b8'};margin-right:8px"></span>
                 ${c.cat}${badge}
                 <span style="color:var(--muted);font-size:11px;margin-left:8px">▼</span>
               </div>
@@ -291,6 +429,7 @@ function render(d) {
   }
 }
 
+// ── State & lifecycle ─────────────────────────────────────────────────────────
 let DATA = null;
 let activeMonth = 'all';
 
@@ -299,7 +438,13 @@ function setActive(key) {
   document.querySelectorAll('#monthFilter button').forEach(b=>{
     b.classList.toggle('active', b.dataset.key === key);
   });
-  render(key === 'all' ? DATA.all : DATA.by_month[key]);
+  const cur = key === 'all' ? DATA.all : DATA.by_month[key];
+  let prevData = null;
+  if (key !== 'all' && DATA.months) {
+    const idx = DATA.months.findIndex(m => m.key === key);
+    if (idx > 0) prevData = DATA.by_month[DATA.months[idx - 1].key];
+  }
+  render(cur, prevData);
 }
 
 const UPDATE_INTERVAL_MS = 30 * 60 * 1000;
@@ -307,8 +452,7 @@ let _countdownTimer = null;
 
 function formatMoscow(date) {
   return date.toLocaleString('ru-RU', {
-    timeZone: 'Europe/Moscow',
-    day: '2-digit', month: '2-digit',
+    timeZone: 'Europe/Moscow', day: '2-digit', month: '2-digit',
     hour: '2-digit', minute: '2-digit',
   }) + ' МСК';
 }
@@ -321,30 +465,28 @@ function scheduleRetry(el, delayMs) {
 function startCountdown(nextUpdateAt) {
   if (_countdownTimer) { clearInterval(_countdownTimer); clearTimeout(_countdownTimer); }
   const el = document.getElementById('nextUpdate');
-  if (nextUpdateAt <= Date.now()) {
-    scheduleRetry(el, 2 * 60 * 1000);
-    return;
-  }
+  if (nextUpdateAt <= Date.now()) { scheduleRetry(el, 2 * 60 * 1000); return; }
   _countdownTimer = setInterval(() => {
     const rem = nextUpdateAt - Date.now();
+    const bar = document.getElementById('updateBarFill');
+    if (bar) bar.style.width = Math.max(0, rem / UPDATE_INTERVAL_MS * 100).toFixed(2) + '%';
     if (rem <= 0) {
       clearInterval(_countdownTimer);
       el.textContent = 'обновляется…';
       _countdownTimer = setTimeout(() => loadData(), 45 * 1000);
       return;
     }
-    const m = Math.floor(rem / 60000);
-    const s = Math.floor((rem % 60000) / 1000);
+    const m = Math.floor(rem / 60000), s = Math.floor((rem % 60000) / 1000);
     el.textContent = m > 0 ? `${m}м ${s}с` : `${s}с`;
   }, 1000);
 }
 
 function applyData(d) {
+  const isRefresh = DATA !== null;
   DATA = d;
-  document.getElementById('period').textContent =
-    `Период данных: ${d.period.date_min} — ${d.period.date_max}`;
+  document.getElementById('period').textContent = `Период данных: ${d.period.date_min} — ${d.period.date_max}`;
   const genAt = new Date(d.generated_at);
-  const valid  = !isNaN(genAt.getTime());
+  const valid = !isNaN(genAt.getTime());
   document.getElementById('generatedAt').textContent = valid ? formatMoscow(genAt) : d.generated_at || '—';
   startCountdown(valid ? genAt.getTime() + UPDATE_INTERVAL_MS : Date.now() + UPDATE_INTERVAL_MS);
   const buttons = [
@@ -355,6 +497,7 @@ function applyData(d) {
     `<button data-key="${b.key}" onclick="setActive('${b.key}')">${b.label}<span class="count">${b.count}</span></button>`
   ).join('');
   setActive(activeMonth in {'all':1, ...Object.fromEntries(d.months.map(m=>[m.key,1]))} ? activeMonth : 'all');
+  if (isRefresh) showToast('Данные обновлены · ' + (valid ? formatMoscow(genAt) : '—'));
 }
 
 function loadData() {
