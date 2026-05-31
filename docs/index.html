@@ -116,6 +116,10 @@
   .trend-up{color:var(--good);font-weight:600}
   .trend-down{color:var(--bad);font-weight:600}
   .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+  .kpi-cpl{font-size:12px;margin-top:5px;font-variant-numeric:tabular-nums;
+            display:flex;align-items:center;gap:5px}
+  .kpi-cpl-val{color:var(--accent);font-weight:700}
+  .kpi-cpl-lbl{color:var(--muted);font-size:11px}
 
 
   /* ── Chart ────────────────────────────────────────────────── */
@@ -408,12 +412,14 @@ function render(d, prev) {
   const k = d.kpi, pk = prev ? prev.kpi : null;
 
   // KPI
+  const adS = k.ad_spend;
+  const cpl = (n, lbl) => (adS && n) ? {v: Math.round(adS / n).toLocaleString('ru-RU') + ' ₽', lbl} : null;
   const kpis = [
-    {l:'Всего заявок',          raw:k.total,          sub:`${k.conv_pcp}% квалифицировано`,          pk:pk?.total},
-    {l:'Квалифицированы (ПЦП)', raw:k.pcp,            sub:`${k.conv_pcp}% от всех`,                   pk:pk?.pcp},
-    {l:'Записей в клинику',     raw:k.zapis,          sub:`${k.conv_zapis_from_pcp}% от ПЦП`,         pk:pk?.zapis},
+    {l:'Всего заявок',          raw:k.total,          sub:`${k.conv_pcp}% квалифицировано`,          pk:pk?.total,        cpl:cpl(k.total,         'стоимость лида')},
+    {l:'Квалифицированы (ПЦП)', raw:k.pcp,            sub:`${k.conv_pcp}% от всех`,                   pk:pk?.pcp,          cpl:cpl(k.pcp,           'стоимость ПЦП')},
+    {l:'Записей в клинику',     raw:k.zapis,          sub:`${k.conv_zapis_from_pcp}% от ПЦП`,         pk:pk?.zapis,        cpl:cpl(k.zapis,         'стоимость записи')},
     {l:'Запись активна',        raw:k.active_zapis,   sub:'без отметки явки',                         pk:pk?.active_zapis},
-    {l:'Пришли на приём',       raw:k.prishel,        sub:`${k.conv_prishel_from_zapis}% от записей`, pk:pk?.prishel},
+    {l:'Пришли на приём',       raw:k.prishel,        sub:`${k.conv_prishel_from_zapis}% от записей`, pk:pk?.prishel,      cpl:cpl(k.prishel,       'стоимость визита')},
     {l:'Отмена записи',         raw:k.otmena,         sub:'',                                         pk:null},
     {l:'Отказов',               raw:k.refusals_total, sub:'',                                         pk:null},
     {l:'Рекламный расход',      raw:k.ad_spend,       suffix:' ₽', sub:'за период',                   pk:pk?.ad_spend},
@@ -421,14 +427,16 @@ function render(d, prev) {
      display:(k.ad_spend!=null&&k.pcp_contract)?(k.ad_spend/k.pcp_contract*100).toFixed(1)+'%':'—',
      sub:'расход / договоры', pk:null},
   ];
-  document.getElementById('kpi').innerHTML = kpis.map(({l,raw,display,sub,pk:pv,suffix})=>{
+  document.getElementById('kpi').innerHTML = kpis.map(({l,raw,display,sub,pk:pv,suffix,cpl})=>{
     const isNum = typeof raw === 'number';
     const val = display ?? (isNum ? '0' : '—');
     const trend = (isNum && pv != null) ? trendBadge(raw, pv) : '';
+    const cplLine = cpl ? `<div class="kpi-cpl"><span class="kpi-cpl-val">${cpl.v}</span><span class="kpi-cpl-lbl">${cpl.lbl}</span></div>` : '';
     return `<div class="card">
       <div class="label">${l}</div>
       <div class="value kpi-val">${val}</div>
       <div class="delta">${sub}${trend?`<span>${trend}</span>`:''}</div>
+      ${cplLine}
     </div>`;
   }).join('');
   document.querySelectorAll('.kpi .value.kpi-val').forEach((el,i) => {
