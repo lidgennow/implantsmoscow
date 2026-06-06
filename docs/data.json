@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-06-06"
   },
-  "generated_at": "2026-06-06T14:43:13Z",
+  "generated_at": "2026-06-06T16:07:45Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,12 +18,12 @@
     {
       "key": "2026-06",
       "label": "Июнь 2026",
-      "count": 88
+      "count": 89
     }
   ],
   "all": {
     "kpi": {
-      "total": 762,
+      "total": 763,
       "pcp": 207,
       "nekv": 12,
       "zapis": 153,
@@ -31,17 +31,17 @@
       "otmena": 76,
       "active_zapis": 21,
       "otval_zapis": 76,
-      "conv_pcp": 27.2,
+      "conv_pcp": 27.1,
       "conv_zapis_from_pcp": 73.9,
       "conv_prishel_from_zapis": 36.6,
-      "refusals_total": 499,
+      "refusals_total": 500,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
       "pcp_no_deposit": 3457960,
       "ad_spend": 770100
     },
     "status_counts": {
-      "ОТКАЗ": 499,
+      "ОТКАЗ": 500,
       "запись в клинику": 153,
       "думает": 54,
       "в работе": 26,
@@ -68,7 +68,7 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 542,
+        "total": 543,
         "pcp": 122,
         "nekv": 7,
         "zapis": 85,
@@ -1009,7 +1009,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 477,
+        "count": 478,
         "share": 95.6,
         "items": [
           {
@@ -3870,6 +3870,12 @@
           },
           {
             "Имя:": "не актуально !",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Оператор Людмила",
+            "Комментарии:": ""
+          },
+          {
+            "Имя:": "dataleads.ru",
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Оператор Людмила",
             "Комментарии:": ""
@@ -7829,7 +7835,7 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 88,
+        "total": 89,
         "pcp": 32,
         "nekv": 2,
         "zapis": 21,
@@ -7837,17 +7843,17 @@
         "otmena": 5,
         "active_zapis": 14,
         "otval_zapis": 5,
-        "conv_pcp": 36.4,
+        "conv_pcp": 36.0,
         "conv_zapis_from_pcp": 65.6,
         "conv_prishel_from_zapis": 9.5,
-        "refusals_total": 26,
+        "refusals_total": 27,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
-        "ОТКАЗ": 26,
+        "ОТКАЗ": 27,
         "запись в клинику": 21,
         "в работе": 14,
         "недозвон": 14,
@@ -7856,7 +7862,7 @@
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 68,
+          "total": 69,
           "pcp": 20,
           "nekv": 1,
           "zapis": 13,
@@ -8005,8 +8011,8 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 24,
-          "share": 92.3,
+          "count": 25,
+          "share": 92.6,
           "items": [
             {
               "Имя:": "dataleads.ru",
@@ -8151,13 +8157,19 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Оператор Людмила",
               "Комментарии:": ""
+            },
+            {
+              "Имя:": "dataleads.ru",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Оператор Людмила",
+              "Комментарии:": ""
             }
           ]
         },
         {
           "cat": "Не актуально / не нужно",
           "count": 2,
-          "share": 7.7,
+          "share": 7.4,
           "items": [
             {
               "Имя:": "dataleads.ru",
