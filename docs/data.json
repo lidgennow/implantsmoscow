@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-06-13"
   },
-  "generated_at": "2026-06-13T14:04:22Z",
+  "generated_at": "2026-06-13T15:58:36Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,20 +18,20 @@
     {
       "key": "2026-06",
       "label": "Июнь 2026",
-      "count": 191
+      "count": 192
     }
   ],
   "all": {
     "kpi": {
-      "total": 865,
+      "total": 866,
       "pcp": 216,
-      "nekv": 14,
+      "nekv": 15,
       "zapis": 157,
       "prishel": 64,
-      "otmena": 70,
-      "active_zapis": 23,
-      "otval_zapis": 70,
-      "conv_pcp": 25.0,
+      "otmena": 71,
+      "active_zapis": 22,
+      "otval_zapis": 71,
+      "conv_pcp": 24.9,
       "conv_zapis_from_pcp": 72.7,
       "conv_prishel_from_zapis": 40.8,
       "refusals_total": 582,
@@ -46,7 +46,7 @@
       "думает": 59,
       "в работе": 33,
       "недозвон": 20,
-      "неквал": 14
+      "неквал": 15
     },
     "operator_stats": {
       "Гостевой": {
@@ -77,13 +77,13 @@
         "active": 14
       },
       "Оператор Марианна": {
-        "total": 239,
+        "total": 240,
         "pcp": 95,
-        "nekv": 5,
+        "nekv": 6,
         "zapis": 72,
         "prishel": 36,
-        "otval": 27,
-        "active": 9
+        "otval": 28,
+        "active": 8
       }
     },
     "appointments": [
@@ -1025,7 +1025,7 @@
       },
       {
         "Имя:": "Смирнов Игорь Геннадьевич",
-        "Явка:": null,
+        "Явка:": "Отмена записи",
         "Имя оператора, взявшего в работу": "Оператор Марианна",
         "Комментарии:": "частичная импл"
       }
@@ -8435,15 +8435,15 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 191,
+        "total": 192,
         "pcp": 58,
-        "nekv": 6,
+        "nekv": 7,
         "zapis": 36,
         "prishel": 8,
-        "otmena": 14,
-        "active_zapis": 14,
-        "otval_zapis": 14,
-        "conv_pcp": 30.4,
+        "otmena": 15,
+        "active_zapis": 13,
+        "otval_zapis": 15,
+        "conv_pcp": 30.2,
         "conv_zapis_from_pcp": 62.1,
         "conv_prishel_from_zapis": 22.2,
         "refusals_total": 84,
@@ -8458,7 +8458,7 @@
         "в работе": 24,
         "думает": 22,
         "недозвон": 19,
-        "неквал": 6
+        "неквал": 7
       },
       "operator_stats": {
         "Оператор Людмила": {
@@ -8471,13 +8471,13 @@
           "active": 9
         },
         "Оператор Марианна": {
-          "total": 42,
+          "total": 43,
           "pcp": 28,
-          "nekv": 2,
+          "nekv": 3,
           "zapis": 16,
           "prishel": 5,
-          "otval": 6,
-          "active": 5
+          "otval": 7,
+          "active": 4
         }
       },
       "appointments": [
@@ -8693,7 +8693,7 @@
         },
         {
           "Имя:": "Смирнов Игорь Геннадьевич",
-          "Явка:": null,
+          "Явка:": "Отмена записи",
           "Имя оператора, взявшего в работу": "Оператор Марианна",
           "Комментарии:": "частичная импл"
         }
