@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-06-26"
   },
-  "generated_at": "2026-06-26T14:29:16Z",
+  "generated_at": "2026-06-26T16:33:13Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,22 +18,22 @@
     {
       "key": "2026-06",
       "label": "Июнь 2026",
-      "count": 392
+      "count": 394
     }
   ],
   "all": {
     "kpi": {
-      "total": 1066,
+      "total": 1068,
       "pcp": 218,
       "nekv": 10,
-      "zapis": 160,
+      "zapis": 161,
       "prishel": 80,
       "otmena": 61,
-      "active_zapis": 19,
+      "active_zapis": 20,
       "otval_zapis": 61,
-      "conv_pcp": 20.5,
-      "conv_zapis_from_pcp": 73.4,
-      "conv_prishel_from_zapis": 50.0,
+      "conv_pcp": 20.4,
+      "conv_zapis_from_pcp": 73.9,
+      "conv_prishel_from_zapis": 49.7,
       "refusals_total": 786,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
@@ -42,10 +42,10 @@
     },
     "status_counts": {
       "ОТКАЗ": 786,
-      "запись в клинику": 160,
-      "думает": 58,
+      "запись в клинику": 161,
+      "думает": 57,
       "в работе": 39,
-      "недозвон": 13,
+      "недозвон": 15,
       "неквал": 10
     },
     "operator_stats": {
@@ -68,8 +68,8 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 775,
-        "pcp": 115,
+        "total": 776,
+        "pcp": 114,
         "nekv": 9,
         "zapis": 82,
         "prishel": 31,
@@ -77,13 +77,13 @@
         "active": 8
       },
       "Оператор Марианна": {
-        "total": 288,
-        "pcp": 101,
+        "total": 289,
+        "pcp": 102,
         "nekv": 1,
-        "zapis": 76,
+        "zapis": 77,
         "prishel": 47,
         "otval": 18,
-        "active": 11
+        "active": 12
       }
     },
     "appointments": [
@@ -1046,6 +1046,12 @@
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Оператор Людмила",
         "Комментарии:": ""
+      },
+      {
+        "Имя:": "Бургин Евгений Николаевич",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Оператор Марианна",
+        "Комментарии:": "ставил импл в др клинике. часть из них отторглись"
       }
     ],
     "refusal_categories": [
@@ -7292,14 +7298,14 @@
         "total": 432,
         "pcp": 85,
         "nekv": 4,
-        "zapis": 66,
+        "zapis": 67,
         "prishel": 39,
         "otmena": 23,
-        "active_zapis": 4,
+        "active_zapis": 5,
         "otval_zapis": 23,
         "conv_pcp": 19.7,
-        "conv_zapis_from_pcp": 77.6,
-        "conv_prishel_from_zapis": 59.1,
+        "conv_zapis_from_pcp": 78.8,
+        "conv_prishel_from_zapis": 58.2,
         "refusals_total": 340,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
@@ -7308,8 +7314,8 @@
       },
       "status_counts": {
         "ОТКАЗ": 340,
-        "запись в клинику": 66,
-        "думает": 19,
+        "запись в клинику": 67,
+        "думает": 18,
         "неквал": 4,
         "в работе": 3
       },
@@ -7333,8 +7339,8 @@
           "active": 0
         },
         "Оператор Людмила": {
-          "total": 315,
-          "pcp": 45,
+          "total": 314,
+          "pcp": 44,
           "nekv": 3,
           "zapis": 30,
           "prishel": 12,
@@ -7342,13 +7348,13 @@
           "active": 2
         },
         "Оператор Марианна": {
-          "total": 115,
-          "pcp": 39,
+          "total": 116,
+          "pcp": 40,
           "nekv": 1,
-          "zapis": 35,
+          "zapis": 36,
           "prishel": 26,
           "otval": 7,
-          "active": 2
+          "active": 3
         }
       },
       "appointments": [
@@ -7747,6 +7753,12 @@
           "Явка:": "Отмена записи",
           "Имя оператора, взявшего в работу": "Оператор Марианна",
           "Комментарии:": "сбросил"
+        },
+        {
+          "Имя:": "Бургин Евгений Николаевич",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Оператор Марианна",
+          "Комментарии:": "ставил импл в др клинике. часть из них отторглись"
         }
       ],
       "refusal_categories": [
@@ -9822,7 +9834,7 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 392,
+        "total": 394,
         "pcp": 108,
         "nekv": 5,
         "zapis": 72,
@@ -9830,7 +9842,7 @@
         "otmena": 35,
         "active_zapis": 15,
         "otval_zapis": 35,
-        "conv_pcp": 27.6,
+        "conv_pcp": 27.4,
         "conv_zapis_from_pcp": 66.7,
         "conv_prishel_from_zapis": 30.6,
         "refusals_total": 233,
@@ -9844,12 +9856,12 @@
         "запись в клинику": 72,
         "думает": 36,
         "в работе": 33,
-        "недозвон": 13,
+        "недозвон": 15,
         "неквал": 5
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 301,
+          "total": 303,
           "pcp": 55,
           "nekv": 5,
           "zapis": 39,
