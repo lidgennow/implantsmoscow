@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-07-01"
   },
-  "generated_at": "2026-07-01T17:29:13Z",
+  "generated_at": "2026-07-01T19:20:28Z",
   "months": [
     {
       "key": "2026-04",
@@ -33,9 +33,9 @@
       "nekv": 8,
       "zapis": 170,
       "prishel": 83,
-      "otmena": 61,
-      "active_zapis": 26,
-      "otval_zapis": 61,
+      "otmena": 62,
+      "active_zapis": 25,
+      "otval_zapis": 62,
       "conv_pcp": 19.1,
       "conv_zapis_from_pcp": 77.3,
       "conv_prishel_from_zapis": 48.8,
@@ -87,8 +87,8 @@
         "nekv": 0,
         "zapis": 80,
         "prishel": 49,
-        "otval": 21,
-        "active": 10
+        "otval": 22,
+        "active": 9
       }
     },
     "appointments": [
@@ -1108,7 +1108,7 @@
       },
       {
         "Имя:": "Еремин Владимир Александрович",
-        "Явка:": null,
+        "Явка:": "Отмена записи",
         "Имя оператора, взявшего в работу": "Оператор Марианна",
         "Комментарии:": "частичная импл"
       }
@@ -10420,9 +10420,9 @@
         "nekv": 4,
         "zapis": 85,
         "prishel": 24,
-        "otmena": 41,
-        "active_zapis": 20,
-        "otval_zapis": 41,
+        "otmena": 42,
+        "active_zapis": 19,
+        "otval_zapis": 42,
         "conv_pcp": 25.6,
         "conv_zapis_from_pcp": 72.0,
         "conv_prishel_from_zapis": 28.2,
@@ -10456,8 +10456,8 @@
           "nekv": 0,
           "zapis": 37,
           "prishel": 15,
-          "otval": 12,
-          "active": 10
+          "otval": 13,
+          "active": 9
         }
       },
       "appointments": [
@@ -10967,7 +10967,7 @@
         },
         {
           "Имя:": "Еремин Владимир Александрович",
-          "Явка:": null,
+          "Явка:": "Отмена записи",
           "Имя оператора, взявшего в работу": "Оператор Марианна",
           "Комментарии:": "частичная импл"
         }
