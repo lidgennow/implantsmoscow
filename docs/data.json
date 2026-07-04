@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-07-04"
   },
-  "generated_at": "2026-07-04T16:32:11Z",
+  "generated_at": "2026-07-04T18:03:18Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,22 +23,22 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 53
+      "count": 56
     }
   ],
   "all": {
     "kpi": {
-      "total": 1188,
-      "pcp": 222,
+      "total": 1191,
+      "pcp": 223,
       "nekv": 11,
-      "zapis": 171,
+      "zapis": 172,
       "prishel": 84,
       "otmena": 68,
-      "active_zapis": 19,
+      "active_zapis": 20,
       "otval_zapis": 68,
       "conv_pcp": 18.7,
-      "conv_zapis_from_pcp": 77.0,
-      "conv_prishel_from_zapis": 49.1,
+      "conv_zapis_from_pcp": 77.1,
+      "conv_prishel_from_zapis": 48.8,
       "refusals_total": 896,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
@@ -47,10 +47,10 @@
     },
     "status_counts": {
       "ОТКАЗ": 896,
-      "запись в клинику": 171,
+      "запись в клинику": 172,
       "думает": 51,
-      "в работе": 39,
-      "недозвон": 20,
+      "в работе": 40,
+      "недозвон": 21,
       "неквал": 11
     },
     "operator_stats": {
@@ -73,7 +73,7 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 868,
+        "total": 870,
         "pcp": 118,
         "nekv": 8,
         "zapis": 88,
@@ -82,13 +82,13 @@
         "active": 11
       },
       "Оператор Марианна": {
-        "total": 317,
-        "pcp": 102,
+        "total": 318,
+        "pcp": 103,
         "nekv": 3,
-        "zapis": 81,
+        "zapis": 82,
         "prishel": 49,
         "otval": 24,
-        "active": 8
+        "active": 9
       }
     },
     "appointments": [
@@ -1117,6 +1117,12 @@
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Оператор Марианна",
         "Комментарии:": "конс АО-4, док Бичель"
+      },
+      {
+        "Имя:": "Катышев Игорь Павлович",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Оператор Марианна",
+        "Комментарии:": "конс по импл, док Бичель"
       }
     ],
     "refusal_categories": [
@@ -13021,17 +13027,17 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 53,
-        "pcp": 14,
+        "total": 56,
+        "pcp": 15,
         "nekv": 3,
-        "zapis": 9,
+        "zapis": 10,
         "prishel": 1,
         "otmena": 1,
-        "active_zapis": 7,
+        "active_zapis": 8,
         "otval_zapis": 1,
-        "conv_pcp": 26.4,
-        "conv_zapis_from_pcp": 64.3,
-        "conv_prishel_from_zapis": 11.1,
+        "conv_pcp": 26.8,
+        "conv_zapis_from_pcp": 66.7,
+        "conv_prishel_from_zapis": 10.0,
         "refusals_total": 19,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
@@ -13040,15 +13046,15 @@
       },
       "status_counts": {
         "ОТКАЗ": 19,
-        "недозвон": 13,
-        "запись в клинику": 9,
+        "недозвон": 14,
+        "запись в клинику": 10,
+        "в работе": 5,
         "думает": 5,
-        "в работе": 4,
         "неквал": 3
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 41,
+          "total": 43,
           "pcp": 7,
           "nekv": 0,
           "zapis": 4,
@@ -13057,13 +13063,13 @@
           "active": 3
         },
         "Оператор Марианна": {
-          "total": 12,
-          "pcp": 7,
+          "total": 13,
+          "pcp": 8,
           "nekv": 3,
-          "zapis": 5,
+          "zapis": 6,
           "prishel": 0,
           "otval": 1,
-          "active": 4
+          "active": 5
         }
       },
       "appointments": [
@@ -13120,6 +13126,12 @@
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Оператор Марианна",
           "Комментарии:": "конс АО-4, док Бичель"
+        },
+        {
+          "Имя:": "Катышев Игорь Павлович",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Оператор Марианна",
+          "Комментарии:": "конс по импл, док Бичель"
         }
       ],
       "refusal_categories": [
