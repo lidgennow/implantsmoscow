@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-07-17"
   },
-  "generated_at": "2026-07-17T10:49:12Z",
+  "generated_at": "2026-07-17T12:10:57Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,22 +23,22 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 203
+      "count": 205
     }
   ],
   "all": {
     "kpi": {
-      "total": 1338,
-      "pcp": 243,
+      "total": 1340,
+      "pcp": 244,
       "nekv": 17,
-      "zapis": 188,
+      "zapis": 189,
       "prishel": 96,
       "otmena": 77,
-      "active_zapis": 15,
+      "active_zapis": 16,
       "otval_zapis": 77,
       "conv_pcp": 18.2,
-      "conv_zapis_from_pcp": 77.4,
-      "conv_prishel_from_zapis": 51.1,
+      "conv_zapis_from_pcp": 77.5,
+      "conv_prishel_from_zapis": 50.8,
       "refusals_total": 1028,
       "pcp_contract": 382320,
       "pcp_contract_count": 13,
@@ -47,11 +47,11 @@
     },
     "status_counts": {
       "ОТКАЗ": 1028,
-      "запись в клинику": 188,
+      "запись в клинику": 189,
       "думает": 55,
       "в работе": 36,
       "неквал": 17,
-      "недозвон": 14
+      "недозвон": 15
     },
     "operator_stats": {
       "Гостевой": {
@@ -82,13 +82,13 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 961,
-        "pcp": 133,
+        "total": 963,
+        "pcp": 134,
         "nekv": 10,
-        "zapis": 99,
+        "zapis": 100,
         "prishel": 36,
         "otval": 53,
-        "active": 10
+        "active": 11
       },
       "Оператор Марианна": {
         "total": 370,
@@ -1228,6 +1228,12 @@
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Оператор Людмила",
         "Комментарии:": "ао"
+      },
+      {
+        "Имя:": "Терновская Вера",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Оператор Людмила",
+        "Комментарии:": ""
       }
     ],
     "refusal_categories": [
@@ -14098,17 +14104,17 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 203,
-        "pcp": 61,
+        "total": 205,
+        "pcp": 62,
         "nekv": 9,
-        "zapis": 40,
+        "zapis": 41,
         "prishel": 12,
         "otmena": 15,
-        "active_zapis": 13,
+        "active_zapis": 14,
         "otval_zapis": 15,
-        "conv_pcp": 30.0,
-        "conv_zapis_from_pcp": 65.6,
-        "conv_prishel_from_zapis": 30.0,
+        "conv_pcp": 30.2,
+        "conv_zapis_from_pcp": 66.1,
+        "conv_prishel_from_zapis": 29.3,
         "refusals_total": 108,
         "pcp_contract": 0,
         "pcp_contract_count": 0,
@@ -14117,10 +14123,10 @@
       },
       "status_counts": {
         "ОТКАЗ": 108,
-        "запись в клинику": 40,
+        "запись в клинику": 41,
         "думает": 21,
         "в работе": 13,
-        "недозвон": 12,
+        "недозвон": 13,
         "неквал": 9
       },
       "operator_stats": {
@@ -14152,13 +14158,13 @@
           "active": 0
         },
         "Оператор Людмила": {
-          "total": 135,
-          "pcp": 27,
+          "total": 137,
+          "pcp": 28,
           "nekv": 2,
-          "zapis": 18,
+          "zapis": 19,
           "prishel": 4,
           "otval": 5,
-          "active": 9
+          "active": 10
         },
         "Оператор Марианна": {
           "total": 64,
@@ -14410,6 +14416,12 @@
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Оператор Людмила",
           "Комментарии:": "ао"
+        },
+        {
+          "Имя:": "Терновская Вера",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Оператор Людмила",
+          "Комментарии:": ""
         }
       ],
       "refusal_categories": [
