@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-09",
-    "date_max": "2026-07-17"
+    "date_max": "2026-07-18"
   },
-  "generated_at": "2026-07-18T06:10:06Z",
+  "generated_at": "2026-07-18T08:21:08Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,21 +23,21 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 210
+      "count": 216
     }
   ],
   "all": {
     "kpi": {
-      "total": 1345,
-      "pcp": 245,
+      "total": 1351,
+      "pcp": 247,
       "nekv": 17,
       "zapis": 190,
       "prishel": 96,
       "otmena": 77,
       "active_zapis": 17,
       "otval_zapis": 77,
-      "conv_pcp": 18.2,
-      "conv_zapis_from_pcp": 77.6,
+      "conv_pcp": 18.3,
+      "conv_zapis_from_pcp": 76.9,
       "conv_prishel_from_zapis": 50.5,
       "refusals_total": 1031,
       "pcp_contract": 382320,
@@ -48,10 +48,10 @@
     "status_counts": {
       "ОТКАЗ": 1031,
       "запись в клинику": 190,
-      "думает": 55,
-      "в работе": 36,
-      "неквал": 17,
-      "недозвон": 16
+      "думает": 57,
+      "в работе": 37,
+      "недозвон": 19,
+      "неквал": 17
     },
     "operator_stats": {
       "Гостевой": {
@@ -82,7 +82,7 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 968,
+        "total": 972,
         "pcp": 135,
         "nekv": 10,
         "zapis": 101,
@@ -91,8 +91,8 @@
         "active": 12
       },
       "Оператор Марианна": {
-        "total": 370,
-        "pcp": 105,
+        "total": 372,
+        "pcp": 107,
         "nekv": 7,
         "zapis": 84,
         "prishel": 55,
@@ -14128,16 +14128,16 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 210,
-        "pcp": 63,
+        "total": 216,
+        "pcp": 65,
         "nekv": 9,
         "zapis": 42,
         "prishel": 12,
         "otmena": 15,
         "active_zapis": 15,
         "otval_zapis": 15,
-        "conv_pcp": 30.0,
-        "conv_zapis_from_pcp": 66.7,
+        "conv_pcp": 30.1,
+        "conv_zapis_from_pcp": 64.6,
         "conv_prishel_from_zapis": 28.6,
         "refusals_total": 111,
         "pcp_contract": 0,
@@ -14148,9 +14148,9 @@
       "status_counts": {
         "ОТКАЗ": 111,
         "запись в клинику": 42,
-        "думает": 21,
-        "недозвон": 14,
-        "в работе": 13,
+        "думает": 23,
+        "недозвон": 17,
+        "в работе": 14,
         "неквал": 9
       },
       "operator_stats": {
@@ -14182,7 +14182,7 @@
           "active": 0
         },
         "Оператор Людмила": {
-          "total": 142,
+          "total": 146,
           "pcp": 29,
           "nekv": 2,
           "zapis": 20,
@@ -14191,8 +14191,8 @@
           "active": 11
         },
         "Оператор Марианна": {
-          "total": 64,
-          "pcp": 31,
+          "total": 66,
+          "pcp": 33,
           "nekv": 7,
           "zapis": 19,
           "prishel": 5,
