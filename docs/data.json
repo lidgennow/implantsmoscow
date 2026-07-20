@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-07-20"
   },
-  "generated_at": "2026-07-20T15:13:05Z",
+  "generated_at": "2026-07-20T16:57:17Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,13 +23,13 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 265
+      "count": 268
     }
   ],
   "all": {
     "kpi": {
-      "total": 1400,
-      "pcp": 250,
+      "total": 1403,
+      "pcp": 251,
       "nekv": 17,
       "zapis": 195,
       "prishel": 98,
@@ -37,7 +37,7 @@
       "active_zapis": 23,
       "otval_zapis": 74,
       "conv_pcp": 17.9,
-      "conv_zapis_from_pcp": 78.0,
+      "conv_zapis_from_pcp": 77.7,
       "conv_prishel_from_zapis": 50.3,
       "refusals_total": 1070,
       "pcp_contract": 382320,
@@ -48,9 +48,9 @@
     "status_counts": {
       "ОТКАЗ": 1070,
       "запись в клинику": 195,
-      "думает": 55,
+      "думает": 56,
       "в работе": 44,
-      "недозвон": 19,
+      "недозвон": 21,
       "неквал": 17
     },
     "operator_stats": {
@@ -82,8 +82,8 @@
         "active": 0
       },
       "Оператор Людмила": {
-        "total": 1006,
-        "pcp": 135,
+        "total": 1009,
+        "pcp": 136,
         "nekv": 9,
         "zapis": 102,
         "prishel": 37,
@@ -14440,8 +14440,8 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 265,
-        "pcp": 76,
+        "total": 268,
+        "pcp": 77,
         "nekv": 10,
         "zapis": 51,
         "prishel": 14,
@@ -14449,7 +14449,7 @@
         "active_zapis": 19,
         "otval_zapis": 18,
         "conv_pcp": 28.7,
-        "conv_zapis_from_pcp": 67.1,
+        "conv_zapis_from_pcp": 66.2,
         "conv_prishel_from_zapis": 27.5,
         "refusals_total": 138,
         "pcp_contract": 0,
@@ -14460,9 +14460,9 @@
       "status_counts": {
         "ОТКАЗ": 138,
         "запись в клинику": 51,
-        "думает": 25,
+        "думает": 26,
         "в работе": 23,
-        "недозвон": 18,
+        "недозвон": 20,
         "неквал": 10
       },
       "operator_stats": {
@@ -14494,8 +14494,8 @@
           "active": 0
         },
         "Оператор Людмила": {
-          "total": 181,
-          "pcp": 32,
+          "total": 184,
+          "pcp": 33,
           "nekv": 2,
           "zapis": 23,
           "prishel": 5,
