@@ -297,7 +297,7 @@
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
   }
-  .header-row { display:grid;grid-template-columns:minmax(640px,1.15fr) minmax(500px,.85fr);align-items:center;gap:30px;padding-bottom:22px;border-bottom:1px solid var(--border); }
+  .header-row { display:grid;grid-template-columns:minmax(640px,1fr) auto;align-items:center;gap:30px;padding-bottom:22px;border-bottom:1px solid var(--border); }
   .header-row > * { min-width:0; }
   .brand-line { display:flex;align-items:center;gap:11px;margin-bottom:14px;color:var(--accent2);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase; }
   .brand-mark { display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:11px;background:var(--accent2);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:-.08em;box-shadow:0 8px 20px rgba(157,80,115,.17); }
@@ -341,6 +341,40 @@
   #themeToggle:hover { color:var(--accent);border-color:var(--card-border-hover);background:var(--surface-soft); }
   .update-bar-wrap { height:3px;margin:15px -2px -1px;border-radius:999px;background:var(--surface-pressed);overflow:hidden; }
   .update-bar-fill { background:var(--accent);box-shadow:none; }
+
+  .range-toolbar { display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:15px 0 2px; }
+  .range-presets { display:flex;gap:6px;min-width:0;overflow-x:auto;padding:2px;scrollbar-width:none; }
+  .range-presets::-webkit-scrollbar { display:none; }
+  .range-presets button {
+    flex:0 0 auto;padding:8px 13px;border:1px solid transparent;border-radius:12px;
+    background:transparent;color:var(--muted2);font-size:12px;font-weight:750;cursor:pointer;
+    transition:background .18s,color .18s,border-color .18s,transform .18s;
+  }
+  .range-presets button:hover { color:var(--text);border-color:var(--card-border);background:var(--surface-soft); }
+  .range-presets button.active { color:#fff;border-color:var(--accent2);background:var(--accent2);box-shadow:0 7px 18px rgba(157,80,115,.17);transform:translateY(-1px); }
+  .custom-range { display:flex;align-items:center;gap:8px;padding:5px 7px 5px 11px;border:1px solid var(--card-border);border-radius:14px;background:var(--card);color:var(--muted);font-size:11px;font-weight:700;white-space:nowrap; }
+  .custom-range.active { border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft); }
+  .custom-range input { width:124px;border:0;background:transparent;color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:10px;outline:0;color-scheme:light; }
+  body.dark .custom-range input { color-scheme:dark; }
+  .range-hint { grid-column:1/-1;margin:0 2px;color:var(--muted);font-size:10px; }
+
+  .workspace-tabs { display:flex;gap:7px;margin-top:24px;padding:6px;border:1px solid var(--card-border);border-radius:18px;background:var(--card);box-shadow:var(--shadow);width:max-content;max-width:100%;overflow-x:auto; }
+  .workspace-tabs button { padding:10px 18px;border:0;border-radius:12px;background:transparent;color:var(--muted2);font-size:12px;font-weight:800;cursor:pointer;white-space:nowrap; }
+  .workspace-tabs button[aria-selected="true"] { background:var(--accent2);color:#fff;box-shadow:0 7px 18px rgba(157,80,115,.17); }
+  .tab-panel[hidden] { display:none !important; }
+  .call-note { margin:16px 0 0;padding:15px 18px;border:1px solid var(--card-border);border-radius:16px;background:var(--accent-pale);color:var(--muted2);font-size:12px; }
+  .call-note b { color:var(--accent2); }
+  .call-kpi { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .call-kpi .card { min-height:145px; }
+  .call-layout { display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);gap:18px;align-items:start; }
+  .watch-list { display:grid;gap:10px; }
+  .watch-row { display:grid;grid-template-columns:1fr auto;gap:14px;padding:13px 0;border-bottom:1px solid var(--border); }
+  .watch-row:last-child { border-bottom:0; }
+  .watch-row span { color:var(--muted2);font-size:12px; }
+  .watch-row strong { color:var(--accent2);font-family:'IBM Plex Mono',monospace;font-size:13px; }
+  .trend-grid { display:grid;grid-template-columns:1fr 1fr;gap:18px; }
+  .trend-grid .chart-wrap { height:380px; }
+  .chart-sub { margin:-5px 0 15px;color:var(--muted);font-size:11px; }
 
   main { display:block; }
   .pulse-strip {
@@ -472,6 +506,10 @@
     .pulse-caption p { max-width:none; }
     .section-funnel { grid-column:span 12;grid-row:auto; }
     .section-pcp,.section-status { grid-column:span 6; }
+    .range-toolbar { grid-template-columns:1fr; }
+    .range-hint { grid-column:1; }
+    .custom-range { width:max-content;max-width:100%; }
+    .call-layout,.trend-grid { grid-template-columns:1fr; }
   }
   @media (max-width:900px) {
     body,body.light { padding:14px 16px 60px; }
@@ -482,6 +520,7 @@
     .update-meta { text-align:left; }
     .row2 { grid-template-columns:1fr; }
     .section-pcp,.section-status { grid-column:span 12; }
+    .call-kpi { grid-template-columns:repeat(2,minmax(0,1fr)); }
   }
   @media (max-width:620px) {
     body,body.light { padding:10px 10px 44px; }
@@ -490,6 +529,12 @@
     .header-tools { gap:9px; }
     .update-meta { min-width:0;font-size:9px; }
     .filter button { padding:7px 10px; }
+    .range-toolbar { gap:10px;padding-top:11px; }
+    .range-presets button { padding:7px 10px; }
+    .custom-range { width:100%;overflow-x:auto; }
+    .custom-range input { width:112px; }
+    .workspace-tabs { width:100%; }
+    .workspace-tabs button { flex:1; }
     .pulse-strip { gap:20px;margin-top:18px;padding:22px 18px;border-radius:22px;box-shadow:0 8px 0 var(--accent-soft),0 20px 38px rgba(181,45,108,.12); }
     .pulse-route { grid-template-columns:1fr 14px 1fr 14px 1fr; }
     .route-step { padding:0 4px; }
@@ -499,6 +544,7 @@
     .section-heading { align-items:flex-start;flex-direction:column;gap:6px; }
     .section-heading p { text-align:left; }
     .kpi { grid-template-columns:1fr; }
+    .call-kpi { grid-template-columns:1fr; }
     .kpi .card { min-height:142px; }
     .funnel-row { display:grid;grid-template-columns:1fr 56px;gap:7px 10px; }
     .funnel-label { width:auto; }
@@ -520,7 +566,7 @@
 <div class="sticky-top">
   <div class="header-row">
     <div>
-      <div class="brand-line"><span class="brand-mark">IM</span>Implants Moscow · аналитика</div>
+      <div class="brand-line"><span class="brand-mark">КЦ</span>Операционная аналитика</div>
       <h1><span class="title-accent">Пульс</span> колл-центра</h1>
       <div class="sub" id="period"></div>
     </div>
@@ -530,8 +576,22 @@
         <div>Следующее: <b class="next" id="nextUpdate">—</b></div>
       </div>
       <button id="themeToggle" onclick="toggleTheme()" title="Сменить тему" aria-label="Сменить цветовую тему"></button>
-      <div class="filter" id="monthFilter"></div>
     </div>
+  </div>
+  <div class="range-toolbar">
+    <div class="range-presets" id="datePresets" role="group" aria-label="Период">
+      <button type="button" data-range="today">Сегодня</button>
+      <button type="button" data-range="yesterday">Вчера</button>
+      <button type="button" data-range="7">7 дней</button>
+      <button type="button" data-range="30" class="active">30 дней</button>
+      <button type="button" data-range="90">90 дней</button>
+      <button type="button" data-range="all">Всё время</button>
+    </div>
+    <div class="custom-range" id="customRange">
+      <span>с</span><input type="date" id="dateFrom" aria-label="Дата начала">
+      <span>по</span><input type="date" id="dateTo" aria-label="Дата окончания">
+    </div>
+    <p class="range-hint" id="rangeHint">Лиды считаются по дате создания. Ручные суммы доступны только для всего периода и целых месяцев.</p>
   </div>
   <div class="update-bar-wrap"><div class="update-bar-fill" id="updateBarFill"></div></div>
 </div>
@@ -550,6 +610,14 @@
     <div class="route-step"><strong id="heroPrishel">—</strong><span>приёмов</span></div>
   </div>
 </section>
+
+<nav class="workspace-tabs" role="tablist" aria-label="Разделы дашборда">
+  <button type="button" role="tab" data-tab="overview" aria-selected="true">Обзор</button>
+  <button type="button" role="tab" data-tab="calls" aria-selected="false">Прозвон</button>
+  <button type="button" role="tab" data-tab="trend" aria-selected="false">Динамика</button>
+</nav>
+
+<div class="tab-panel" id="panel-overview" role="tabpanel">
 
 <div class="section-wrap">
   <div class="section-heading">
@@ -605,20 +673,55 @@
   <div class="card"><div style="overflow:auto"><table id="ops"></table></div></div>
 </div>
 
-<div class="section-wrap">
-  <div class="section-heading">
-    <h2>Записи в клинику <span style="color:var(--muted);font-size:13px;font-weight:400;text-transform:none;letter-spacing:0" id="apptCnt"></span></h2>
-    <p>Пациенты, отметка явки, ответственный оператор и комментарий.</p>
-  </div>
-  <div class="card"><div class="scroll"><table id="appts"></table></div></div>
-</div>
-
 <div class="section-wrap" style="padding-bottom:48px">
   <div class="section-heading">
     <h2>Причины отказов <span style="color:var(--muted);font-size:13px;font-weight:400;text-transform:none;letter-spacing:0" id="refTotal"></span></h2>
     <p>Категории раскрываются до списка пациентов и комментариев.</p>
   </div>
   <div class="card"><div id="refCats"></div></div>
+</div>
+</div>
+
+<div class="tab-panel" id="panel-calls" role="tabpanel" hidden>
+  <div class="section-wrap">
+    <div class="section-heading">
+      <h2>Прозвон по лидам</h2>
+      <p>Задачи amoCRM типа «Звонок» по лидам, созданным в выбранном периоде.</p>
+    </div>
+    <div class="grid call-kpi" id="callKpi"></div>
+    <div class="call-note" id="callNote"></div>
+  </div>
+  <div class="section-wrap call-layout">
+    <div>
+      <div class="section-heading"><h2>Прозвон по операторам</h2><p>Объём, среднее число попыток и точки контроля.</p></div>
+      <div class="card"><div style="overflow:auto"><table id="callOps"></table></div></div>
+    </div>
+    <div>
+      <div class="section-heading"><h2>Где нужен разбор</h2></div>
+      <div class="card watch-list" id="callWatch"></div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-panel" id="panel-trend" role="tabpanel" hidden>
+  <div class="section-wrap">
+    <div class="section-heading">
+      <h2>Динамика по дням</h2>
+      <p>Дневной ритм новых лидов, квалификации и задач на звонок.</p>
+    </div>
+    <div class="trend-grid">
+      <div class="card">
+        <h2>Лиды и квалификация</h2>
+        <p class="chart-sub">Заявки, ПЦП и визиты группируются по дате создания лида.</p>
+        <div class="chart-wrap"><canvas id="chTrendLeads"></canvas></div>
+      </div>
+      <div class="card">
+        <h2>Задачи на звонок</h2>
+        <p class="chart-sub">Выполненные задачи — по дате обновления; открытые — по дате дедлайна.</p>
+        <div class="chart-wrap"><canvas id="chTrendCalls"></canvas></div>
+      </div>
+    </div>
+  </div>
 </div>
 </main>
 </div>
@@ -628,7 +731,7 @@
 <script>
 const fmt = n => (n||0).toLocaleString('ru-RU');
 const pct = (a,b) => b ? ((a/b)*100).toFixed(1)+'%' : '—';
-let chartStatus = null;
+let chartStatus = null, chartTrendLeads = null, chartTrendCalls = null;
 
 // ── Theme ────────────────────────────────────────────────────────────────────
 function updateThemeIcon() {
@@ -643,7 +746,7 @@ function toggleTheme() {
   document.body.classList.toggle('dark');
   localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
   updateThemeIcon();
-  if (DATA) setActive(activeMonth);
+  if (DATA) refreshCurrent();
 }
 if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
 updateThemeIcon();
@@ -664,8 +767,6 @@ function renderSkeletons() {
     </div>`).join('');
   document.getElementById('ops').innerHTML = `<tbody>${Array(4).fill(0).map(()=>`
     <tr>${Array(8).fill(0).map(()=>`<td><div class="skel skel-sm"></div></td>`).join('')}</tr>`).join('')}</tbody>`;
-  document.getElementById('appts').innerHTML = `<tbody>${Array(4).fill(0).map(()=>`
-    <tr>${Array(4).fill(0).map(()=>`<td><div class="skel skel-sm"></div></td>`).join('')}</tr>`).join('')}</tbody>`;
   document.getElementById('refCats').innerHTML = Array(3).fill(0).map(()=>`
     <div style="padding:12px;margin-bottom:8px;border:1px solid var(--border);border-radius:8px">
       <div class="skel skel-sm" style="width:45%;margin-bottom:8px"></div>
@@ -716,17 +817,11 @@ function emptyHTML(title, sub) {
 }
 
 // ── Ops sort ──────────────────────────────────────────────────────────────────
-const yavkaPill = v => {
-  if(!v) return '<span class="pill pill-muted">—</span>';
-  if(v==='Пришел') return '<span class="pill pill-good">Пришёл</span>';
-  if(v==='Отмена записи') return '<span class="pill pill-bad">Отмена</span>';
-  return `<span class="pill pill-muted">${v}</span>`;
-};
 let sortState = {col: null, dir: -1};
 function sortOps(col) {
   sortState = sortState.col === col ? {col, dir: sortState.dir * -1} : {col, dir: -1};
-  if (!DATA) return;
-  renderOps((activeMonth === 'all' ? DATA.all : DATA.by_month[activeMonth]).operator_stats);
+  if (!CURRENT_SLICE) return;
+  renderOps(CURRENT_SLICE.operator_stats);
 }
 function renderOps(ops) {
   const entries = Object.entries(ops);
@@ -813,7 +908,7 @@ function render(d, prev) {
   document.getElementById('funnel').innerHTML = funnelData.map(([l,v,base])=>`
     <div class="funnel-row">
       <div class="funnel-label">${l}</div>
-      <div class="funnel-bar"><div class="funnel-fill" data-w="${base?(v/base*100).toFixed(2):0}">${v}</div></div>
+      <div class="funnel-bar"><div class="funnel-fill" data-w="${base&&v!=null?(v/base*100).toFixed(2):0}">${v==null?'—':v}</div></div>
       <div class="funnel-num">${pct(v,base)}</div>
     </div>`).join('');
   requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -844,19 +939,6 @@ function render(d, prev) {
 
   // Ops
   renderOps(d.operator_stats);
-
-  // Записи
-  document.getElementById('apptCnt').textContent = d.appointments.length ? `— ${d.appointments.length} записей` : '';
-  document.getElementById('appts').innerHTML = !d.appointments.length
-    ? `<tbody><tr><td style="border:0;padding:0">${emptyHTML('Нет записей','За выбранный период нет записей в клинику')}</td></tr></tbody>`
-    : `<thead><tr><th>Пациент</th><th>Явка</th><th>Оператор</th><th>Комментарий</th></tr></thead>
-       <tbody>${d.appointments.map(r=>`
-        <tr>
-          <td><b>${r['Имя:']||'—'}</b></td>
-          <td>${yavkaPill(r['Явка:'])}</td>
-          <td>${r['Имя оператора, взявшего в работу']||'—'}</td>
-          <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
-        </tr>`).join('')}</tbody>`;
 
   // Отказы
   const cats = d.refusal_categories || [];
@@ -907,20 +989,150 @@ function render(d, prev) {
 }
 
 // ── State & lifecycle ─────────────────────────────────────────────────────────
-let DATA = null, activeMonth = 'all';
+let DATA = null, CURRENT_SLICE = null;
+let RANGE = {from:null,to:null,preset:'30',tab:'overview'};
 
-function setActive(key) {
-  activeMonth = key;
-  document.querySelectorAll('#monthFilter button').forEach(b=>{
-    b.classList.toggle('active', b.dataset.key === key);
-  });
-  const cur = key === 'all' ? DATA.all : DATA.by_month[key];
-  let prevData = null;
-  if (key !== 'all' && DATA.months) {
-    const idx = DATA.months.findIndex(m => m.key === key);
-    if (idx > 0) prevData = DATA.by_month[DATA.months[idx - 1].key];
+const SUM_KPI_KEYS = [
+  'total','pcp','nekv','zapis','prishel','otmena','active_zapis','otval_zapis',
+  'refusals_total','calls_total','calls_completed','calls_open','leads_no_calls','leads_over_norm',
+];
+const MONEY_KEYS = ['pcp_contract','pcp_contract_count','pcp_no_deposit','ad_spend'];
+const shiftISO = (iso, days) => {
+  const d = new Date(`${iso}T12:00:00Z`); d.setUTCDate(d.getUTCDate()+days);
+  return d.toISOString().slice(0,10);
+};
+const daysBetween = (a,b) => Math.round((new Date(`${b}T12:00:00Z`)-new Date(`${a}T12:00:00Z`))/86400000)+1;
+const humanDate = iso => new Intl.DateTimeFormat('ru-RU',{day:'2-digit',month:'2-digit',year:'numeric',timeZone:'UTC'}).format(new Date(`${iso}T12:00:00Z`));
+const daysInMonth = iso => new Date(Date.UTC(+iso.slice(0,4),+iso.slice(5,7),0)).getUTCDate();
+const isWholeMonths = (from,to) => from.slice(8)==='01' && +to.slice(8)===daysInMonth(to);
+
+function emptySlice() {
+  return {kpi:Object.fromEntries(SUM_KPI_KEYS.map(k=>[k,0])),status_counts:{},operator_stats:{},appointments:[],refusal_categories:[]};
+}
+function mergeSlices(slices) {
+  const out = emptySlice(), cats = {};
+  for (const slice of slices) {
+    if (!slice) continue;
+    for (const key of SUM_KPI_KEYS) out.kpi[key] += Number(slice.kpi?.[key] || 0);
+    for (const [status,n] of Object.entries(slice.status_counts||{})) out.status_counts[status]=(out.status_counts[status]||0)+n;
+    for (const [name,stats] of Object.entries(slice.operator_stats||{})) {
+      const target = out.operator_stats[name] ||= {};
+      for (const [key,n] of Object.entries(stats)) if (typeof n === 'number') target[key]=(target[key]||0)+n;
+    }
+    for (const cat of slice.refusal_categories||[]) {
+      const target = cats[cat.cat] ||= {cat:cat.cat,count:0,items:[]};
+      target.count += cat.count||0;
+      if (cat.items?.length) target.items.push(...cat.items);
+    }
   }
-  render(cur, prevData);
+  const k=out.kpi;
+  k.conv_pcp=k.total?+(k.pcp/k.total*100).toFixed(1):0;
+  k.conv_zapis_from_pcp=k.pcp?+(k.zapis/k.pcp*100).toFixed(1):0;
+  k.conv_prishel_from_zapis=k.zapis?+(k.prishel/k.zapis*100).toFixed(1):0;
+  k.calls_per_lead=k.total?+(k.calls_total/k.total).toFixed(1):0;
+  out.refusal_categories=Object.values(cats).sort((a,b)=>b.count-a.count).map(c=>({...c,share:k.refusals_total?+(c.count/k.refusals_total*100).toFixed(1):0}));
+  return out;
+}
+function manualForRange(from,to) {
+  if (from===DATA.period.date_min && to===DATA.period.date_max) return Object.fromEntries(MONEY_KEYS.map(k=>[k,DATA.all.kpi[k]??null]));
+  if (!isWholeMonths(from,to)) return Object.fromEntries(MONEY_KEYS.map(k=>[k,null]));
+  const selected=DATA.months.filter(m=>m.key>=from.slice(0,7)&&m.key<=to.slice(0,7));
+  if (!selected.length) return Object.fromEntries(MONEY_KEYS.map(k=>[k,null]));
+  const result={};
+  for (const key of MONEY_KEYS) {
+    const vals=selected.map(m=>DATA.by_month?.[m.key]?.kpi?.[key]);
+    result[key]=vals.some(v=>v==null)?null:vals.reduce((s,v)=>s+Number(v||0),0);
+  }
+  return result;
+}
+function aggregateRange(from,to) {
+  if (!DATA.by_day) return from===DATA.period.date_min&&to===DATA.period.date_max?DATA.all:emptySlice();
+  const slices=Object.entries(DATA.by_day).filter(([day])=>day>=from&&day<=to).map(([,slice])=>slice);
+  const out=mergeSlices(slices);
+  Object.assign(out.kpi,manualForRange(from,to));
+  return out;
+}
+function previousSlice(from,to) {
+  const len=daysBetween(from,to), prevTo=shiftISO(from,-1), prevFrom=shiftISO(prevTo,-(len-1));
+  if (prevTo<DATA.period.date_min) return null;
+  return aggregateRange(prevFrom<DATA.period.date_min?DATA.period.date_min:prevFrom,prevTo);
+}
+function setPreset(value) {
+  const max=DATA.period.date_max, min=DATA.period.date_min;
+  RANGE.preset=value;
+  if (value==='today') RANGE.from=RANGE.to=max;
+  else if (value==='yesterday') RANGE.from=RANGE.to=shiftISO(max,-1);
+  else if (value==='all') { RANGE.from=min;RANGE.to=max; }
+  else { RANGE.to=max;RANGE.from=shiftISO(max,-(+value-1));if(RANGE.from<min)RANGE.from=min; }
+  syncRangeControls();refreshCurrent();
+}
+function syncRangeControls() {
+  document.querySelectorAll('#datePresets button').forEach(b=>b.classList.toggle('active',b.dataset.range===RANGE.preset));
+  document.getElementById('customRange').classList.toggle('active',RANGE.preset===null);
+  document.getElementById('dateFrom').value=RANGE.from||'';
+  document.getElementById('dateTo').value=RANGE.to||'';
+}
+function setTab(tab) {
+  RANGE.tab=tab;
+  document.querySelectorAll('.workspace-tabs [role="tab"]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.hidden=p.id!==`panel-${tab}`);
+  if (tab==='trend'&&CURRENT_SLICE) requestAnimationFrame(renderTrend);
+}
+
+function renderCalls(d) {
+  const k=d.kpi, norm=DATA.calls_meta?.regulation||9;
+  const items=[
+    ['Задач на звонок',k.calls_total,'все попытки по лидам когорты','primary'],
+    ['Выполнено',k.calls_completed,pct(k.calls_completed,k.calls_total)+' от задач',''],
+    ['Открыто',k.calls_open,'ещё не закрыты',''],
+    ['На один лид',k.calls_per_lead,'среднее число задач',''],
+    ['Без задач на звонок',k.leads_no_calls,pct(k.leads_no_calls,k.total)+' лидов',''],
+    [`Сверх ${norm} задач`,k.leads_over_norm,'контрольная граница','money'],
+  ];
+  document.getElementById('callKpi').innerHTML=items.map(([label,value,sub,tone])=>`<div class="card kpi-card ${tone}"><div class="label">${label}</div><div class="value">${typeof value==='number'?value.toLocaleString('ru-RU'):'—'}</div><div class="delta">${sub}</div></div>`).join('');
+  document.getElementById('callNote').innerHTML=`<b>Как читать:</b> ${DATA.calls_meta?.note||'это задачи amoCRM, а не подтверждённые разговоры.'}`;
+  const rows=Object.entries(d.operator_stats||{}).sort(([,a],[,b])=>(b.calls||0)-(a.calls||0));
+  document.getElementById('callOps').innerHTML=`<thead><tr><th>Оператор</th><th>Лидов</th><th>Задач</th><th>На лид</th><th>Выполнено</th><th>Открыто</th><th>Без звонка</th><th>Сверх нормы</th></tr></thead><tbody>${rows.map(([name,s])=>`<tr><td><b>${name}</b></td><td class="num">${s.total||0}</td><td class="num">${s.calls||0}</td><td class="num">${s.total?(s.calls/s.total).toFixed(1):'—'}</td><td class="num good">${s.calls_completed||0}</td><td class="num warn">${s.calls_open||0}</td><td class="num">${s.leads_no_calls||0}</td><td class="num bad">${s.leads_over_norm||0}</td></tr>`).join('')}</tbody>`;
+  document.getElementById('callWatch').innerHTML=`
+    <div class="watch-row"><span>Доля выполненных задач</span><strong>${pct(k.calls_completed,k.calls_total)}</strong></div>
+    <div class="watch-row"><span>Лиды без задачи «Звонок»</span><strong>${fmt(k.leads_no_calls)}</strong></div>
+    <div class="watch-row"><span>Лиды сверх границы ${norm}</span><strong>${fmt(k.leads_over_norm)}</strong></div>
+    <div class="watch-row"><span>Открытые задачи</span><strong>${fmt(k.calls_open)}</strong></div>`;
+}
+
+function renderTrend() {
+  const days=[];for(let d=RANGE.from;d<=RANGE.to;d=shiftISO(d,1)) days.push(d);
+  const lead=(key)=>days.map(day=>DATA.by_day?.[day]?.kpi?.[key]||0);
+  const calls=(key)=>days.map(day=>DATA.call_daily?.[day]?.[key]||0);
+  const css=getComputedStyle(document.body), accent=css.getPropertyValue('--accent2').trim(), soft=css.getPropertyValue('--accent').trim(), good=css.getPropertyValue('--good').trim(), warn=css.getPropertyValue('--warn').trim(), bad=css.getPropertyValue('--bad').trim();
+  const common={responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:8,padding:18}}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:days.length>45?8:12}},y:{beginAtZero:true,ticks:{precision:0}}}};
+  const labels=days.map(d=>d.slice(8)+'.'+d.slice(5,7));
+  if(chartTrendLeads)chartTrendLeads.destroy();
+  chartTrendLeads=new Chart(document.getElementById('chTrendLeads'),{type:'line',data:{labels,datasets:[
+    {label:'Заявки',data:lead('total'),borderColor:accent,backgroundColor:accent+'20',fill:true,tension:.35,pointRadius:days.length>45?0:2},
+    {label:'ПЦП',data:lead('pcp'),borderColor:soft,tension:.35,pointRadius:days.length>45?0:2},
+    {label:'Визиты',data:lead('prishel'),borderColor:good,tension:.35,pointRadius:days.length>45?0:2},
+  ]},options:common});
+  if(chartTrendCalls)chartTrendCalls.destroy();
+  chartTrendCalls=new Chart(document.getElementById('chTrendCalls'),{type:'line',data:{labels,datasets:[
+    {label:'Выполнено',data:calls('completed'),borderColor:accent,backgroundColor:accent+'20',fill:true,tension:.35,pointRadius:days.length>45?0:2},
+    {label:'Открыто',data:calls('open'),borderColor:warn,tension:.35,pointRadius:days.length>45?0:2},
+    {label:'Всего задач',data:calls('total'),borderColor:bad,tension:.35,pointRadius:days.length>45?0:2},
+  ]},options:common});
+}
+
+function refreshCurrent() {
+  if(!DATA||!RANGE.from||!RANGE.to)return;
+  CURRENT_SLICE=aggregateRange(RANGE.from,RANGE.to);
+  render(CURRENT_SLICE,previousSlice(RANGE.from,RANGE.to));
+  renderCalls(CURRENT_SLICE);
+  const len=daysBetween(RANGE.from,RANGE.to);
+  document.getElementById('period').textContent=`${humanDate(RANGE.from)} — ${humanDate(RANGE.to)} · ${len} ${len===1?'день':'дн.'}`;
+  const money=manualForRange(RANGE.from,RANGE.to).ad_spend;
+  document.getElementById('rangeHint').textContent=money==null
+    ? 'Лиды считаются по дате создания. Расход не показан: он вносится по месяцам, а выбран неполный месяц.'
+    : 'Лиды считаются по дате создания. Ручные суммы включены без распределения по дням.';
+  if(RANGE.tab==='trend')requestAnimationFrame(renderTrend);
 }
 
 const UPDATE_INTERVAL_MS = 30 * 60 * 1000;
@@ -957,25 +1169,26 @@ function startCountdown(nextAt) {
 function applyData(d) {
   const isRefresh = DATA !== null;
   DATA = d;
-  document.getElementById('period').textContent = `Период данных: ${d.period.date_min} — ${d.period.date_max}`;
   const genAt = new Date(d.generated_at);
   const valid = !isNaN(genAt.getTime());
   document.getElementById('generatedAt').textContent = valid ? formatMoscow(genAt) : d.generated_at || '—';
   startCountdown(valid ? genAt.getTime() + UPDATE_INTERVAL_MS : Date.now() + UPDATE_INTERVAL_MS);
-  const buttons = [
-    {key:'all', label:'Все', count: d.all.kpi.total},
-    ...d.months.map(m=>({key:m.key, label:m.label, count:m.count})),
-  ];
-  document.getElementById('monthFilter').innerHTML = buttons.map(b=>
-    `<button data-key="${b.key}" onclick="setActive('${b.key}')">${b.label}<span class="count">${b.count}</span></button>`
-  ).join('');
-  setActive(activeMonth in {'all':1, ...Object.fromEntries(d.months.map(m=>[m.key,1]))} ? activeMonth : 'all');
+  for(const id of ['dateFrom','dateTo']){const el=document.getElementById(id);el.min=d.period.date_min;el.max=d.period.date_max;}
+  if(!RANGE.from)setPreset('30');else refreshCurrent();
   if (isRefresh) showToast('Данные обновлены · ' + (valid ? formatMoscow(genAt) : '—'));
 }
 
 function loadData() {
   fetch('data.json?t=' + Date.now()).then(r=>r.json()).then(applyData);
 }
+
+document.querySelectorAll('#datePresets button').forEach(b=>b.addEventListener('click',()=>setPreset(b.dataset.range)));
+for(const id of ['dateFrom','dateTo'])document.getElementById(id).addEventListener('change',()=>{
+  const from=document.getElementById('dateFrom').value,to=document.getElementById('dateTo').value;
+  if(!from||!to||from>to)return;
+  RANGE={...RANGE,from,to,preset:null};syncRangeControls();refreshCurrent();
+});
+document.querySelectorAll('.workspace-tabs [role="tab"]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
 
 renderSkeletons();
 loadData();
