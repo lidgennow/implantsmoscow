@@ -18,6 +18,13 @@ PIPELINE_ID = 10786530
 CALL_REGULATION = int(os.environ.get("CALL_REGULATION", "9"))
 MOSCOW_TZ = ZoneInfo("Europe/Moscow")
 
+# Исторические даты событий. Текущая стадия сделки для этих метрик не используется:
+# стадия меняется, а эти поля сохраняют факт и дату прохождения шага.
+FIELD_PCP_DATE = 960167      # Дата (ПЦП)
+FIELD_BOOKING_DATE = 960163  # Дата (Запись)
+FIELD_ARRIVAL_DATE = 960165  # Дата (Явка)
+FIELD_APPOINTMENT_AT = 959989  # Дата записи на приём (запланированное время)
+
 HEADERS = {"Authorization": f"Bearer {AMO_TOKEN}"}
 
 # ── Маппинг этапов воронки ──────────────────────────────────────────────────
@@ -128,6 +135,26 @@ def get_call_tasks(lead_ids):
     return tasks
 
 
+def get_custom_field_value(lead, field_id):
+    """Возвращает первое значение допполя сделки."""
+    for field in lead.get("custom_fields_values") or []:
+        if field.get("field_id") != field_id:
+            continue
+        values = field.get("values") or []
+        return values[0].get("value") if values else None
+    return None
+
+
+def amo_date_to_day(value):
+    """Приводит Unix-дату amoCRM к календарному дню по Москве."""
+    if value in (None, ""):
+        return None
+    try:
+        return datetime.fromtimestamp(int(value), tz=MOSCOW_TZ).strftime("%Y-%m-%d")
+    except (TypeError, ValueError, OSError):
+        return None
+
+
 # ── Analytics ────────────────────────────────────────────────────────────────
 
 def categorize(comment):
@@ -225,6 +252,74 @@ def compute(g, manual=None, include_details=True):
     }
 
 
+def compute_calendar_slice(df, start_day, end_day, manual=None, include_details=True):
+    """
+    Собирает срез по календарным датам событий:
+    - заявки, неквалы, отказы и прозвон — по дате создания лида;
+    - ПЦП, записи и явки — по своим сохранённым полям дат в amoCRM.
+
+    Так история не «умирает», когда сделка переходит на следующую стадию.
+    """
+    created = df[(df["day"] >= start_day) & (df["day"] <= end_day)]
+    result = compute(created, manual=manual, include_details=include_details)
+
+    def event_group(column):
+        values = df[column].fillna("")
+        return df[(values >= start_day) & (values <= end_day)]
+
+    pcp_events = event_group("pcp_day")
+    booking_events = event_group("booking_day")
+    arrival_events = event_group("arrival_day")
+
+    booking_mask = booking_events["Статус:"] == "запись в клинику"
+    active_mask = booking_mask & booking_events["Явка:"].isna()
+    cancelled_mask = booking_mask & booking_events["Явка:"].isin(OTVAL_YAVKA)
+
+    kpi = result["kpi"]
+    kpi.update({
+        "pcp": int(len(pcp_events)),
+        "zapis": int(len(booking_events)),
+        "prishel": int(len(arrival_events)),
+        # Эти две метрики — текущий исход записей, созданных внутри периода.
+        "otmena": int(cancelled_mask.sum()),
+        "active_zapis": int(active_mask.sum()),
+        "otval_zapis": int(cancelled_mask.sum()),
+    })
+    kpi["conv_pcp"] = round(kpi["pcp"] / kpi["total"] * 100, 1) if kpi["total"] else 0
+    kpi["conv_zapis_from_pcp"] = round(kpi["zapis"] / kpi["pcp"] * 100, 1) if kpi["pcp"] else 0
+    kpi["conv_prishel_from_zapis"] = round(kpi["prishel"] / kpi["zapis"] * 100, 1) if kpi["zapis"] else 0
+
+    # В таблице операторов этапы тоже должны идти по датам событий, а не по текущей стадии.
+    def counts_by_operator(group):
+        if group.empty:
+            return {}
+        return {
+            (name if pd.notna(name) else "—"): int(count)
+            for name, count in group.groupby("Имя оператора, взявшего в работу", dropna=False).size().items()
+        }
+
+    pcp_by_op = counts_by_operator(pcp_events)
+    booking_by_op = counts_by_operator(booking_events)
+    arrival_by_op = counts_by_operator(arrival_events)
+    active_by_op = counts_by_operator(booking_events[active_mask])
+    cancelled_by_op = counts_by_operator(booking_events[cancelled_mask])
+    operators = set(result["operator_stats"]) | set(pcp_by_op) | set(booking_by_op) | set(arrival_by_op)
+    empty_operator = {
+        "total": 0, "pcp": 0, "nekv": 0, "zapis": 0, "prishel": 0,
+        "otval": 0, "active": 0, "calls": 0, "calls_completed": 0,
+        "calls_open": 0, "leads_no_calls": 0, "leads_over_norm": 0,
+    }
+    for operator in operators:
+        stats = result["operator_stats"].setdefault(operator, dict(empty_operator))
+        stats["pcp"] = pcp_by_op.get(operator, 0)
+        stats["zapis"] = booking_by_op.get(operator, 0)
+        stats["prishel"] = arrival_by_op.get(operator, 0)
+        stats["active"] = active_by_op.get(operator, 0)
+        stats["otval"] = cancelled_by_op.get(operator, 0)
+
+    return result
+
+
 def clean(o):
     if isinstance(o, dict):  return {str(k): clean(v) for k, v in o.items()}
     if isinstance(o, list):  return [clean(v) for v in o]
@@ -261,6 +356,10 @@ def main():
         comment = notes.get(lead["id"], "")
         row = {
             "_lead_id":                           lead["id"],
+            "pcp_day":                            amo_date_to_day(get_custom_field_value(lead, FIELD_PCP_DATE)),
+            "booking_day":                        amo_date_to_day(get_custom_field_value(lead, FIELD_BOOKING_DATE)),
+            "arrival_day":                        amo_date_to_day(get_custom_field_value(lead, FIELD_ARRIVAL_DATE)),
+            "appointment_day":                    amo_date_to_day(get_custom_field_value(lead, FIELD_APPOINTMENT_AT)),
             "Имя:":                              lead.get("name", ""),
             "КВАЛИФИКАЦИЯ":                      mapping["qual"],
             "Статус:":                           mapping["status"],
@@ -301,8 +400,14 @@ def main():
         with open(MANUAL_PATH, encoding="utf-8") as f:
             manual_all = json.load(f)
 
-    months = sorted(df["month"].dropna().unique())
-    days = sorted(df["day"].dropna().unique())
+    event_day_columns = ["day", "pcp_day", "booking_day", "arrival_day"]
+    days = sorted({
+        day
+        for column in event_day_columns
+        for day in df[column].dropna().astype(str)
+        if day
+    })
+    months = sorted({day[:7] for day in days})
 
     def month_label(m):
         y, mo = m.split("-")
@@ -339,13 +444,29 @@ def main():
         for day, stats in sorted(call_daily.items())
     }
 
+    period_min = days[0] if days else ""
+    period_max = days[-1] if days else ""
+
     data = {
         "period": {
-            "date_min": str(df["dt"].min().date()) if not df["dt"].isna().all() else "",
-            "date_max": str(df["dt"].max().date()) if not df["dt"].isna().all() else "",
+            "date_min": period_min,
+            "date_max": period_max,
         },
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "metric_basis": "lead_created_at",
+        "metric_basis": {
+            "total": "lead_created_at",
+            "pcp": f"lead_custom_field_{FIELD_PCP_DATE}",
+            "zapis": f"lead_custom_field_{FIELD_BOOKING_DATE}",
+            "prishel": f"lead_custom_field_{FIELD_ARRIVAL_DATE}",
+        },
+        "metrics_meta": {
+            "note": "Заявки считаются по дате создания; ПЦП, записи и явки — по отдельным датам событий amoCRM.",
+            "fields": {
+                "pcp": {"id": FIELD_PCP_DATE, "label": "Дата (ПЦП)"},
+                "zapis": {"id": FIELD_BOOKING_DATE, "label": "Дата (Запись)"},
+                "prishel": {"id": FIELD_ARRIVAL_DATE, "label": "Дата (Явка)"},
+            },
+        },
         "calls_meta": {
             "source": "amo_tasks_type_1",
             "label": "Задачи amoCRM типа «Звонок»",
@@ -356,9 +477,22 @@ def main():
             {"key": m, "label": month_label(m), "count": int((df["month"] == m).sum())}
             for m in months
         ],
-        "all":      compute(df, manual=total_manual),
-        "by_month": {m: compute(df[df["month"] == m], manual=manual_all.get(m, {})) for m in months},
-        "by_day":   {day: compute(df[df["day"] == day], include_details=False) for day in days},
+        "all": compute_calendar_slice(
+            df, period_min, period_max, manual=total_manual,
+        ),
+        "by_month": {
+            m: compute_calendar_slice(
+                df,
+                f"{m}-01",
+                f"{m}-{pd.Period(m).days_in_month:02d}",
+                manual=manual_all.get(m, {}),
+            )
+            for m in months
+        },
+        "by_day": {
+            day: compute_calendar_slice(df, day, day, include_details=False)
+            for day in days
+        },
         "call_daily": call_daily,
     }
 
