@@ -16,6 +16,7 @@ with sync_playwright() as playwright:
 
     assert page.locator("#kpi .kpi-card").count() == 8
     assert page.get_by_text("ДРР", exact=True).count() == 0
+    assert page.get_by_text("ПЦП на договоре", exact=True).count() == 0
     assert page.get_by_text("Implants Moscow", exact=False).count() == 0
     assert page.locator("#appts").count() == 0
     assert page.locator("#heroTotal").inner_text() != "—"
