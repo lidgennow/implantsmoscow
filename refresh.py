@@ -6,6 +6,7 @@ import numpy as np
 import requests
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT        = Path(__file__).parent
 OUT_PATH    = ROOT / "docs" / "data.json"
@@ -15,6 +16,7 @@ AMO_DOMAIN  = os.environ.get("AMO_DOMAIN", "dmitriiostashov.amocrm.ru")
 AMO_TOKEN   = os.environ["AMO_TOKEN"]
 PIPELINE_ID = 10786530
 CALL_REGULATION = int(os.environ.get("CALL_REGULATION", "9"))
+MOSCOW_TZ = ZoneInfo("Europe/Moscow")
 
 HEADERS = {"Authorization": f"Bearer {AMO_TOKEN}"}
 
@@ -259,7 +261,7 @@ def main():
             skipped += 1
             continue
         ts  = lead.get("created_at", 0)
-        dt  = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else None
+        dt  = datetime.fromtimestamp(ts, tz=MOSCOW_TZ) if ts else None
         comment = notes.get(lead["id"], "")
         row = {
             "_lead_id":                           lead["id"],
@@ -329,7 +331,7 @@ def main():
         ts = task.get("updated_at") if is_completed else task.get("complete_till")
         if not ts:
             continue
-        day = datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%d")
+        day = datetime.fromtimestamp(ts, tz=MOSCOW_TZ).strftime("%Y-%m-%d")
         operator = users.get(task.get("responsible_user_id"), "—")
         call_daily[day]["total"] += 1
         call_daily[day]["completed" if is_completed else "open"] += 1
