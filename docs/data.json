@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-07"
   },
-  "generated_at": "2026-08-07T14:33:22Z",
+  "generated_at": "2026-08-07T14:34:49Z",
   "metric_basis": "lead_created_at",
   "calls_meta": {
     "source": "amo_tasks_type_1",
@@ -58,8 +58,6 @@
       "calls_per_lead": 4.0,
       "leads_no_calls": 2,
       "leads_over_norm": 37,
-      "pcp_contract": 382320,
-      "pcp_contract_count": 13,
       "pcp_no_deposit": 3457960,
       "ad_spend": 1708400
     },
@@ -7816,8 +7814,6 @@
         "calls_per_lead": 4.5,
         "leads_no_calls": 0,
         "leads_over_norm": 7,
-        "pcp_contract": 382320,
-        "pcp_contract_count": 13,
         "pcp_no_deposit": 3457960,
         "ad_spend": 294100
       },
@@ -9225,8 +9221,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 12,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": 476000
       },
@@ -11561,8 +11555,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 11,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": 511500
       },
@@ -13900,8 +13892,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 2,
         "leads_over_norm": 7,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": 426800
       },
@@ -15687,8 +15677,6 @@
         "calls_per_lead": 2.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -15981,8 +15969,6 @@
         "calls_per_lead": 5.1,
         "leads_no_calls": 0,
         "leads_over_norm": 2,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16050,8 +16036,6 @@
         "calls_per_lead": 4.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16105,8 +16089,6 @@
         "calls_per_lead": 4.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16175,8 +16157,6 @@
         "calls_per_lead": 2.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16258,8 +16238,6 @@
         "calls_per_lead": 4.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16327,8 +16305,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16397,8 +16373,6 @@
         "calls_per_lead": 6.1,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16465,8 +16439,6 @@
         "calls_per_lead": 4.8,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16519,8 +16491,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16594,8 +16564,6 @@
         "calls_per_lead": 5.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16668,8 +16636,6 @@
         "calls_per_lead": 3.3,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16743,8 +16709,6 @@
         "calls_per_lead": 5.0,
         "leads_no_calls": 0,
         "leads_over_norm": 2,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16825,8 +16789,6 @@
         "calls_per_lead": 3.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16879,8 +16841,6 @@
         "calls_per_lead": 4.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -16949,8 +16909,6 @@
         "calls_per_lead": 5.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17023,8 +16981,6 @@
         "calls_per_lead": 4.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17091,8 +17047,6 @@
         "calls_per_lead": 6.5,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17159,8 +17113,6 @@
         "calls_per_lead": 5.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17213,8 +17165,6 @@
         "calls_per_lead": 4.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17287,8 +17237,6 @@
         "calls_per_lead": 4.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17356,8 +17304,6 @@
         "calls_per_lead": 4.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17425,8 +17371,6 @@
         "calls_per_lead": 3.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17494,8 +17438,6 @@
         "calls_per_lead": 5.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17569,8 +17511,6 @@
         "calls_per_lead": 3.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17639,8 +17579,6 @@
         "calls_per_lead": 4.3,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17693,8 +17631,6 @@
         "calls_per_lead": 3.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17762,8 +17698,6 @@
         "calls_per_lead": 3.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17837,8 +17771,6 @@
         "calls_per_lead": 6.3,
         "leads_no_calls": 0,
         "leads_over_norm": 2,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17907,8 +17839,6 @@
         "calls_per_lead": 4.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -17975,8 +17905,6 @@
         "calls_per_lead": 5.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18044,8 +17972,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18119,8 +18045,6 @@
         "calls_per_lead": 4.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18188,8 +18112,6 @@
         "calls_per_lead": 4.8,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18270,8 +18192,6 @@
         "calls_per_lead": 4.3,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18339,8 +18259,6 @@
         "calls_per_lead": 4.9,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18423,8 +18341,6 @@
         "calls_per_lead": 3.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18498,8 +18414,6 @@
         "calls_per_lead": 3.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18568,8 +18482,6 @@
         "calls_per_lead": 4.4,
         "leads_no_calls": 0,
         "leads_over_norm": 2,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18638,8 +18550,6 @@
         "calls_per_lead": 3.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18712,8 +18622,6 @@
         "calls_per_lead": 3.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18786,8 +18694,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18841,8 +18747,6 @@
         "calls_per_lead": 5.1,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18917,8 +18821,6 @@
         "calls_per_lead": 4.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -18986,8 +18888,6 @@
         "calls_per_lead": 3.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19061,8 +18961,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19136,8 +19034,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19212,8 +19108,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19282,8 +19176,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19357,8 +19249,6 @@
         "calls_per_lead": 3.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19427,8 +19317,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19498,8 +19386,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19579,8 +19465,6 @@
         "calls_per_lead": 6.1,
         "leads_no_calls": 0,
         "leads_over_norm": 3,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19654,8 +19538,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19725,8 +19607,6 @@
         "calls_per_lead": 3.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19794,8 +19674,6 @@
         "calls_per_lead": 4.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19869,8 +19747,6 @@
         "calls_per_lead": 4.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -19944,8 +19820,6 @@
         "calls_per_lead": 2.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20004,8 +19878,6 @@
         "calls_per_lead": 4.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20074,8 +19946,6 @@
         "calls_per_lead": 3.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20149,8 +20019,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20225,8 +20093,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20282,8 +20148,6 @@
         "calls_per_lead": 2.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20360,8 +20224,6 @@
         "calls_per_lead": 6.5,
         "leads_no_calls": 0,
         "leads_over_norm": 2,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20430,8 +20292,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20513,8 +20373,6 @@
         "calls_per_lead": 4.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20574,8 +20432,6 @@
         "calls_per_lead": 4.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20650,8 +20506,6 @@
         "calls_per_lead": 4.9,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20725,8 +20579,6 @@
         "calls_per_lead": 2.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20806,8 +20658,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20882,8 +20732,6 @@
         "calls_per_lead": 4.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -20952,8 +20800,6 @@
         "calls_per_lead": 5.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21027,8 +20873,6 @@
         "calls_per_lead": 4.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21107,8 +20951,6 @@
         "calls_per_lead": 3.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21176,8 +21018,6 @@
         "calls_per_lead": 4.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21232,8 +21072,6 @@
         "calls_per_lead": 3.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21309,8 +21147,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21378,8 +21214,6 @@
         "calls_per_lead": 4.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21447,8 +21281,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21522,8 +21354,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21605,8 +21435,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21681,8 +21509,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21738,8 +21564,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21808,8 +21632,6 @@
         "calls_per_lead": 3.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21883,8 +21705,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -21959,8 +21779,6 @@
         "calls_per_lead": 4.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22033,8 +21851,6 @@
         "calls_per_lead": 6.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22103,8 +21919,6 @@
         "calls_per_lead": 5.0,
         "leads_no_calls": 2,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22207,8 +22021,6 @@
         "calls_per_lead": 1.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22254,8 +22066,6 @@
         "calls_per_lead": 4.2,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22336,8 +22146,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22411,8 +22219,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22482,8 +22288,6 @@
         "calls_per_lead": 3.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22565,8 +22369,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22641,8 +22443,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22716,8 +22516,6 @@
         "calls_per_lead": 3.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22779,8 +22577,6 @@
         "calls_per_lead": 3.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22834,8 +22630,6 @@
         "calls_per_lead": 4.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -22923,8 +22717,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23006,8 +22798,6 @@
         "calls_per_lead": 4.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23077,8 +22867,6 @@
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23153,8 +22941,6 @@
         "calls_per_lead": 5.3,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23228,8 +23014,6 @@
         "calls_per_lead": 4.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23305,8 +23089,6 @@
         "calls_per_lead": 4.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23375,8 +23157,6 @@
         "calls_per_lead": 2.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23438,8 +23218,6 @@
         "calls_per_lead": 3.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23515,8 +23293,6 @@
         "calls_per_lead": 2.6,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23592,8 +23368,6 @@
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23670,8 +23444,6 @@
         "calls_per_lead": 3.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23746,8 +23518,6 @@
         "calls_per_lead": 4.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23821,8 +23591,6 @@
         "calls_per_lead": 3.5,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23893,8 +23661,6 @@
         "calls_per_lead": 2.3,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -23970,8 +23736,6 @@
         "calls_per_lead": 3.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -24046,8 +23810,6 @@
         "calls_per_lead": 3.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -24117,8 +23879,6 @@
         "calls_per_lead": 2.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -24187,8 +23947,6 @@
         "calls_per_lead": 2.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -24244,8 +24002,6 @@
         "calls_per_lead": 2.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
@@ -24321,8 +24077,6 @@
         "calls_per_lead": 2.3,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
-        "pcp_contract": 0,
-        "pcp_contract_count": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
