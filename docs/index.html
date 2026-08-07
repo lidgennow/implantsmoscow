@@ -638,16 +638,10 @@
 
 <div class="section-wrap section-pcp">
   <div class="section-heading">
-    <h2>ПЦП — результаты</h2>
-    <p>Подписанные договоры и планы лечения, по которым ещё нет депозита.</p>
+    <h2>ПЦП — без депозита</h2>
+    <p>Планы лечения, по которым ещё нет депозита.</p>
   </div>
   <div class="grid row2">
-    <div class="card result-card">
-      <div class="kpi-mini" style="color:var(--good)">ПЦП на договоре</div>
-      <div class="result-value" style="color:var(--good)" id="pcpContract">—</div>
-      <div style="color:var(--muted);font-size:13px;margin-top:4px">сумма подписанных договоров</div>
-      <div style="color:var(--good);font-size:15px;margin-top:6px;font-weight:600" id="pcpContractCount">—</div>
-    </div>
     <div class="card result-card">
       <div class="kpi-mini" style="color:var(--warn)">ПЦП с планом — без депозита</div>
       <div class="result-value" style="color:var(--warn)" id="pcpNoDeposit">—</div>
@@ -903,7 +897,6 @@ function render(d, prev) {
     ['Квалифицированы (ПЦП)', k.pcp,                k.total],
     ['Записаны в клинику',    k.zapis,              k.total],
     ['Пришли на приём',       k.prishel,            k.total],
-    ['ПЦП на договоре',       k.pcp_contract_count, k.total],
   ];
   document.getElementById('funnel').innerHTML = funnelData.map(([l,v,base])=>`
     <div class="funnel-row">
@@ -918,8 +911,6 @@ function render(d, prev) {
   }));
 
   // ПЦП
-  document.getElementById('pcpContract').textContent     = k.pcp_contract    != null ? fmt(k.pcp_contract)   + ' ₽' : '—';
-  document.getElementById('pcpContractCount').textContent= k.pcp_contract_count ? k.pcp_contract_count + ' пациентов' : '—';
   document.getElementById('pcpNoDeposit').textContent    = k.pcp_no_deposit  != null ? fmt(k.pcp_no_deposit) + ' ₽' : '—';
 
   // Donut
@@ -996,7 +987,7 @@ const SUM_KPI_KEYS = [
   'total','pcp','nekv','zapis','prishel','otmena','active_zapis','otval_zapis',
   'refusals_total','calls_total','calls_completed','calls_open','leads_no_calls','leads_over_norm',
 ];
-const MONEY_KEYS = ['pcp_contract','pcp_contract_count','pcp_no_deposit','ad_spend'];
+const MONEY_KEYS = ['pcp_no_deposit','ad_spend'];
 const shiftISO = (iso, days) => {
   const d = new Date(`${iso}T12:00:00Z`); d.setUTCDate(d.getUTCDate()+days);
   return d.toISOString().slice(0,10);
