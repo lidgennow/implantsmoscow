@@ -1,5 +1,6 @@
 """Тянет лиды из amoCRM (воронка «Колл Центр(data leads)») и строит docs/data.json."""
 import os, re, json
+from collections import defaultdict
 import pandas as pd
 import numpy as np
 import requests
@@ -13,6 +14,7 @@ MANUAL_PATH = ROOT / "manual_data.json"
 AMO_DOMAIN  = os.environ.get("AMO_DOMAIN", "dmitriiostashov.amocrm.ru")
 AMO_TOKEN   = os.environ["AMO_TOKEN"]
 PIPELINE_ID = 10786530
+CALL_REGULATION = int(os.environ.get("CALL_REGULATION", "9"))
 
 HEADERS = {"Authorization": f"Bearer {AMO_TOKEN}"}
 
@@ -97,6 +99,33 @@ def get_notes(lead_ids):
     return {lid: n.get("params", {}).get("text", "") or "" for lid, n in best.items()}
 
 
+def get_call_tasks(lead_ids):
+    """Возвращает задачи amoCRM типа «Звонок», привязанные к нужным лидам."""
+    tasks = []
+    for i in range(0, len(lead_ids), 50):
+        chunk = lead_ids[i : i + 50]
+        page = 1
+        while True:
+            params = (
+                [("filter[entity_type]", "leads"), ("filter[task_type][]", 1)]
+                + [("filter[entity_id][]", lid) for lid in chunk]
+                + [("limit", 250), ("page", page)]
+            )
+            r = requests.get(
+                f"https://{AMO_DOMAIN}/api/v4/tasks",
+                headers=HEADERS, params=params, timeout=30,
+            )
+            if r.status_code == 204:
+                break
+            r.raise_for_status()
+            batch = r.json().get("_embedded", {}).get("tasks", [])
+            tasks.extend(batch)
+            if len(batch) < 250:
+                break
+            page += 1
+    return tasks
+
+
 # ── Analytics ────────────────────────────────────────────────────────────────
 
 def categorize(comment):
@@ -109,7 +138,7 @@ def categorize(comment):
     return "Другое"
 
 
-def compute(g, manual=None):
+def compute(g, manual=None, include_details=True):
     manual   = manual or {}
     total    = len(g)
     pcp      = int((g["КВАЛИФИКАЦИЯ"] == "ПЦП").sum())
@@ -120,6 +149,11 @@ def compute(g, manual=None):
     zap_mask = g["Статус:"] == "запись в клинику"
     active   = int((zap_mask & g["Явка:"].isna()).sum())
     otval    = int((zap_mask & g["Явка:"].isin(OTVAL_YAVKA)).sum())
+    calls_total     = int(g["call_tasks"].sum()) if "call_tasks" in g else 0
+    calls_completed = int(g["call_completed"].sum()) if "call_completed" in g else 0
+    calls_open      = int(g["call_open"].sum()) if "call_open" in g else 0
+    leads_no_calls  = int((g["call_tasks"] == 0).sum()) if "call_tasks" in g else total
+    leads_over_norm = int((g["call_tasks"] > CALL_REGULATION).sum()) if "call_tasks" in g else 0
 
     pcp_contract       = manual.get("pcp_contract")       or 0
     pcp_contract_count = manual.get("pcp_contract_count") or 0
@@ -138,6 +172,11 @@ def compute(g, manual=None):
             "prishel": int((og["Явка:"] == "Пришел").sum()),
             "otval":   int((ozap & og["Явка:"].isin(OTVAL_YAVKA)).sum()),
             "active":  int((ozap & og["Явка:"].isna()).sum()),
+            "calls": int(og["call_tasks"].sum()) if "call_tasks" in og else 0,
+            "calls_completed": int(og["call_completed"].sum()) if "call_completed" in og else 0,
+            "calls_open": int(og["call_open"].sum()) if "call_open" in og else 0,
+            "leads_no_calls": int((og["call_tasks"] == 0).sum()) if "call_tasks" in og else int(len(og)),
+            "leads_over_norm": int((og["call_tasks"] > CALL_REGULATION).sum()) if "call_tasks" in og else 0,
         }
 
     rg = g[g["Статус:"] == "ОТКАЗ"]
@@ -146,9 +185,12 @@ def compute(g, manual=None):
     if rt:
         vc = rg["refusal_cat"].value_counts()
         for cat, n in vc.items():
-            items = rg[rg["refusal_cat"] == cat][
-                ["Имя:", "Статус:", "Имя оператора, взявшего в работу", "Комментарии:"]
-            ].to_dict("records")
+            items = (
+                rg[rg["refusal_cat"] == cat][
+                    ["Имя:", "Статус:", "Имя оператора, взявшего в работу", "Комментарии:"]
+                ].to_dict("records")
+                if include_details else []
+            )
             refusal_cats.append({
                 "cat": cat, "count": int(n),
                 "share": round(n / rt * 100, 1),
@@ -164,6 +206,12 @@ def compute(g, manual=None):
             "conv_zapis_from_pcp":     round(zapis  / pcp   * 100, 1) if pcp   else 0,
             "conv_prishel_from_zapis": round(prishel/ zapis * 100, 1) if zapis else 0,
             "refusals_total":  int((g["Статус:"] == "ОТКАЗ").sum()),
+            "calls_total": calls_total,
+            "calls_completed": calls_completed,
+            "calls_open": calls_open,
+            "calls_per_lead": round(calls_total / total, 1) if total else 0,
+            "leads_no_calls": leads_no_calls,
+            "leads_over_norm": leads_over_norm,
             "pcp_contract":       pcp_contract,
             "pcp_contract_count": pcp_contract_count,
             "pcp_no_deposit":     pcp_no_dep,
@@ -174,9 +222,7 @@ def compute(g, manual=None):
             g["Статус:"].fillna("—").value_counts().items()
         },
         "operator_stats":    op_stats,
-        "appointments": g[g["Статус:"] == "запись в клинику"][
-            ["Имя:", "Явка:", "Имя оператора, взявшего в работу", "Комментарии:"]
-        ].to_dict("records"),
+        "appointments": [],
         "refusal_categories": refusal_cats,
     }
 
@@ -216,6 +262,7 @@ def main():
         dt  = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else None
         comment = notes.get(lead["id"], "")
         row = {
+            "_lead_id":                           lead["id"],
             "Имя:":                              lead.get("name", ""),
             "КВАЛИФИКАЦИЯ":                      mapping["qual"],
             "Статус:":                           mapping["status"],
@@ -231,7 +278,25 @@ def main():
 
     df         = pd.DataFrame(rows)
     df["dt"]   = pd.to_datetime(df["Время:"], format="%Y.%m.%d %H:%M:%S", errors="coerce")
-    df["month"]= df["dt"].dt.strftime("%Y-%m")
+    df["month"] = df["dt"].dt.strftime("%Y-%m")
+    df["day"]   = df["dt"].dt.strftime("%Y-%m-%d")
+
+    call_tasks = get_call_tasks(df["_lead_id"].astype(int).tolist())
+    calls_by_lead = defaultdict(lambda: {"total": 0, "completed": 0, "open": 0})
+    for task in call_tasks:
+        lid = task.get("entity_id")
+        if lid is None:
+            continue
+        calls_by_lead[lid]["total"] += 1
+        if task.get("is_completed"):
+            calls_by_lead[lid]["completed"] += 1
+        else:
+            calls_by_lead[lid]["open"] += 1
+
+    df["call_tasks"] = df["_lead_id"].map(lambda lid: calls_by_lead[int(lid)]["total"])
+    df["call_completed"] = df["_lead_id"].map(lambda lid: calls_by_lead[int(lid)]["completed"])
+    df["call_open"] = df["_lead_id"].map(lambda lid: calls_by_lead[int(lid)]["open"])
+    print(f"  Задач «Звонок»: {len(call_tasks)}")
 
     manual_all: dict = {}
     if MANUAL_PATH.exists():
@@ -239,6 +304,7 @@ def main():
             manual_all = json.load(f)
 
     months = sorted(df["month"].dropna().unique())
+    days = sorted(df["day"].dropna().unique())
 
     def month_label(m):
         y, mo = m.split("-")
@@ -255,25 +321,56 @@ def main():
         "ad_spend":           total_ad,
     }
 
+    call_daily = defaultdict(lambda: {
+        "total": 0, "completed": 0, "open": 0, "operator_stats": defaultdict(int),
+    })
+    for task in call_tasks:
+        is_completed = bool(task.get("is_completed"))
+        ts = task.get("updated_at") if is_completed else task.get("complete_till")
+        if not ts:
+            continue
+        day = datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%d")
+        operator = users.get(task.get("responsible_user_id"), "—")
+        call_daily[day]["total"] += 1
+        call_daily[day]["completed" if is_completed else "open"] += 1
+        call_daily[day]["operator_stats"][operator] += 1
+
+    call_daily = {
+        day: {
+            **stats,
+            "operator_stats": dict(stats["operator_stats"]),
+        }
+        for day, stats in sorted(call_daily.items())
+    }
+
     data = {
         "period": {
             "date_min": str(df["dt"].min().date()) if not df["dt"].isna().all() else "",
             "date_max": str(df["dt"].max().date()) if not df["dt"].isna().all() else "",
         },
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "metric_basis": "lead_created_at",
+        "calls_meta": {
+            "source": "amo_tasks_type_1",
+            "label": "Задачи amoCRM типа «Звонок»",
+            "regulation": CALL_REGULATION,
+            "note": "Выполненная задача — это попытка звонка, а не подтверждённый разговор.",
+        },
         "months": [
             {"key": m, "label": month_label(m), "count": int((df["month"] == m).sum())}
             for m in months
         ],
         "all":      compute(df, manual=total_manual),
         "by_month": {m: compute(df[df["month"] == m], manual=manual_all.get(m, {})) for m in months},
+        "by_day":   {day: compute(df[df["day"] == day], include_details=False) for day in days},
+        "call_daily": call_daily,
     }
 
     data = clean(data)
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
     k = data["all"]["kpi"]
-    print(f"✓ Готово: {k['total']} лидов · {k['zapis']} записей · {k['prishel']} пришли")
+    print(f"✓ Готово: {k['total']} лидов · {k['zapis']} записей · {k['prishel']} пришли · {k['calls_total']} задач на звонок")
     print(f"  По месяцам: " + ", ".join(f"{m['label']} {m['count']}" for m in data["months"]))
     print(f"  Файл: {OUT_PATH}")
 
