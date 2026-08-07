@@ -26,14 +26,17 @@ with sync_playwright() as playwright:
 
     range_buttons = page.locator("#datePresets button")
     assert range_buttons.count() == 6
-    page.locator("#dateFrom").fill("2026-05-01")
-    page.locator("#dateTo").fill("2026-05-31")
+    page.locator("#dateFrom").fill("2026-04-01")
+    page.locator("#dateTo").fill("2026-04-30")
     page.locator("#dateTo").press("Tab")
     page.wait_for_timeout(1100)
     assert "active" in (page.locator("#customRange").get_attribute("class") or "")
-    assert "01.05.2026 — 31.05.2026" in page.locator("#period").inner_text()
-    assert page.locator("#heroTotal").inner_text() == "432"
-    assert "476 000" in page.locator("#kpi .kpi-card").last.inner_text().replace(" ", " ")
+    assert "01.04.2026 — 30.04.2026" in page.locator("#period").inner_text()
+    assert page.locator("#heroTotal").inner_text() == "242"
+    assert page.locator("#heroZapis").inner_text() == "64"
+    assert page.locator("#heroPrishel").inner_text() == "14"
+    assert "294 100" in page.locator("#kpi .kpi-card").last.inner_text().replace(" ", " ")
+    assert "Заявки — по созданию" in page.locator("#rangeHint").inner_text()
 
     range_buttons.filter(has_text="7 дней").click()
     assert "active" in (range_buttons.filter(has_text="7 дней").get_attribute("class") or "")
