@@ -157,8 +157,6 @@ def compute(g, manual=None, include_details=True):
     leads_no_calls  = int((g["call_tasks"] == 0).sum()) if "call_tasks" in g else total
     leads_over_norm = int((g["call_tasks"] > CALL_REGULATION).sum()) if "call_tasks" in g else 0
 
-    pcp_contract       = manual.get("pcp_contract")       or 0
-    pcp_contract_count = manual.get("pcp_contract_count") or 0
     pcp_no_dep         = manual.get("pcp_no_deposit")     or 0
     ad_spend           = manual.get("ad_spend")
 
@@ -214,8 +212,6 @@ def compute(g, manual=None, include_details=True):
             "calls_per_lead": round(calls_total / total, 1) if total else 0,
             "leads_no_calls": leads_no_calls,
             "leads_over_norm": leads_over_norm,
-            "pcp_contract":       pcp_contract,
-            "pcp_contract_count": pcp_contract_count,
             "pcp_no_deposit":     pcp_no_dep,
             "ad_spend":           ad_spend,
         },
@@ -317,8 +313,6 @@ def main():
         if isinstance(v, dict) and v.get("ad_spend")
     ) or None
     total_manual = {
-        "pcp_contract":       sum(v.get("pcp_contract",       0) or 0 for v in manual_all.values() if isinstance(v, dict)),
-        "pcp_contract_count": sum(v.get("pcp_contract_count", 0) or 0 for v in manual_all.values() if isinstance(v, dict)),
         "pcp_no_deposit":     sum(v.get("pcp_no_deposit",     0) or 0 for v in manual_all.values() if isinstance(v, dict)),
         "ad_spend":           total_ad,
     }
