@@ -591,7 +591,7 @@
       <span>с</span><input type="date" id="dateFrom" aria-label="Дата начала">
       <span>по</span><input type="date" id="dateTo" aria-label="Дата окончания">
     </div>
-    <p class="range-hint" id="rangeHint">Лиды считаются по дате создания. Ручные суммы доступны только для всего периода и целых месяцев.</p>
+    <p class="range-hint" id="rangeHint">Заявки — по дате создания; ПЦП, записи и явки — по датам этих событий в amoCRM.</p>
   </div>
   <div class="update-bar-wrap"><div class="update-bar-fill" id="updateBarFill"></div></div>
 </div>
@@ -600,7 +600,7 @@
 <section class="pulse-strip" aria-label="Краткий путь заявки">
   <div class="pulse-caption">
     <div class="pulse-kicker"><span class="pulse-dot"></span>Выбранный период</div>
-    <p>Путь пациента от первого обращения до визита в клинику.</p>
+    <p>Движение за период: каждый шаг считается по своей дате.</p>
   </div>
   <div class="pulse-route" aria-live="polite">
     <div class="route-step"><strong id="heroTotal">—</strong><span>заявок</span></div>
@@ -622,7 +622,7 @@
 <div class="section-wrap">
   <div class="section-heading">
     <h2>Ключевые показатели</h2>
-    <p>Основные объёмы, конверсии и рекламный расход за выбранный период.</p>
+    <p>Заявки, ПЦП, записи, явки и рекламный расход за выбранные даты.</p>
   </div>
   <div class="grid kpi" id="kpi"></div>
 </div>
@@ -630,8 +630,8 @@
 <div class="overview-bento">
 <div class="section-wrap section-funnel">
   <div class="section-heading">
-    <h2>Воронка по заявкам</h2>
-    <p>Потери между первым обращением, записью, визитом и договором.</p>
+    <h2>Движение за период</h2>
+    <p>Заявка — по созданию; ПЦП, запись и явка — по отдельным датам amoCRM.</p>
   </div>
   <div class="card funnel-card"><div class="funnel" id="funnel"></div></div>
 </div>
@@ -701,12 +701,12 @@
   <div class="section-wrap">
     <div class="section-heading">
       <h2>Динамика по дням</h2>
-      <p>Дневной ритм новых лидов, квалификации и задач на звонок.</p>
+      <p>Дневной ритм заявок, ПЦП, записей, явок и задач на звонок.</p>
     </div>
     <div class="trend-grid">
       <div class="card">
-        <h2>Лиды и квалификация</h2>
-        <p class="chart-sub">Заявки, ПЦП и визиты группируются по дате создания лида.</p>
+        <h2>События воронки</h2>
+        <p class="chart-sub">Каждая линия группируется по своей фактической дате в amoCRM.</p>
         <div class="chart-wrap"><canvas id="chTrendLeads"></canvas></div>
       </div>
       <div class="card">
@@ -866,10 +866,10 @@ function render(d, prev) {
   const cpl = (n, lbl) => (adS && n) ? {v: Math.round(adS / n).toLocaleString('ru-RU') + ' ₽', lbl} : null;
   const kpis = [
     {l:'Всего заявок',          raw:k.total,          sub:`${k.conv_pcp}% квалифицировано`,          pk:pk?.total,        cpl:cpl(k.total,         'стоимость лида'), tone:'primary'},
-    {l:'Квалифицированы (ПЦП)', raw:k.pcp,            sub:`${k.conv_pcp}% от всех`,                   pk:pk?.pcp,          cpl:cpl(k.pcp,           'стоимость ПЦП')},
-    {l:'Записей в клинику',     raw:k.zapis,          sub:`${k.conv_zapis_from_pcp}% от ПЦП`,         pk:pk?.zapis,        cpl:cpl(k.zapis,         'стоимость записи')},
-    {l:'Запись активна',        raw:k.active_zapis,   sub:'без отметки явки',                         pk:pk?.active_zapis},
-    {l:'Пришли на приём',       raw:k.prishel,        sub:`${k.conv_prishel_from_zapis}% от записей`, pk:pk?.prishel,      cpl:cpl(k.prishel,       'стоимость визита')},
+    {l:'Квалифицированы (ПЦП)', raw:k.pcp,            sub:`${k.conv_pcp}% к заявкам периода`,      pk:pk?.pcp,          cpl:cpl(k.pcp,           'стоимость ПЦП')},
+    {l:'Записей в клинику',     raw:k.zapis,          sub:`${k.conv_zapis_from_pcp}% к ПЦП периода`,    pk:pk?.zapis,        cpl:cpl(k.zapis,         'стоимость записи')},
+    {l:'Запись активна',        raw:k.active_zapis,   sub:'из записей периода, ещё без финала',         pk:pk?.active_zapis},
+    {l:'Пришли на приём',       raw:k.prishel,        sub:`${k.conv_prishel_from_zapis}% к записям периода`, pk:pk?.prishel,      cpl:cpl(k.prishel,       'стоимость визита')},
     {l:'Отмена записи',         raw:k.otmena,         sub:'',                                         pk:null},
     {l:'Отказов',               raw:k.refusals_total, sub:'',                                         pk:null},
     {l:'Рекламный расход',      raw:k.ad_spend,       suffix:' ₽', sub:'внесено за период',            pk:pk?.ad_spend, tone:'money'},
@@ -901,7 +901,7 @@ function render(d, prev) {
   document.getElementById('funnel').innerHTML = funnelData.map(([l,v,base])=>`
     <div class="funnel-row">
       <div class="funnel-label">${l}</div>
-      <div class="funnel-bar"><div class="funnel-fill" data-w="${base&&v!=null?(v/base*100).toFixed(2):0}">${v==null?'—':v}</div></div>
+      <div class="funnel-bar"><div class="funnel-fill" data-w="${base&&v!=null?Math.min(v/base*100,100).toFixed(2):0}">${v==null?'—':v}</div></div>
       <div class="funnel-num">${pct(v,base)}</div>
     </div>`).join('');
   requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1102,6 +1102,7 @@ function renderTrend() {
   chartTrendLeads=new Chart(document.getElementById('chTrendLeads'),{type:'line',data:{labels,datasets:[
     {label:'Заявки',data:lead('total'),borderColor:accent,backgroundColor:accent+'20',fill:true,tension:.35,pointRadius:days.length>45?0:2},
     {label:'ПЦП',data:lead('pcp'),borderColor:soft,tension:.35,pointRadius:days.length>45?0:2},
+    {label:'Записи',data:lead('zapis'),borderColor:warn,tension:.35,pointRadius:days.length>45?0:2},
     {label:'Визиты',data:lead('prishel'),borderColor:good,tension:.35,pointRadius:days.length>45?0:2},
   ]},options:common});
   if(chartTrendCalls)chartTrendCalls.destroy();
@@ -1121,8 +1122,8 @@ function refreshCurrent() {
   document.getElementById('period').textContent=`${humanDate(RANGE.from)} — ${humanDate(RANGE.to)} · ${len} ${len===1?'день':'дн.'}`;
   const money=manualForRange(RANGE.from,RANGE.to).ad_spend;
   document.getElementById('rangeHint').textContent=money==null
-    ? 'Лиды считаются по дате создания. Расход не показан: он вносится по месяцам, а выбран неполный месяц.'
-    : 'Лиды считаются по дате создания. Ручные суммы включены без распределения по дням.';
+    ? 'Заявки — по созданию; ПЦП, записи и явки — по своим датам. Расход не показан для неполного месяца.'
+    : 'Заявки — по созданию; ПЦП, записи и явки — по своим датам. Ручные суммы включены без разбивки по дням.';
   if(RANGE.tab==='trend')requestAnimationFrame(renderTrend);
 }
 
