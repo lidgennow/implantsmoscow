@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-08"
   },
-  "generated_at": "2026-08-08T11:31:28Z",
+  "generated_at": "2026-08-08T11:58:11Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -74,9 +74,9 @@
       "conv_zapis_from_pcp": 63.0,
       "conv_prishel_from_zapis": 26.8,
       "refusals_total": 1274,
-      "calls_total": 6491,
+      "calls_total": 6493,
       "calls_completed": 6272,
-      "calls_open": 219,
+      "calls_open": 221,
       "calls_per_lead": 4.0,
       "leads_no_calls": 2,
       "leads_over_norm": 37,
@@ -142,9 +142,9 @@
         "prishel": 46,
         "otval": 55,
         "active": 11,
-        "calls": 4304,
+        "calls": 4306,
         "calls_completed": 4151,
-        "calls_open": 153,
+        "calls_open": 155,
         "leads_no_calls": 0,
         "leads_over_norm": 16
       },
@@ -15729,10 +15729,10 @@
         "conv_zapis_from_pcp": 73.5,
         "conv_prishel_from_zapis": 16.0,
         "refusals_total": 36,
-        "calls_total": 264,
+        "calls_total": 266,
         "calls_completed": 209,
-        "calls_open": 55,
-        "calls_per_lead": 2.8,
+        "calls_open": 57,
+        "calls_per_lead": 2.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -15755,9 +15755,9 @@
           "prishel": 3,
           "otval": 8,
           "active": 7,
-          "calls": 227,
+          "calls": 229,
           "calls_completed": 179,
-          "calls_open": 48,
+          "calls_open": 50,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -22324,7 +22324,7 @@
       },
       "status_counts": {},
       "operator_stats": {
-        "Дмитрий Осташов": {
+        "Гостевой": {
           "total": 0,
           "pcp": 0,
           "nekv": 0,
@@ -22352,7 +22352,7 @@
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
-        "Гостевой": {
+        "Дмитрий Осташов": {
           "total": 0,
           "pcp": 0,
           "nekv": 0,
@@ -24465,10 +24465,10 @@
         "conv_zapis_from_pcp": 0.0,
         "conv_prishel_from_zapis": 0,
         "refusals_total": 6,
-        "calls_total": 55,
+        "calls_total": 57,
         "calls_completed": 37,
-        "calls_open": 18,
-        "calls_per_lead": 2.6,
+        "calls_open": 20,
+        "calls_per_lead": 2.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -24490,9 +24490,9 @@
           "prishel": 1,
           "otval": 0,
           "active": 0,
-          "calls": 51,
+          "calls": 53,
           "calls_completed": 35,
-          "calls_open": 16,
+          "calls_open": 18,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -25654,11 +25654,11 @@
       }
     },
     "2026-08-08": {
-      "total": 65,
+      "total": 67,
       "completed": 43,
-      "open": 22,
+      "open": 24,
       "operator_stats": {
-        "Оператор Людмила": 48,
+        "Оператор Людмила": 50,
         "Оператор Марианна": 17
       }
     },
