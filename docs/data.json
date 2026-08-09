@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-09",
-    "date_max": "2026-08-08"
+    "date_max": "2026-08-09"
   },
-  "generated_at": "2026-08-09T06:09:37Z",
+  "generated_at": "2026-08-09T07:33:58Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -63,20 +63,20 @@
   "all": {
     "kpi": {
       "total": 1628,
-      "pcp": 672,
-      "nekv": 16,
-      "zapis": 424,
+      "pcp": 675,
+      "nekv": 17,
+      "zapis": 426,
       "prishel": 113,
-      "otmena": 85,
-      "active_zapis": 19,
-      "otval_zapis": 85,
-      "conv_pcp": 41.3,
+      "otmena": 84,
+      "active_zapis": 21,
+      "otval_zapis": 84,
+      "conv_pcp": 41.5,
       "conv_zapis_from_pcp": 63.1,
-      "conv_prishel_from_zapis": 26.7,
-      "refusals_total": 1282,
-      "calls_total": 6527,
-      "calls_completed": 6295,
-      "calls_open": 232,
+      "conv_prishel_from_zapis": 26.5,
+      "refusals_total": 1284,
+      "calls_total": 6534,
+      "calls_completed": 6319,
+      "calls_open": 215,
       "calls_per_lead": 4.0,
       "leads_no_calls": 2,
       "leads_over_norm": 37,
@@ -84,12 +84,12 @@
       "ad_spend": 1708400
     },
     "status_counts": {
-      "ОТКАЗ": 1282,
-      "запись в клинику": 216,
+      "ОТКАЗ": 1284,
+      "запись в клинику": 217,
       "думает": 53,
       "в работе": 32,
-      "недозвон": 29,
-      "неквал": 16
+      "недозвон": 25,
+      "неквал": 17
     },
     "operator_stats": {
       "Гостевой": {
@@ -136,15 +136,15 @@
       },
       "Оператор Людмила": {
         "total": 1176,
-        "pcp": 324,
-        "nekv": 9,
-        "zapis": 213,
+        "pcp": 327,
+        "nekv": 10,
+        "zapis": 215,
         "prishel": 46,
-        "otval": 55,
-        "active": 11,
-        "calls": 4331,
-        "calls_completed": 4159,
-        "calls_open": 172,
+        "otval": 54,
+        "active": 13,
+        "calls": 4338,
+        "calls_completed": 4183,
+        "calls_open": 155,
         "leads_no_calls": 0,
         "leads_over_norm": 16
       },
@@ -167,7 +167,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 1182,
+        "count": 1184,
         "share": 92.2,
         "items": [
           {
@@ -7191,12 +7191,6 @@
             "Комментарии:": "для родственницы, АО-4, перезвонить завтра"
           },
           {
-            "Имя:": "dataleads.ru",
-            "Статус:": "ОТКАЗ",
-            "Имя оператора, взявшего в работу": "Оператор Людмила",
-            "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/29104263  был у нас"
-          },
-          {
             "Имя:": "Нам Виталий Вилорьевич",
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Оператор Марианна",
@@ -7261,13 +7255,31 @@
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Оператор Людмила",
             "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/42303001"
+          },
+          {
+            "Имя:": "dataleads.ru",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Оператор Людмила",
+            "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/29104263  был у нас"
+          },
+          {
+            "Имя:": "Моисеенко Алексей",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Оператор Людмила",
+            "Комментарии:": "+"
+          },
+          {
+            "Имя:": "dataleads.ru",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Оператор Людмила",
+            "Комментарии:": ""
           }
         ]
       },
       {
         "cat": "Не актуально / не нужно",
         "count": 75,
-        "share": 5.9,
+        "share": 5.8,
         "items": [
           {
             "Имя:": "dataleads.ru",
@@ -11636,16 +11648,16 @@
         "nekv": 3,
         "zapis": 112,
         "prishel": 33,
-        "otmena": 32,
-        "active_zapis": 0,
-        "otval_zapis": 32,
+        "otmena": 30,
+        "active_zapis": 1,
+        "otval_zapis": 30,
         "conv_pcp": 38.0,
         "conv_zapis_from_pcp": 64.0,
         "conv_prishel_from_zapis": 29.5,
-        "refusals_total": 374,
-        "calls_total": 1858,
-        "calls_completed": 1802,
-        "calls_open": 56,
+        "refusals_total": 375,
+        "calls_total": 1859,
+        "calls_completed": 1805,
+        "calls_open": 54,
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 11,
@@ -11653,8 +11665,8 @@
         "ad_spend": 511500
       },
       "status_counts": {
-        "ОТКАЗ": 374,
-        "запись в клинику": 60,
+        "ОТКАЗ": 375,
+        "запись в клинику": 59,
         "думает": 14,
         "в работе": 9,
         "неквал": 3,
@@ -11667,11 +11679,11 @@
           "nekv": 3,
           "zapis": 59,
           "prishel": 10,
-          "otval": 27,
-          "active": 0,
-          "calls": 1337,
-          "calls_completed": 1291,
-          "calls_open": 46,
+          "otval": 25,
+          "active": 1,
+          "calls": 1338,
+          "calls_completed": 1294,
+          "calls_open": 44,
           "leads_no_calls": 0,
           "leads_over_norm": 8
         },
@@ -11694,8 +11706,8 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 348,
-          "share": 93.0,
+          "count": 349,
+          "share": 93.1,
           "items": [
             {
               "Имя:": "dataleads.ru",
@@ -13784,6 +13796,12 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Оператор Марианна",
               "Комментарии:": ""
+            },
+            {
+              "Имя:": "Моисеенко Алексей",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Оператор Людмила",
+              "Комментарии:": "+"
             }
           ]
         },
@@ -13980,9 +13998,9 @@
         "conv_zapis_from_pcp": 62.1,
         "conv_prishel_from_zapis": 29.9,
         "refusals_total": 280,
-        "calls_total": 1540,
-        "calls_completed": 1461,
-        "calls_open": 79,
+        "calls_total": 1541,
+        "calls_completed": 1463,
+        "calls_open": 78,
         "calls_per_lead": 4.0,
         "leads_no_calls": 2,
         "leads_over_norm": 7,
@@ -14048,9 +14066,9 @@
           "prishel": 10,
           "otval": 16,
           "active": 4,
-          "calls": 934,
-          "calls_completed": 892,
-          "calls_open": 42,
+          "calls": 935,
+          "calls_completed": 894,
+          "calls_open": 41,
           "leads_no_calls": 0,
           "leads_over_norm": 2
         },
@@ -15784,46 +15802,46 @@
     "2026-08": {
       "kpi": {
         "total": 104,
-        "pcp": 36,
-        "nekv": 4,
-        "zapis": 27,
+        "pcp": 39,
+        "nekv": 5,
+        "zapis": 29,
         "prishel": 4,
-        "otmena": 10,
-        "active_zapis": 14,
-        "otval_zapis": 10,
-        "conv_pcp": 34.6,
-        "conv_zapis_from_pcp": 75.0,
-        "conv_prishel_from_zapis": 14.8,
-        "refusals_total": 41,
-        "calls_total": 296,
-        "calls_completed": 223,
-        "calls_open": 73,
-        "calls_per_lead": 2.8,
+        "otmena": 11,
+        "active_zapis": 15,
+        "otval_zapis": 11,
+        "conv_pcp": 37.5,
+        "conv_zapis_from_pcp": 74.4,
+        "conv_prishel_from_zapis": 13.8,
+        "refusals_total": 42,
+        "calls_total": 301,
+        "calls_completed": 242,
+        "calls_open": 59,
+        "calls_per_lead": 2.9,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
-        "ОТКАЗ": 41,
-        "недозвон": 26,
-        "запись в клинику": 22,
+        "ОТКАЗ": 42,
+        "запись в клинику": 24,
+        "недозвон": 22,
         "в работе": 7,
-        "думает": 4,
-        "неквал": 4
+        "неквал": 5,
+        "думает": 4
       },
       "operator_stats": {
         "Оператор Людмила": {
           "total": 86,
-          "pcp": 19,
-          "nekv": 1,
-          "zapis": 17,
+          "pcp": 22,
+          "nekv": 2,
+          "zapis": 19,
           "prishel": 3,
-          "otval": 8,
-          "active": 7,
-          "calls": 254,
-          "calls_completed": 187,
-          "calls_open": 67,
+          "otval": 9,
+          "active": 8,
+          "calls": 259,
+          "calls_completed": 206,
+          "calls_open": 53,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -15846,8 +15864,8 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 36,
-          "share": 87.8,
+          "count": 37,
+          "share": 88.1,
           "items": [
             {
               "Имя:": "дубль , был у нас",
@@ -16027,12 +16045,6 @@
               "Имя:": "dataleads.ru",
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Оператор Людмила",
-              "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/29104263  был у нас"
-            },
-            {
-              "Имя:": "dataleads.ru",
-              "Статус:": "ОТКАЗ",
-              "Имя оператора, взявшего в работу": "Оператор Людмила",
               "Комментарии:": "в клинику не пойдет, пусть врач сам позвонит и по телефонц проконсультирует &quot; я не хочу никуда идти, пусть ваш врач сам мне позвонит&quot;"
             },
             {
@@ -16064,13 +16076,25 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Оператор Людмила",
               "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/42303001"
+            },
+            {
+              "Имя:": "dataleads.ru",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Оператор Людмила",
+              "Комментарии:": "https://dmitriiostashov.amocrm.ru/leads/detail/29104263  был у нас"
+            },
+            {
+              "Имя:": "dataleads.ru",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Оператор Людмила",
+              "Комментарии:": ""
             }
           ]
         },
         {
           "cat": "Не актуально / не нужно",
           "count": 3,
-          "share": 7.3,
+          "share": 7.1,
           "items": [
             {
               "Имя:": "03.08",
@@ -16095,7 +16119,7 @@
         {
           "cat": "Цена / финансы",
           "count": 2,
-          "share": 4.9,
+          "share": 4.8,
           "items": [
             {
               "Имя:": "dataleads.ru",
@@ -20395,8 +20419,8 @@
         "conv_prishel_from_zapis": 100.0,
         "refusals_total": 12,
         "calls_total": 64,
-        "calls_completed": 60,
-        "calls_open": 4,
+        "calls_completed": 61,
+        "calls_open": 3,
         "calls_per_lead": 4.0,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
@@ -20419,8 +20443,8 @@
           "otval": 2,
           "active": 0,
           "calls": 64,
-          "calls_completed": 60,
-          "calls_open": 4,
+          "calls_completed": 61,
+          "calls_open": 3,
           "leads_no_calls": 0,
           "leads_over_norm": 1
         },
@@ -20539,10 +20563,10 @@
         "conv_zapis_from_pcp": 100.0,
         "conv_prishel_from_zapis": 33.3,
         "refusals_total": 7,
-        "calls_total": 78,
-        "calls_completed": 75,
+        "calls_total": 79,
+        "calls_completed": 76,
         "calls_open": 3,
-        "calls_per_lead": 6.5,
+        "calls_per_lead": 6.6,
         "leads_no_calls": 0,
         "leads_over_norm": 2,
         "pcp_no_deposit": 0,
@@ -20562,8 +20586,8 @@
           "prishel": 0,
           "otval": 0,
           "active": 0,
-          "calls": 46,
-          "calls_completed": 44,
+          "calls": 47,
+          "calls_completed": 45,
           "calls_open": 2,
           "leads_no_calls": 0,
           "leads_over_norm": 1
@@ -20740,16 +20764,16 @@
         "nekv": 1,
         "zapis": 3,
         "prishel": 2,
-        "otmena": 2,
+        "otmena": 1,
         "active_zapis": 0,
-        "otval_zapis": 2,
+        "otval_zapis": 1,
         "conv_pcp": 28.6,
         "conv_zapis_from_pcp": 75.0,
         "conv_prishel_from_zapis": 66.7,
-        "refusals_total": 11,
+        "refusals_total": 12,
         "calls_total": 57,
-        "calls_completed": 54,
-        "calls_open": 3,
+        "calls_completed": 55,
+        "calls_open": 2,
         "calls_per_lead": 4.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
@@ -20757,8 +20781,8 @@
         "ad_spend": null
       },
       "status_counts": {
-        "ОТКАЗ": 11,
-        "запись в клинику": 2,
+        "ОТКАЗ": 12,
+        "запись в клинику": 1,
         "неквал": 1
       },
       "operator_stats": {
@@ -20768,11 +20792,11 @@
           "nekv": 1,
           "zapis": 3,
           "prishel": 2,
-          "otval": 2,
+          "otval": 1,
           "active": 0,
           "calls": 52,
-          "calls_completed": 49,
-          "calls_open": 3,
+          "calls_completed": 50,
+          "calls_open": 2,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -20795,14 +20819,14 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 10,
-          "share": 90.9,
+          "count": 11,
+          "share": 91.7,
           "items": []
         },
         {
           "cat": "Не актуально / не нужно",
           "count": 1,
-          "share": 9.1,
+          "share": 8.3,
           "items": []
         }
       ]
@@ -20966,9 +20990,9 @@
         "nekv": 0,
         "zapis": 6,
         "prishel": 2,
-        "otmena": 5,
-        "active_zapis": 0,
-        "otval_zapis": 5,
+        "otmena": 4,
+        "active_zapis": 1,
+        "otval_zapis": 4,
         "conv_pcp": 52.6,
         "conv_zapis_from_pcp": 60.0,
         "conv_prishel_from_zapis": 33.3,
@@ -20994,8 +21018,8 @@
           "nekv": 0,
           "zapis": 6,
           "prishel": 0,
-          "otval": 5,
-          "active": 0,
+          "otval": 4,
+          "active": 1,
           "calls": 71,
           "calls_completed": 65,
           "calls_open": 6,
@@ -23627,10 +23651,10 @@
         "conv_zapis_from_pcp": 66.7,
         "conv_prishel_from_zapis": 100.0,
         "refusals_total": 6,
-        "calls_total": 30,
-        "calls_completed": 26,
-        "calls_open": 4,
-        "calls_per_lead": 3.0,
+        "calls_total": 31,
+        "calls_completed": 28,
+        "calls_open": 3,
+        "calls_per_lead": 3.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -23651,9 +23675,9 @@
           "prishel": 1,
           "otval": 1,
           "active": 0,
-          "calls": 30,
-          "calls_completed": 26,
-          "calls_open": 4,
+          "calls": 31,
+          "calls_completed": 28,
+          "calls_open": 3,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -24137,16 +24161,16 @@
         "nekv": 0,
         "zapis": 9,
         "prishel": 0,
-        "otmena": 3,
-        "active_zapis": 4,
-        "otval_zapis": 3,
+        "otmena": 4,
+        "active_zapis": 3,
+        "otval_zapis": 4,
         "conv_pcp": 56.2,
         "conv_zapis_from_pcp": 100.0,
         "conv_prishel_from_zapis": 0.0,
         "refusals_total": 7,
-        "calls_total": 38,
+        "calls_total": 39,
         "calls_completed": 32,
-        "calls_open": 6,
+        "calls_open": 7,
         "calls_per_lead": 2.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
@@ -24166,11 +24190,11 @@
           "nekv": 0,
           "zapis": 9,
           "prishel": 0,
-          "otval": 3,
-          "active": 4,
-          "calls": 35,
+          "otval": 4,
+          "active": 3,
+          "calls": 36,
           "calls_completed": 29,
-          "calls_open": 6,
+          "calls_open": 7,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -24294,8 +24318,8 @@
         "conv_prishel_from_zapis": 25.0,
         "refusals_total": 5,
         "calls_total": 49,
-        "calls_completed": 42,
-        "calls_open": 7,
+        "calls_completed": 43,
+        "calls_open": 6,
         "calls_per_lead": 3.8,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
@@ -24319,8 +24343,8 @@
           "otval": 0,
           "active": 0,
           "calls": 35,
-          "calls_completed": 30,
-          "calls_open": 5,
+          "calls_completed": 31,
+          "calls_open": 4,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -24432,8 +24456,8 @@
         "conv_prishel_from_zapis": 25.0,
         "refusals_total": 1,
         "calls_total": 20,
-        "calls_completed": 13,
-        "calls_open": 7,
+        "calls_completed": 14,
+        "calls_open": 6,
         "calls_per_lead": 3.3,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
@@ -24456,8 +24480,8 @@
           "otval": 4,
           "active": 0,
           "calls": 20,
-          "calls_completed": 13,
-          "calls_open": 7,
+          "calls_completed": 14,
+          "calls_open": 6,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         }
@@ -24487,8 +24511,8 @@
         "conv_prishel_from_zapis": 50.0,
         "refusals_total": 4,
         "calls_total": 39,
-        "calls_completed": 27,
-        "calls_open": 12,
+        "calls_completed": 29,
+        "calls_open": 10,
         "calls_per_lead": 3.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
@@ -24496,9 +24520,9 @@
         "ad_spend": null
       },
       "status_counts": {
-        "недозвон": 6,
+        "недозвон": 5,
         "ОТКАЗ": 4,
-        "запись в клинику": 2
+        "запись в клинику": 3
       },
       "operator_stats": {
         "Оператор Людмила": {
@@ -24510,8 +24534,8 @@
           "otval": 1,
           "active": 1,
           "calls": 38,
-          "calls_completed": 26,
-          "calls_open": 12,
+          "calls_completed": 28,
+          "calls_open": 10,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -24550,7 +24574,7 @@
       "kpi": {
         "total": 21,
         "pcp": 1,
-        "nekv": 1,
+        "nekv": 2,
         "zapis": 0,
         "prishel": 1,
         "otmena": 0,
@@ -24560,35 +24584,35 @@
         "conv_zapis_from_pcp": 0.0,
         "conv_prishel_from_zapis": 0,
         "refusals_total": 6,
-        "calls_total": 61,
-        "calls_completed": 39,
-        "calls_open": 22,
-        "calls_per_lead": 2.9,
+        "calls_total": 63,
+        "calls_completed": 48,
+        "calls_open": 15,
+        "calls_per_lead": 3.0,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
-        "недозвон": 10,
+        "недозвон": 8,
         "ОТКАЗ": 6,
         "в работе": 2,
-        "думает": 1,
-        "неквал": 1,
-        "запись в клинику": 1
+        "неквал": 2,
+        "запись в клинику": 2,
+        "думает": 1
       },
       "operator_stats": {
         "Оператор Людмила": {
           "total": 18,
           "pcp": 0,
-          "nekv": 0,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 1,
           "otval": 0,
           "active": 0,
-          "calls": 53,
-          "calls_completed": 33,
-          "calls_open": 20,
+          "calls": 55,
+          "calls_completed": 42,
+          "calls_open": 13,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -24636,19 +24660,19 @@
         "conv_pcp": 41.2,
         "conv_zapis_from_pcp": 57.1,
         "conv_prishel_from_zapis": 0.0,
-        "refusals_total": 5,
-        "calls_total": 34,
-        "calls_completed": 19,
-        "calls_open": 15,
-        "calls_per_lead": 2.0,
+        "refusals_total": 6,
+        "calls_total": 36,
+        "calls_completed": 25,
+        "calls_open": 11,
+        "calls_per_lead": 2.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
-        "недозвон": 8,
-        "ОТКАЗ": 5,
+        "недозвон": 7,
+        "ОТКАЗ": 6,
         "запись в клинику": 3,
         "неквал": 1
       },
@@ -24661,9 +24685,9 @@
           "prishel": 0,
           "otval": 0,
           "active": 0,
-          "calls": 29,
-          "calls_completed": 15,
-          "calls_open": 14,
+          "calls": 31,
+          "calls_completed": 21,
+          "calls_open": 10,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -24686,17 +24710,60 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 4,
-          "share": 80.0,
+          "count": 5,
+          "share": 83.3,
           "items": []
         },
         {
           "cat": "Цена / финансы",
           "count": 1,
-          "share": 20.0,
+          "share": 16.7,
           "items": []
         }
       ]
+    },
+    "2026-08-09": {
+      "kpi": {
+        "total": 0,
+        "pcp": 3,
+        "nekv": 0,
+        "zapis": 2,
+        "prishel": 0,
+        "otmena": 0,
+        "active_zapis": 2,
+        "otval_zapis": 0,
+        "conv_pcp": 0,
+        "conv_zapis_from_pcp": 66.7,
+        "conv_prishel_from_zapis": 0.0,
+        "refusals_total": 0,
+        "calls_total": 0,
+        "calls_completed": 0,
+        "calls_open": 0,
+        "calls_per_lead": 0,
+        "leads_no_calls": 0,
+        "leads_over_norm": 0,
+        "pcp_no_deposit": 0,
+        "ad_spend": null
+      },
+      "status_counts": {},
+      "operator_stats": {
+        "Оператор Людмила": {
+          "total": 0,
+          "pcp": 3,
+          "nekv": 0,
+          "zapis": 2,
+          "prishel": 0,
+          "otval": 0,
+          "active": 2,
+          "calls": 0,
+          "calls_completed": 0,
+          "calls_open": 0,
+          "leads_no_calls": 0,
+          "leads_over_norm": 0
+        }
+      },
+      "appointments": [],
+      "refusal_categories": []
     }
   },
   "call_daily": {
@@ -25747,29 +25814,29 @@
       }
     },
     "2026-08-07": {
-      "total": 48,
+      "total": 43,
       "completed": 42,
-      "open": 6,
+      "open": 1,
       "operator_stats": {
-        "Оператор Людмила": 26,
+        "Оператор Людмила": 21,
         "Оператор Марианна": 22
       }
     },
     "2026-08-08": {
-      "total": 95,
+      "total": 85,
       "completed": 66,
-      "open": 29,
+      "open": 19,
       "operator_stats": {
-        "Оператор Людмила": 75,
+        "Оператор Людмила": 65,
         "Оператор Марианна": 20
       }
     },
     "2026-08-09": {
-      "total": 43,
-      "completed": 0,
-      "open": 43,
+      "total": 61,
+      "completed": 24,
+      "open": 37,
       "operator_stats": {
-        "Оператор Людмила": 37,
+        "Оператор Людмила": 55,
         "Оператор Марианна": 6
       }
     },
@@ -25861,11 +25928,11 @@
       }
     },
     "2026-08-20": {
-      "total": 3,
+      "total": 4,
       "completed": 0,
-      "open": 3,
+      "open": 4,
       "operator_stats": {
-        "Оператор Людмила": 3
+        "Оператор Людмила": 4
       }
     },
     "2026-08-21": {
@@ -25887,11 +25954,11 @@
       }
     },
     "2026-08-23": {
-      "total": 3,
+      "total": 4,
       "completed": 0,
-      "open": 3,
+      "open": 4,
       "operator_stats": {
-        "Оператор Людмила": 3
+        "Оператор Людмила": 4
       }
     },
     "2026-08-24": {
@@ -25921,12 +25988,12 @@
       }
     },
     "2026-08-27": {
-      "total": 4,
+      "total": 5,
       "completed": 0,
-      "open": 4,
+      "open": 5,
       "operator_stats": {
         "Оператор Марианна": 3,
-        "Оператор Людмила": 1
+        "Оператор Людмила": 2
       }
     },
     "2026-08-28": {
@@ -25988,6 +26055,14 @@
       }
     },
     "2026-09-05": {
+      "total": 1,
+      "completed": 0,
+      "open": 1,
+      "operator_stats": {
+        "Оператор Людмила": 1
+      }
+    },
+    "2026-09-06": {
       "total": 1,
       "completed": 0,
       "open": 1,
