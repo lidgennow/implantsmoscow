@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-12"
   },
-  "generated_at": "2026-08-13T02:07:10Z",
+  "generated_at": "2026-08-13T04:27:02Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -52,7 +52,7 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 389
+      "count": 388
     },
     {
       "key": "2026-08",
@@ -62,30 +62,30 @@
   ],
   "all": {
     "kpi": {
-      "total": 1703,
-      "pcp": 696,
+      "total": 1702,
+      "pcp": 695,
       "nekv": 15,
-      "zapis": 437,
-      "prishel": 114,
+      "zapis": 436,
+      "prishel": 113,
       "otmena": 76,
       "active_zapis": 26,
       "otval_zapis": 76,
-      "conv_pcp": 40.9,
-      "conv_zapis_from_pcp": 62.8,
-      "conv_prishel_from_zapis": 26.1,
+      "conv_pcp": 40.8,
+      "conv_zapis_from_pcp": 62.7,
+      "conv_prishel_from_zapis": 25.9,
       "refusals_total": 1357,
       "calls_total": 6812,
       "calls_completed": 6593,
       "calls_open": 219,
       "calls_per_lead": 4.0,
-      "leads_no_calls": 2,
+      "leads_no_calls": 1,
       "leads_over_norm": 38,
       "pcp_no_deposit": 3457960,
       "ad_spend": 1708400
     },
     "status_counts": {
       "ОТКАЗ": 1357,
-      "запись в клинику": 215,
+      "запись в клинику": 214,
       "думает": 54,
       "в работе": 34,
       "недозвон": 28,
@@ -93,17 +93,17 @@
     },
     "operator_stats": {
       "Гостевой": {
-        "total": 3,
-        "pcp": 1,
+        "total": 2,
+        "pcp": 0,
         "nekv": 0,
-        "zapis": 1,
-        "prishel": 1,
+        "zapis": 0,
+        "prishel": 0,
         "otval": 0,
         "active": 0,
         "calls": 2,
         "calls_completed": 2,
         "calls_open": 0,
-        "leads_no_calls": 1,
+        "leads_no_calls": 0,
         "leads_over_norm": 0
       },
       "Дмитрий Осташов": {
@@ -14507,30 +14507,30 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 389,
-        "pcp": 140,
+        "total": 388,
+        "pcp": 139,
         "nekv": 4,
-        "zapis": 87,
-        "prishel": 26,
+        "zapis": 86,
+        "prishel": 25,
         "otmena": 28,
         "active_zapis": 6,
         "otval_zapis": 28,
-        "conv_pcp": 36.0,
-        "conv_zapis_from_pcp": 62.1,
-        "conv_prishel_from_zapis": 29.9,
+        "conv_pcp": 35.8,
+        "conv_zapis_from_pcp": 61.9,
+        "conv_prishel_from_zapis": 29.1,
         "refusals_total": 293,
         "calls_total": 1557,
         "calls_completed": 1495,
         "calls_open": 62,
         "calls_per_lead": 4.0,
-        "leads_no_calls": 2,
+        "leads_no_calls": 1,
         "leads_over_norm": 8,
         "pcp_no_deposit": 0,
         "ad_spend": 426800
       },
       "status_counts": {
         "ОТКАЗ": 293,
-        "запись в клинику": 60,
+        "запись в клинику": 59,
         "думает": 21,
         "в работе": 10,
         "неквал": 4,
@@ -14538,17 +14538,17 @@
       },
       "operator_stats": {
         "Гостевой": {
-          "total": 2,
-          "pcp": 1,
+          "total": 1,
+          "pcp": 0,
           "nekv": 0,
-          "zapis": 1,
-          "prishel": 1,
+          "zapis": 0,
+          "prishel": 0,
           "otval": 0,
           "active": 0,
           "calls": 1,
           "calls_completed": 1,
           "calls_open": 0,
-          "leads_no_calls": 1,
+          "leads_no_calls": 0,
           "leads_over_norm": 0
         },
         "Дмитрий Осташов": {
@@ -23128,47 +23128,33 @@
     },
     "2026-07-06": {
       "kpi": {
-        "total": 18,
-        "pcp": 9,
+        "total": 17,
+        "pcp": 8,
         "nekv": 0,
-        "zapis": 5,
+        "zapis": 4,
         "prishel": 3,
         "otmena": 0,
         "active_zapis": 0,
         "otval_zapis": 0,
-        "conv_pcp": 50.0,
-        "conv_zapis_from_pcp": 55.6,
-        "conv_prishel_from_zapis": 60.0,
+        "conv_pcp": 47.1,
+        "conv_zapis_from_pcp": 50.0,
+        "conv_prishel_from_zapis": 75.0,
         "refusals_total": 15,
         "calls_total": 91,
         "calls_completed": 90,
         "calls_open": 1,
-        "calls_per_lead": 5.1,
-        "leads_no_calls": 2,
+        "calls_per_lead": 5.4,
+        "leads_no_calls": 1,
         "leads_over_norm": 1,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
         "ОТКАЗ": 15,
-        "запись в клинику": 2,
+        "запись в клинику": 1,
         "думает": 1
       },
       "operator_stats": {
-        "Гостевой": {
-          "total": 1,
-          "pcp": 1,
-          "nekv": 0,
-          "zapis": 1,
-          "prishel": 0,
-          "otval": 0,
-          "active": 0,
-          "calls": 0,
-          "calls_completed": 0,
-          "calls_open": 0,
-          "leads_no_calls": 1,
-          "leads_over_norm": 0
-        },
         "Менеджер Татьяна": {
           "total": 1,
           "pcp": 1,
@@ -23293,7 +23279,7 @@
         "pcp": 0,
         "nekv": 0,
         "zapis": 0,
-        "prishel": 3,
+        "prishel": 2,
         "otmena": 0,
         "active_zapis": 0,
         "otval_zapis": 0,
@@ -23312,20 +23298,6 @@
       },
       "status_counts": {},
       "operator_stats": {
-        "Дмитрий Осташов": {
-          "total": 0,
-          "pcp": 0,
-          "nekv": 0,
-          "zapis": 0,
-          "prishel": 1,
-          "otval": 0,
-          "active": 0,
-          "calls": 0,
-          "calls_completed": 0,
-          "calls_open": 0,
-          "leads_no_calls": 0,
-          "leads_over_norm": 0
-        },
         "Менеджер Татьяна": {
           "total": 0,
           "pcp": 0,
@@ -23340,7 +23312,7 @@
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
-        "Гостевой": {
+        "Дмитрий Осташов": {
           "total": 0,
           "pcp": 0,
           "nekv": 0,
