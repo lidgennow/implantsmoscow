@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-16"
   },
-  "generated_at": "2026-08-16T14:50:44Z",
+  "generated_at": "2026-08-16T15:24:22Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -57,12 +57,12 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 231
+      "count": 232
     }
   ],
   "all": {
     "kpi": {
-      "total": 1754,
+      "total": 1755,
       "pcp": 720,
       "nekv": 14,
       "zapis": 454,
@@ -74,9 +74,9 @@
       "conv_zapis_from_pcp": 63.1,
       "conv_prishel_from_zapis": 25.6,
       "refusals_total": 1399,
-      "calls_total": 7076,
-      "calls_completed": 6865,
-      "calls_open": 211,
+      "calls_total": 7078,
+      "calls_completed": 6866,
+      "calls_open": 212,
       "calls_per_lead": 4.0,
       "leads_no_calls": 1,
       "leads_over_norm": 39,
@@ -88,7 +88,7 @@
       "запись в клинику": 225,
       "думает": 56,
       "в работе": 37,
-      "недозвон": 23,
+      "недозвон": 24,
       "неквал": 14
     },
     "operator_stats": {
@@ -135,16 +135,16 @@
         "leads_over_norm": 0
       },
       "Оператор Людмила": {
-        "total": 1267,
+        "total": 1268,
         "pcp": 352,
         "nekv": 8,
         "zapis": 230,
         "prishel": 49,
         "otval": 52,
         "active": 15,
-        "calls": 4664,
-        "calls_completed": 4513,
-        "calls_open": 151,
+        "calls": 4666,
+        "calls_completed": 4514,
+        "calls_open": 152,
         "leads_no_calls": 0,
         "leads_over_norm": 17
       },
@@ -16730,7 +16730,7 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 231,
+        "total": 232,
         "pcp": 85,
         "nekv": 6,
         "zapis": 58,
@@ -16738,13 +16738,13 @@
         "otmena": 26,
         "active_zapis": 26,
         "otval_zapis": 26,
-        "conv_pcp": 36.8,
+        "conv_pcp": 36.6,
         "conv_zapis_from_pcp": 68.2,
         "conv_prishel_from_zapis": 13.8,
         "refusals_total": 117,
-        "calls_total": 784,
-        "calls_completed": 687,
-        "calls_open": 97,
+        "calls_total": 786,
+        "calls_completed": 688,
+        "calls_open": 98,
         "calls_per_lead": 3.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
@@ -16754,23 +16754,23 @@
       "status_counts": {
         "ОТКАЗ": 117,
         "запись в клинику": 51,
+        "недозвон": 22,
         "думает": 21,
-        "недозвон": 21,
         "в работе": 15,
         "неквал": 6
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 179,
+          "total": 180,
           "pcp": 47,
           "nekv": 2,
           "zapis": 34,
           "prishel": 6,
           "otval": 18,
           "active": 12,
-          "calls": 568,
-          "calls_completed": 495,
-          "calls_open": 73,
+          "calls": 570,
+          "calls_completed": 496,
+          "calls_open": 74,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -26568,7 +26568,7 @@
     },
     "2026-08-16": {
       "kpi": {
-        "total": 7,
+        "total": 8,
         "pcp": 6,
         "nekv": 0,
         "zapis": 4,
@@ -26576,14 +26576,14 @@
         "otmena": 0,
         "active_zapis": 4,
         "otval_zapis": 0,
-        "conv_pcp": 85.7,
+        "conv_pcp": 75.0,
         "conv_zapis_from_pcp": 66.7,
         "conv_prishel_from_zapis": 0.0,
         "refusals_total": 4,
-        "calls_total": 9,
-        "calls_completed": 7,
-        "calls_open": 2,
-        "calls_per_lead": 1.3,
+        "calls_total": 11,
+        "calls_completed": 8,
+        "calls_open": 3,
+        "calls_per_lead": 1.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -26591,22 +26591,22 @@
       },
       "status_counts": {
         "ОТКАЗ": 4,
+        "недозвон": 2,
         "запись в клинику": 1,
-        "недозвон": 1,
         "думает": 1
       },
       "operator_stats": {
         "Оператор Людмила": {
-          "total": 5,
+          "total": 6,
           "pcp": 0,
           "nekv": 0,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
           "active": 0,
-          "calls": 7,
-          "calls_completed": 5,
-          "calls_open": 2,
+          "calls": 9,
+          "calls_completed": 6,
+          "calls_open": 3,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         },
@@ -27764,21 +27764,21 @@
       }
     },
     "2026-08-16": {
-      "total": 81,
-      "completed": 54,
+      "total": 82,
+      "completed": 55,
       "open": 27,
       "operator_stats": {
-        "Оператор Людмила": 42,
+        "Оператор Людмила": 43,
         "Оператор Марианна": 39
       }
     },
     "2026-08-17": {
-      "total": 28,
+      "total": 29,
       "completed": 0,
-      "open": 28,
+      "open": 29,
       "operator_stats": {
         "Оператор Марианна": 7,
-        "Оператор Людмила": 21
+        "Оператор Людмила": 22
       }
     },
     "2026-08-18": {
