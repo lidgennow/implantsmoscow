@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-17"
   },
-  "generated_at": "2026-08-17T11:29:02Z",
+  "generated_at": "2026-08-17T11:53:56Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -74,9 +74,9 @@
       "conv_zapis_from_pcp": 63.2,
       "conv_prishel_from_zapis": 25.2,
       "refusals_total": 1420,
-      "calls_total": 7123,
+      "calls_total": 7124,
       "calls_completed": 6942,
-      "calls_open": 181,
+      "calls_open": 182,
       "calls_per_lead": 4.0,
       "leads_no_calls": 1,
       "leads_over_norm": 39,
@@ -142,9 +142,9 @@
         "prishel": 63,
         "otval": 31,
         "active": 13,
-        "calls": 2412,
+        "calls": 2413,
         "calls_completed": 2353,
-        "calls_open": 59,
+        "calls_open": 60,
         "leads_no_calls": 0,
         "leads_over_norm": 22
       }
@@ -14943,9 +14943,9 @@
         "conv_zapis_from_pcp": 61.6,
         "conv_prishel_from_zapis": 28.2,
         "refusals_total": 302,
-        "calls_total": 1588,
+        "calls_total": 1589,
         "calls_completed": 1534,
-        "calls_open": 54,
+        "calls_open": 55,
         "calls_per_lead": 4.1,
         "leads_no_calls": 1,
         "leads_over_norm": 8,
@@ -15011,9 +15011,9 @@
           "prishel": 13,
           "otval": 16,
           "active": 0,
-          "calls": 641,
+          "calls": 642,
           "calls_completed": 619,
-          "calls_open": 22,
+          "calls_open": 23,
           "leads_no_calls": 0,
           "leads_over_norm": 5
         }
@@ -23797,10 +23797,10 @@
         "conv_zapis_from_pcp": 0,
         "conv_prishel_from_zapis": 0,
         "refusals_total": 7,
-        "calls_total": 56,
+        "calls_total": 57,
         "calls_completed": 55,
-        "calls_open": 1,
-        "calls_per_lead": 7.0,
+        "calls_open": 2,
+        "calls_per_lead": 7.1,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -23833,9 +23833,9 @@
           "prishel": 0,
           "otval": 0,
           "active": 0,
-          "calls": 23,
+          "calls": 24,
           "calls_completed": 22,
-          "calls_open": 1,
+          "calls_open": 2,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         }
@@ -28028,11 +28028,11 @@
       }
     },
     "2026-08-17": {
-      "total": 93,
+      "total": 94,
       "completed": 86,
-      "open": 7,
+      "open": 8,
       "operator_stats": {
-        "Оператор Марианна": 11,
+        "Оператор Марианна": 12,
         "Оператор Людмила": 82
       }
     },
