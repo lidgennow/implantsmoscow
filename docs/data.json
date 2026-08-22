@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T13:34:03Z",
+  "generated_at": "2026-08-22T14:24:04Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -73,10 +73,10 @@
       "conv_pcp": 40.6,
       "conv_zapis_from_pcp": 63.3,
       "conv_prishel_from_zapis": 24.7,
-      "refusals_total": 1477,
-      "calls_total": 7402,
-      "calls_completed": 7207,
-      "calls_open": 195,
+      "refusals_total": 1478,
+      "calls_total": 7407,
+      "calls_completed": 7208,
+      "calls_open": 199,
       "calls_per_lead": 4.1,
       "leads_no_calls": 1,
       "leads_over_norm": 41,
@@ -84,11 +84,11 @@
       "ad_spend": 1708400
     },
     "status_counts": {
-      "ОТКАЗ": 1477,
+      "ОТКАЗ": 1478,
       "запись в клинику": 221,
       "думает": 50,
       "в работе": 41,
-      "недозвон": 23,
+      "недозвон": 22,
       "неквал": 12
     },
     "operator_stats": {
@@ -128,9 +128,9 @@
         "prishel": 49,
         "otval": 52,
         "active": 14,
-        "calls": 4857,
-        "calls_completed": 4747,
-        "calls_open": 110,
+        "calls": 4861,
+        "calls_completed": 4748,
+        "calls_open": 113,
         "leads_no_calls": 0,
         "leads_over_norm": 17
       },
@@ -142,9 +142,9 @@
         "prishel": 64,
         "otval": 32,
         "active": 8,
-        "calls": 2538,
+        "calls": 2539,
         "calls_completed": 2453,
-        "calls_open": 85,
+        "calls_open": 86,
         "leads_no_calls": 0,
         "leads_over_norm": 24
       }
@@ -153,7 +153,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 1370,
+        "count": 1371,
         "share": 92.8,
         "items": [
           {
@@ -8375,6 +8375,12 @@
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Оператор Людмила",
             "Комментарии:": ""
+          },
+          {
+            "Имя:": "импланты Бразилия , постоянный протез",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Оператор Людмила",
+            "Комментарии:": "ао"
           }
         ]
       },
@@ -17361,10 +17367,10 @@
         "conv_pcp": 35.6,
         "conv_zapis_from_pcp": 69.4,
         "conv_prishel_from_zapis": 12.0,
-        "refusals_total": 165,
-        "calls_total": 1097,
-        "calls_completed": 985,
-        "calls_open": 112,
+        "refusals_total": 166,
+        "calls_total": 1102,
+        "calls_completed": 986,
+        "calls_open": 116,
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
         "leads_over_norm": 1,
@@ -17372,11 +17378,11 @@
         "ad_spend": null
       },
       "status_counts": {
-        "ОТКАЗ": 165,
+        "ОТКАЗ": 166,
         "запись в клинику": 62,
         "думает": 28,
-        "недозвон": 22,
         "в работе": 21,
+        "недозвон": 21,
         "неквал": 5
       },
       "operator_stats": {
@@ -17388,9 +17394,9 @@
           "prishel": 6,
           "otval": 28,
           "active": 12,
-          "calls": 759,
-          "calls_completed": 703,
-          "calls_open": 56,
+          "calls": 763,
+          "calls_completed": 704,
+          "calls_open": 59,
           "leads_no_calls": 0,
           "leads_over_norm": 1
         },
@@ -17402,9 +17408,9 @@
           "prishel": 3,
           "otval": 16,
           "active": 8,
-          "calls": 338,
+          "calls": 339,
           "calls_completed": 282,
-          "calls_open": 56,
+          "calls_open": 57,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         }
@@ -17413,8 +17419,8 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 153,
-          "share": 92.7,
+          "count": 154,
+          "share": 92.8,
           "items": [
             {
               "Имя:": "дубль , был у нас",
@@ -18333,6 +18339,12 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Оператор Людмила",
               "Комментарии:": "импл- ия 2 зуба"
+            },
+            {
+              "Имя:": "импланты Бразилия , постоянный протез",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Оператор Людмила",
+              "Комментарии:": "ао"
             }
           ]
         },
@@ -27637,10 +27649,10 @@
         "conv_zapis_from_pcp": 40.0,
         "conv_prishel_from_zapis": 50.0,
         "refusals_total": 6,
-        "calls_total": 40,
+        "calls_total": 41,
         "calls_completed": 31,
-        "calls_open": 9,
-        "calls_per_lead": 3.1,
+        "calls_open": 10,
+        "calls_per_lead": 3.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -27676,9 +27688,9 @@
           "prishel": 1,
           "otval": 0,
           "active": 2,
-          "calls": 36,
+          "calls": 37,
           "calls_completed": 27,
-          "calls_open": 9,
+          "calls_open": 10,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         }
@@ -27781,20 +27793,20 @@
         "conv_pcp": 35.7,
         "conv_zapis_from_pcp": 80.0,
         "conv_prishel_from_zapis": 0.0,
-        "refusals_total": 3,
-        "calls_total": 27,
-        "calls_completed": 25,
-        "calls_open": 2,
-        "calls_per_lead": 1.9,
+        "refusals_total": 4,
+        "calls_total": 31,
+        "calls_completed": 26,
+        "calls_open": 5,
+        "calls_per_lead": 2.2,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
         "ad_spend": null
       },
       "status_counts": {
-        "недозвон": 6,
+        "недозвон": 5,
+        "ОТКАЗ": 4,
         "запись в клинику": 3,
-        "ОТКАЗ": 3,
         "думает": 1,
         "в работе": 1
       },
@@ -27807,9 +27819,9 @@
           "prishel": 0,
           "otval": 1,
           "active": 2,
-          "calls": 27,
-          "calls_completed": 25,
-          "calls_open": 2,
+          "calls": 31,
+          "calls_completed": 26,
+          "calls_open": 5,
           "leads_no_calls": 0,
           "leads_over_norm": 0
         }
@@ -27818,7 +27830,7 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 3,
+          "count": 4,
           "share": 100.0,
           "items": []
         }
@@ -29077,12 +29089,12 @@
       }
     },
     "2026-08-22": {
-      "total": 39,
-      "completed": 30,
-      "open": 9,
+      "total": 44,
+      "completed": 31,
+      "open": 13,
       "operator_stats": {
-        "Оператор Марианна": 9,
-        "Оператор Людмила": 30
+        "Оператор Марианна": 10,
+        "Оператор Людмила": 34
       }
     },
     "2026-08-23": {
