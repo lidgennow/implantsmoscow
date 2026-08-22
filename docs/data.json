@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T15:23:22Z",
+  "generated_at": "2026-08-22T15:48:25Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -74,8 +74,8 @@
       "conv_zapis_from_pcp": 63.3,
       "conv_prishel_from_zapis": 24.7,
       "refusals_total": 1478,
-      "calls_total": 7409,
-      "calls_completed": 7209,
+      "calls_total": 7410,
+      "calls_completed": 7210,
       "calls_open": 200,
       "calls_per_lead": 4.1,
       "leads_no_calls": 1,
@@ -128,8 +128,8 @@
         "prishel": 49,
         "otval": 52,
         "active": 14,
-        "calls": 4863,
-        "calls_completed": 4749,
+        "calls": 4864,
+        "calls_completed": 4750,
         "calls_open": 114,
         "leads_no_calls": 0,
         "leads_over_norm": 17
@@ -17368,8 +17368,8 @@
         "conv_zapis_from_pcp": 69.4,
         "conv_prishel_from_zapis": 12.0,
         "refusals_total": 166,
-        "calls_total": 1104,
-        "calls_completed": 987,
+        "calls_total": 1105,
+        "calls_completed": 988,
         "calls_open": 117,
         "calls_per_lead": 3.6,
         "leads_no_calls": 0,
@@ -17394,8 +17394,8 @@
           "prishel": 6,
           "otval": 28,
           "active": 12,
-          "calls": 765,
-          "calls_completed": 705,
+          "calls": 766,
+          "calls_completed": 706,
           "calls_open": 60,
           "leads_no_calls": 0,
           "leads_over_norm": 1
@@ -27794,10 +27794,10 @@
         "conv_zapis_from_pcp": 80.0,
         "conv_prishel_from_zapis": 0.0,
         "refusals_total": 4,
-        "calls_total": 32,
-        "calls_completed": 27,
+        "calls_total": 33,
+        "calls_completed": 28,
         "calls_open": 5,
-        "calls_per_lead": 2.3,
+        "calls_per_lead": 2.4,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -27819,8 +27819,8 @@
           "prishel": 0,
           "otval": 1,
           "active": 2,
-          "calls": 32,
-          "calls_completed": 27,
+          "calls": 33,
+          "calls_completed": 28,
           "calls_open": 5,
           "leads_no_calls": 0,
           "leads_over_norm": 0
@@ -29090,19 +29090,19 @@
     },
     "2026-08-22": {
       "total": 45,
-      "completed": 32,
-      "open": 13,
+      "completed": 33,
+      "open": 12,
       "operator_stats": {
         "Оператор Марианна": 10,
         "Оператор Людмила": 35
       }
     },
     "2026-08-23": {
-      "total": 16,
+      "total": 17,
       "completed": 0,
-      "open": 16,
+      "open": 17,
       "operator_stats": {
-        "Оператор Марианна": 16
+        "Оператор Марианна": 17
       }
     },
     "2026-08-24": {
