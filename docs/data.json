@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-24"
   },
-  "generated_at": "2026-08-24T18:43:08Z",
+  "generated_at": "2026-08-24T19:32:12Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
