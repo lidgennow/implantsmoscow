@@ -3,7 +3,7 @@
     "date_min": "2026-04-09",
     "date_max": "2026-08-25"
   },
-  "generated_at": "2026-08-25T13:58:53Z",
+  "generated_at": "2026-08-25T14:53:55Z",
   "metric_basis": {
     "total": "lead_created_at",
     "pcp": "lead_custom_field_960167",
@@ -74,8 +74,8 @@
       "conv_zapis_from_pcp": 63.6,
       "conv_prishel_from_zapis": 24.5,
       "refusals_total": 1526,
-      "calls_total": 7551,
-      "calls_completed": 7388,
+      "calls_total": 7553,
+      "calls_completed": 7390,
       "calls_open": 163,
       "calls_per_lead": 4.1,
       "leads_no_calls": 1,
@@ -128,8 +128,8 @@
         "prishel": 50,
         "otval": 48,
         "active": 18,
-        "calls": 4940,
-        "calls_completed": 4835,
+        "calls": 4942,
+        "calls_completed": 4837,
         "calls_open": 105,
         "leads_no_calls": 0,
         "leads_over_norm": 17
@@ -17734,8 +17734,8 @@
         "conv_zapis_from_pcp": 70.9,
         "conv_prishel_from_zapis": 12.0,
         "refusals_total": 201,
-        "calls_total": 1234,
-        "calls_completed": 1138,
+        "calls_total": 1236,
+        "calls_completed": 1140,
         "calls_open": 96,
         "calls_per_lead": 3.7,
         "leads_no_calls": 0,
@@ -17760,8 +17760,8 @@
           "prishel": 7,
           "otval": 27,
           "active": 16,
-          "calls": 842,
-          "calls_completed": 785,
+          "calls": 844,
+          "calls_completed": 787,
           "calls_open": 57,
           "leads_no_calls": 0,
           "leads_over_norm": 1
@@ -26949,10 +26949,10 @@
         "conv_zapis_from_pcp": 100.0,
         "conv_prishel_from_zapis": 0.0,
         "refusals_total": 8,
-        "calls_total": 42,
-        "calls_completed": 36,
+        "calls_total": 43,
+        "calls_completed": 37,
         "calls_open": 6,
-        "calls_per_lead": 2.6,
+        "calls_per_lead": 2.7,
         "leads_no_calls": 0,
         "leads_over_norm": 0,
         "pcp_no_deposit": 0,
@@ -26973,8 +26973,8 @@
           "prishel": 0,
           "otval": 4,
           "active": 1,
-          "calls": 39,
-          "calls_completed": 33,
+          "calls": 40,
+          "calls_completed": 34,
           "calls_open": 6,
           "leads_no_calls": 0,
           "leads_over_norm": 0
@@ -27585,8 +27585,8 @@
         "conv_zapis_from_pcp": 50.0,
         "conv_prishel_from_zapis": 33.3,
         "refusals_total": 20,
-        "calls_total": 111,
-        "calls_completed": 105,
+        "calls_total": 112,
+        "calls_completed": 106,
         "calls_open": 6,
         "calls_per_lead": 4.3,
         "leads_no_calls": 0,
@@ -27608,8 +27608,8 @@
           "prishel": 1,
           "otval": 2,
           "active": 1,
-          "calls": 90,
-          "calls_completed": 84,
+          "calls": 91,
+          "calls_completed": 85,
           "calls_open": 6,
           "leads_no_calls": 0,
           "leads_over_norm": 1
@@ -29913,21 +29913,21 @@
       }
     },
     "2026-08-25": {
-      "total": 79,
-      "completed": 69,
+      "total": 81,
+      "completed": 71,
       "open": 10,
       "operator_stats": {
         "Оператор Марианна": 15,
-        "Оператор Людмила": 64
+        "Оператор Людмила": 66
       }
     },
     "2026-08-26": {
-      "total": 12,
+      "total": 10,
       "completed": 0,
-      "open": 12,
+      "open": 10,
       "operator_stats": {
         "Оператор Марианна": 7,
-        "Оператор Людмила": 5
+        "Оператор Людмила": 3
       }
     },
     "2026-08-27": {
@@ -30044,11 +30044,11 @@
       }
     },
     "2026-09-09": {
-      "total": 1,
+      "total": 2,
       "completed": 0,
-      "open": 1,
+      "open": 2,
       "operator_stats": {
-        "Оператор Людмила": 1
+        "Оператор Людмила": 2
       }
     },
     "2026-09-10": {
@@ -30085,6 +30085,14 @@
       }
     },
     "2026-09-14": {
+      "total": 1,
+      "completed": 0,
+      "open": 1,
+      "operator_stats": {
+        "Оператор Людмила": 1
+      }
+    },
+    "2026-09-16": {
       "total": 1,
       "completed": 0,
       "open": 1,
